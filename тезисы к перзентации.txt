@@ -14,4 +14,4 @@ http://www.slideshare.net/maspalio/yapc-2007-module-kwalitee-talk
 
 http://markmail.org/search/list:org.perl.cpan-testers-discuss#query:list%3Aorg.perl.cpan-testers-discuss+page:1+mid:x2qnr6jaqg5doit6+state:results
 
-интересно было бы рассказать про генеалогию
+интересно было бы рассказать про генеалогию.
