@@ -1,0 +1,112 @@
+﻿1) Кодировка файла
+perl -MEncode::Detect::Detector -MFile::Slurp -E "say Encode::Detect::Detector::detect(read_file( '06_regex.pl' ))"
+UTF-8
+
+perl -MEncode::Detect::Detector -E "say Encode::Detect::Detector::detect(qq{перл})"
+
+c:\Users\TOSH\Documents\job\perl\презентация\t>perl -MEncode::Detect::Detector -E "say Encode::Detect::Detector::detect(qq{перл})"
+ISO-8859-7
+
+2) Кодировка консоли (win7)
+chcp
+866
+..
+Таким образом нужно utf8 текст вывести в консоли с кодировкой 866
+http://habrahabr.ru/post/163439/
+
+http://habrahabr.ru/users/kshiian/ !!!
+http://ahinea.com/en/tech/perl-unicode-struggle.html
+chcp	
+chcp 65001
+chcp 1252
+
+
+"\x{00ef}" does not map to cp866
+
+cpanm Encode::Detect::Detector
+perl -MEncode::Detect::Detector -MFile::Slurp -E "say Encode::Detect::Detector::detect(read_file( '06_regex.pl' ))"
+
+use File::Slurp;
+
+# read in a whole file into a scalar my $text = read_file( 'filename' ) 
+
+use Encode::Detect::Detector;
+my $charset = detect($octets);
+ 
+my $d = new Encode::Detect::Detector;
+$d->handle($octets);
+$d->handle($more_octets);
+$d->end;
+my $charset = $d->getresult;
+
+#!/usr/bin/env perl use Modern::Perl; use open OUT => ':encoding(cp1251)'; my $lang = shift or die "Usage: $0 What_is_your_language?\n"; $lang =~ /(perl|перл) (?{print "use Perl or die!!\n";}) /ix;#русский не мачится, почему?
+c:\Users\TOSH\Documents\job\perl\презентация\t>chcp
+Текущая кодовая страница: 866
+
+
+export PERL_UNICODE=SDL
+set PERL_UNICODE=SDL
+perl -CSDL -le 'print "\x{1815}"';
+perl -CSDL -le "print qq{\x{1815}}";
+
+binmode(STDOUT, ":utf8");          #treat as if it is UTF-8
+binmode(STDIN, ":encoding(utf8)"); #actually check if it is UTF-8
+
+http://stackoverflow.com/questions/627661/how-can-i-output-utf-8-from-perl
+
+or with PerlIO:
+
+open my $fh, ">:utf8", $filename
+    or die "could not open $filename: $!\n";
+
+open my $fh, "<:encoding(utf-8)", $filename
+    or die "could not open $filename: $!\n";
+
+or with the open pragma:
+
+use open ":encoding(utf8)";
+use open IN => ":encoding(utf8)", OUT => ":utf8";
+
+use utf8 or export PERL5OPTS=-Mutf8.
+
+https://stackoverflow.com/questions/6162484/why-does-modern-perl-avoid-utf-8-by-default
+
+http://www.joelonsoftware.com/articles/Unicode.html
+
+use MIME::QuotedPrint qw(encode_qp);
+use Encode qw(encode);
+ 
+$encoded = encode_qp(encode("UTF-8", "\x{FFFF}\n"));
+print $encoded;
+
+chcp 1252
+mode con cp select=1252
+
+http://perlgeek.de/en/article/encodings-and-unicode
+
+
+
+Guys: continuing on studying that Perlmonks post, turns out that this is even neater and nicer: replace:
+use Win32::API;
+and:
+
+$SetConsoleOutputCP= new Win32::API( 'kernel32.dll', 'SetConsoleOutputCP', 'N','N' );
+$SetConsoleOutputCP->Call(65001);
+
+with:
+
+use Win32::Console;
+
+and:
+
+ Win32::Console::OutputCP(65001);
+
+Leaving all else intact.
+This is even more in the spirit of Perl conciseness and magic.
+share|edit|flag
+	
+answered Feb 21 '12 at 20:33
+Helen Craigman
+4291716
+
+http://creograf.ru/post/windows1251-utf8

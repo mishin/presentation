@@ -1,0 +1,7 @@
+﻿ошибки в perlrequick
+1)
+    "1000\t2000" =~ m(0\t2);# matches
+    "cat"      =~ /\143\x61\x74/;# matches in ASCII, but a weird way to spell cat
+
+нет запутых
+

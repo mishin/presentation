@@ -1,0 +1,15 @@
+﻿Trying to avoid line noise (brain cramp)
+ 
+ # original: /([^(]+)(\([^)]+\))(.*)/
+
+my $not_paren = "[^(]+";
+my $paren     = "\\(";
+my $rest      = ".*";
+
+# now reads:
+$string =~ /($not_paren)($paren$not_paren$paren)($rest)/; 
+
+Here's one more way to de-line-noise-ify the code:
+
+my $leftparen = quotemeta "("; 
+my $rightparen = quotemeta ")";

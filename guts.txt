@@ -1,0 +1,157 @@
+﻿c:\Users\TOSH\Documents\job\perl\презентация\t>perl -Mre=debug 01_simple_regex.pl
+Compiling REx "World"
+Final program:
+   1: EXACT <World> (4)
+   4: END (0)
+anchored "World" at 0 (checking anchored isall) minlen 5
+Guessing start of match in sv for REx "World" against "Hello World"
+Found anchored substr "World" at offset 6...
+Starting position does not contradict /^/m...
+Guessed: match at offset 6
+Freeing REx: "World"
+
+ SV (scalar value)
+http://blog.woobling.org/2009/07/sv.html
+http://cpansearch.perl.org/src/RURBAN/illguts-0.49/index.html#svnull
+http://perldoc.perl.org/Devel/Peek.html#A-reference-to-an-SV-which-holds-a-C-pointer
+
+XS — акроним от eXternal Subroutine (внешняя подпрограмма),
+http://pragmaticperl.com/issues/03/pragmaticperl-03-%D0%B2%D0%B2%D0%B5%D0%B4%D0%B5%D0%BD%D0%B8%D0%B5-%D0%B2-perl-xs.html#.VByZ8Bat8yw
+
+
+
+http://www.swig.org/
+
+xsubpp
+
+ perl -MRegexp::Debugger 01_simple_regex.pl
+ perl -Mre=debug  01_simple_regex.pl
+ c:\Users\TOSH\Documents\job\perl\презентация\t>perl -MYAPE::Regex::Explain -e "print YAPE::Regex::Explain->new(qr/World/)->explain();"
+The regular expression:
+
+(?-imsx:World)
+
+matches as follows:
+
+NODE                     EXPLANATION
+----------------------------------------------------------------------
+(?-imsx:                 group, but do not capture (case-sensitive)
+                         (with ^ and $ matching normally) (with . not
+                         matching \n) (matching whitespace and #
+                         normally):
+----------------------------------------------------------------------
+  World                    'World'
+----------------------------------------------------------------------
+)                        end of grouping
+----------------------------------------------------------------------
+
+c:\Users\TOSH\Documents\job\perl\презентация\t>
+
+
+
+ 
+ 
+ http://www.perlmonks.org/?node_id=63245
+ 
+ Re: Trying to avoid line noise (brain cramp)
+ 
+ # original: /([^(]+)(\([^)]+\))(.*)/
+
+my $not_paren = "[^(]+";
+my $paren     = "\\(";
+my $rest      = ".*";
+
+# now reads:
+$string =~ /($not_paren)($paren$not_paren$paren)($rest)/; 
+
+Here's one more way to de-line-noise-ify the code:
+
+my $leftparen = quotemeta "("; my $rightparen = quotemeta ")";
+[download]
+
+This is more legible than "\\(" or "\Q(\E". -- Frag.
+
+    s{ <                    # opening angle bracket
+        (?:                 # Non-backreffing grouping paren
+             [^>'"] *       # 0 or more things that are neither > nor ' nor "
+                |           #    or else
+             ".*?"          # a section between double quotes (stingy match)
+                |           #    or else
+             '.*?'          # a section between single quotes (stingy match)
+        ) +                 #   all occurring one or more times
+       >                    # closing angle bracket
+    }{}gsx;                 # replace with nothing, i.e. delete
+
+ 
+ 
+ perl -Mre=debugcolor  01_simple_regex.pl
+ 
+ 
+ 
+ use re 'debugcolor'; 
+ 
+ 
+ http://www.perlmonks.org/?node_id=34130
+Compiling REx "World"
+
+debugcolor Use of uninitialized value in join or string at C:/Dwimperl/perl/lib/re.pm line
+42.
+
+http://blob.perl.org/books/impatient-perl/iperl.htm
+
+http://perlweekly.com/all.html
+
+http://perl.plover.com/Rx/paper/
+
+
+print YAPE::Regex::Explain->new(qr/\Q[abc]\E\d+/)->explain();
+ print YAPE::Regex::Explain->new('\w[a-f]*')->explain('silent');
+
+
+ my $re = qr{
+            (foo|bar)   # just a comment
+            \d+
+            /
+    }ix;
+    print YAPE::Regex::Explain->new($re)->explain();
+	
+	perl -MYAPE::Regex::Explain -E "say YAPE::Regex::Explain->new(qr/\Q[abc]\E\d+/)->explain();"
+ 
+ http://perl.active-venture.com/pod/perldebguts-debugregexp.html
+ http://codenode.com/2010/02/28/debugging-perl-regex-backtracking/
+ 
+ 	
+	
+	c:\Users\TOSH\Documents\job\perl\презентация\t>perl -MRegexp::Debugger 04_regex.pl
+(?#R_d:0)(?>\A(?{Regexp::Debugger::_reset_debugger_state()})(?!)|\G(?{Regexp::Debugger::_reset_debugger_state_rematch()})(?!))|(?:(?{Regexp::Debugger::_report_event(0, 0, pos()); $^R })(?=)(?:(?{Regexp::Debugger::_report_event(0, 1, pos()); $^R })(?=)0(?{Regexp::Debugger::_report_event(0, 2, pos()); $^R })(?=)(?{Regexp::Debugger::_report_event(0, 3, pos()); $^R })(?=)\t(?{Regexp::Debugger::_report_event(0, 4, pos()); $^R })(?=)(?{Regexp::Debugger::_report_event(0, 5, pos());
+$^R })(?=)2(?{Regexp::Debugger::_report_event(0, 6, pos()); $^R })(?=))(?{Regexp::Debugger::_report_event(0, 7, pos()); $^R })(?=)|(?{Regexp::Debugger::_report_event(0, 8, pos()); $^R })(?=)(?!))
+String found where operator expected at 04_regex.pl line 2, near ""cat""
+        (Missing semicolon on previous line?)
+syntax error at 04_regex.pl line 2, near ""cat""
+Execution of 04_regex.pl aborted due to compilation errors.
+
+
+=head2 Использование классов символов
+
+B<Класс символов> позволяет набору возможных символов, а не только одному символу,
+соответствовать в определенной точке в регексе.
+Класс символом обозначается квадратными скобками C<[...]>, с набором символов, которые нужно найти внутри.
+Вот некоторые примеры:
+
+    /cat/;            # найдет 'cat'
+    /[bcr]at/;        # найдет 'bat', 'cat', or 'rat'
+    "abc" =~ /[cab]/; # найдет 'a'
+
+В последнем вырадении, даже несмотря на то, что C<'c'> является первым символом в классе, 
+самой ранней точкой совпадения регекса будет C<'a'>.
+
+    /[yY][eE][sS]/; # найдет 'yes' в регистронезависимом поиске
+                    # 'yes', 'Yes', 'YES', etc.
+    /yes/i;         # также найдет 'yes' без учета регистра
+
+Последний пример показывает поиск с B<модификатором> C<'i'> , который делает
+поиск независимым от регистра (ignore registr).
+
+Пожалуйста. Вместо спасиба, блог пост лучше напишите в стиле было так, а
+стало так и темой "Unicode aware web scrapping in command line perl
+scripts".

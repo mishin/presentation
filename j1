@@ -1,0 +1,19 @@
+[
+    {
+   "str_pos" : 0,
+   "event" : {
+      "msg" : "Restarting regex match",
+      "construct_type" : "_START",
+      "event_type" : "pre",
+      "lexical_scope" : 0,
+      "indent" : "  ",
+      "depth" : 1,
+      "regex_pos" : 0,
+      "construct" : "",
+      "quantifier" : ""
+   },
+   "regex_pos" : 0
+}
+,
+    { MATCH_INCOMPLETE => 1 }
+]
