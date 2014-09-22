@@ -1,0 +1,10 @@
+severity  = 1 
+
+[InputOutput::RequireCheckedSyscalls]
+functions = open opendir read readline readdir close closedir
+
+[-Documentation::PodSpelling]
+severity = 5
+spell_command = aspell
+
+[-ValuesAndExpressions::RequireInterpolationOfMetachars] 

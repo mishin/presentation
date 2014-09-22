@@ -1,0 +1,1 @@
+c:\TCPU59\utils\distrib\putty\pscp.exe -l pwadm -pw secret %cd%\%1 ehd-app-test:/u01/informatica/server/infa_shared/CmdFiles/%2

@@ -1,0 +1,6 @@
+---
+rwa_owner_un: rwa_owner
+rwa_owner_pw: 32jhsdakjfhdsfkla
+prod_database_tns: TEST.COM
+driver: Oracle
+

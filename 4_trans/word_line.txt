@@ -1,0 +1,19 @@
+﻿ru.mishin.quiz
+Quiz
+startingPoint
+
+perl testEnvironment.pl | ack 'module ((\w+::)*(\w+)):\s+(?:Not Install)' --output='$1'
+ack 'module ((\w+::)*(\w+)):\s+(?:Not Install)' --output='$1'
+
+perl 4translate.pl 2>&1 | ack -i 'module ((\w+::)*(\w+)):\s+(?:Not Install)' --output='$1'
+perl 4translate.pl 2>&1 | ack -i "Can't locate (\w+\/\w+)" --output='$1'| perl -ane "print $F[3]. ' '" | perl -pe "s/: / /g" | cpanm
+
+install dependencies on perl script win7
+cpanm App::Ack;cpanm Win32::Console::ANSI
+perl my_script.pl 2>&1 | ack -i "Can't locate (\w+\/\w+)" --output=$1 | perl -pe "s{/}{::}g" | cpanm
+
+perl -c script.pl 2>&1 | ack -i "Can't locate ((\w+\/)*(\w+)).pm" --output=$1 | perl -pe "s{/}{::}g" | cpanm
+
+perl -с script.pl 2>&1 | ack -i "Can't locate ((\w+\/)*(\w+).pm)" --output=$1 | perl -pe "s{/}{::}g" | cpanm
+
+c:\Documents and Settings\user\Мои документы\GitHub\gists>git commit -a -m "firebug is cool"

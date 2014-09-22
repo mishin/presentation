@@ -1,0 +1,1 @@
+perl -MFile::Find -le 'find(sub{print $File::Find::name if /\b[a-z]{2}_[A-Z]{2}/},"/usr")'

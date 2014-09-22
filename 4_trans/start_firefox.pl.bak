@@ -1,0 +1,75 @@
+use Modern::Perl;
+use WWW::Mechanize::Firefox;
+my $myurl       = 'http://google.com';
+my $firefox_bin = 'C:/Program Files/Mozilla Firefox/firefox.exe';
+
+#################### Open URL #########################
+## creating firefox obj
+my $mech = WWW::Mechanize::Firefox->new(
+    launch    => $firefox_bin,
+    create    => 1,
+    autoclose => 0,
+);
+
+# open page/url
+$mech->get($myurl);
+print "\nRequest- sucessfully" if $mech->success();    ## Request status
+my $http_status = $mech->status();                     ## http status
+if ( $http_status eq 200 ) {
+    print "\nHTTP_Status- OK";
+}
+elsif ( $http_status eq 404 ) {
+    print "\nHTTP_Status- Not Found";
+}
+else {
+    print "\nHTTP_Status- Error";
+}
+#######################################################
+
+#######################################################
+
+	####### Profile and Tab list #######
+	my $ffobj = Firefox::Application->new();
+	my $profile_name = $ffobj->current_profile->{name};
+	if ($profile_name eq "yslow") { 
+		print "\nFirefox profile_name - $profile_name";
+	} else { print "\nFirefox profile is wrong! will die\n"; exit(2);}
+	## tab list
+	my @tab_info = $ffobj->openTabs();
+	my $tab_count = @tab_info;
+	print "\nTotal no of Tab - $tab_count";
+	if ($tab_count > 50 ) {
+		print "\n Clossing the all Tabs";
+		foreach my $hash_tab (@tab_info) {
+			 my ($tab_title,$tab_location) = ($hash_tab->{title},$hash_tab->{location});
+			print "\n $tab_title => $tab_location | $hash_tab"; 
+			shift(@tab_info);
+			$ffobj->closeTab($ffobj->selectedTab()); 
+		}			
+	} else { 
+		#my $tabobj = $ffobj->addTab(autoclose => 0); 
+		print "\nYou can create new Tab";		
+	}
+	#### playing with firefox tab ####
+	@tab_info = $ffobj->openTabs();
+	my $arraySize = $#tab_info;
+	my $LastTab = $tab_info[$arraySize];
+	print "\nSubmitting Yslow results to showslow...\n";
+	my $LastTabRef = $LastTab->{'tab'};
+	$ffobj->activateTab($LastTabRef);
+	#### 
+#http://www.indiangnu.org/wp-content/uploads/2012/firefox-cli-for-yslow-url-pl.txt
+# use WWW::Mechanize::Firefox;
+# my $mech = WWW::Mechanize::Firefox->new(
+# launch => 'C:/Program Files/Mozilla Firefox/firefox.exe',
+# );
+# $mech->get('http://google.com');
+#http://www.perlmonks.org/?node_id=1021051
+# $ff = Firefox::Application->new(
+# launch => 'C:/Program Files/Mozilla Firefox/firefox.exe',
+# );
+# $ff->quit( restart => 1 ); # restart
+# sleep 4;
+
+# $ff->get('http://google.com');
+#perlcritic

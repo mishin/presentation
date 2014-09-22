@@ -1,0 +1,1 @@
+WScript.CreateObject("WScript.Shell").SendKeys"{F7}"&Right("0"&Year(date),4)&"-"&Right("0"&Month(date),2)&"-"&Right("0"&Day(date),2)&"{Enter 2}"

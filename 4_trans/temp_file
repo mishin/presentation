@@ -1,0 +1,2 @@
+google say:NAME = head1 X &lt;regular выражение X X &lt;regex&gt; &lt;regexp&gt;
+prompt say:=head1 НАЗЫВАЮТ X <регулярное выражение> X <regex> X <regexp>

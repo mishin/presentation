@@ -1,0 +1,1 @@
+cmd /u /c call g_and_p_trans.pl --from en --to ru --text "It is awesome" > out

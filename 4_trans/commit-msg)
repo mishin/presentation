@@ -1,0 +1,230 @@
+#!/usr/bin/env ruby
+
+require 'rubygems'
+require 'xmlrpc/client'
+require 'yaml'
+require 'termios'
+require 'pp'
+
+module Jira
+end 
+
+class Jira::CommitRunner
+  def self.run (argv=ARGV)
+    runner = Jira::CommitRunner.new(argv[0])
+    runner.create if runner.new_ticket?
+    return 0
+  end
+
+  def initialize (commit_msg_file)
+    # git commit-msg hook redirects STDIN to /dev/null
+    @stdin           = STDIN.tty? ? STDIN : IO.for_fd(STDOUT.fileno)
+    @client          = Jira::Client.new
+    @commit_msg_file = commit_msg_file
+  end
+
+  def create 
+    prompt_username_and_password unless @client.has_credentials?
+
+    ## entering a reasonable description in a bit tedios
+    if ! comment_index = commit_message.find {|ii| ii =~ /^# Please enter/}
+      description           = ""
+    else
+      end_of_commit_message = commit_message.index(comment_index) - 1
+      description           = commit_message[1..end_of_commit_message].join('')
+    end
+
+    ## summary is also a bit annoying; usually it'll be in the from of:
+    ##   1> Ticket #WEB-NEW - Hello Nurse! 
+    ## which we want to turn into 
+    ##   2> Hello Nurse!
+    summary = commit_message[0].gsub(/(Ticket)?(\s+)?(\#)?(\w+)\-NEW(\s+)?(\-+)?(\s+)?/i,'')
+ 
+    ticket_id = @client.create_ticket({
+      'project'     => commit_message[0].match(/(\w+)\-NEW/i)[1].upcase,
+      'type'        => 1,
+      'summary'     => summary,
+      'description' => description,
+      'assignee'    => @client.username
+    })
+
+    puts "created #{ticket_id}"
+    update_commit_message(ticket_id)
+  end
+
+  def commit_message
+    @commit_message ||= File.open(@commit_msg_file) { |file| file.readlines }
+  end
+
+  def update_commit_message(ticket)
+    #puts "update"
+    @commit_message[0].sub!(/\w+\-NEW/i, "#{ticket}")
+    File.open(ARGV[0], 'w') do |fh| 
+      fh.write @commit_message
+      fh.flush
+    end
+  end
+
+  def new_ticket?
+    return false unless commit_message[0] =~ /\w+\-NEW/i
+    return true
+  end
+
+  def prompt_username_and_password 
+    3.times do |i|
+      return if @client.save_username_and_password(prompt_username, prompt_password)
+    end
+    
+    puts "Too many tries, giving up!\n"
+    exit -1
+  end
+
+  def prompt_username(prompt='Jira Username: ')
+    print prompt
+    return @stdin.gets.chomp
+  end
+
+  def prompt_password(prompt='Jira Password: ')
+    STDOUT.print prompt
+    STDOUT.flush
+    term = Termios::getattr(@stdin)
+    term.c_lflag &= ~Termios::ECHO
+    Termios::setattr(@stdin, Termios::TCSANOW, term)
+    return @stdin.gets.chomp
+  ensure
+    term.c_lflag |= Termios::ECHO
+    Termios::setattr(@stdin, Termios::TCSANOW, term)
+  end
+
+end
+
+
+class Jira::Client
+  JIRA_HOST      = 'jira.yammer.com'
+  JIRA_RPC_PATH  = '/rpc/xmlrpc'
+  JIRA_CRED_FILE = File.join(ENV['HOME'], '.jira.yml')
+ 
+  attr_accessor :username
+
+  def initialize 
+    @client = XMLRPC::Client.new JIRA_HOST, JIRA_RPC_PATH
+    load_credentials
+  end
+ 
+  def authenticate(username=nil, password=nil)
+    username ||= @creds[:account ]
+    password ||= @creds[:password]
+
+    begin
+      @nonce = @client.call('jira1.login', username, password)
+      return @nonce
+    rescue XMLRPC::FaultException 
+      ## most likely an invalid password
+      puts "\nInvalid username or password!"
+      return false
+    end 
+  end 
+
+  def create_ticket(ticket)
+    @nonce ||= authenticate
+    res = @client.call('jira1.createIssue', @nonce, ticket)
+    return res['key'] if res && res['key']
+  end
+
+  def load_credentials 
+    if @creds = Keychain.get_credential("http://#{JIRA_HOST}/")
+      @username = @creds[:account ]
+      @password = @creds[:password]
+    end
+  end 
+
+  def save_username_and_password (username, password)
+    unless authenticate(username,password)
+      return false
+    else
+      @creds = Keychain.add_credential(username, password, "http://#{JIRA_HOST}/")
+      @username = username
+      @password = password
+    end
+  end   
+
+  def has_credentials?
+    !!@creds
+  end
+
+end 
+
+
+class Keychain 
+  def self.uname
+    @uname ||= `uname -a`
+  end
+
+  def self.method_missing(method,*args)
+    if uname.match(/darwin/i) 
+      return Keychain::Apple.send(method, *args)
+    else 
+      return Keychain::Dummy.send(method, *args)
+    end
+  end
+end 
+
+class Keychain::Apple
+  def self.get_credential(server)
+    out  = `/usr/bin/security find-internet-password -gs #{server} 2>&1`
+    cred = {} 
+
+    if $? != 0
+      return false
+    else
+      out.split("\n").select do |line|
+        case line
+          when /^password:/ then cred.store(:password, line.split(": ")[1].gsub(/^\"|\"$/,''))
+          when /acct/       then cred.store(:account,  line.split("=" )[1].gsub(/^\"|\"$/,''))
+          when /srvr/       then cred.store(:server,   line.split("=" )[1].gsub(/^\"|\"$/,''))
+        end
+      end
+    end
+
+    cred
+  end
+
+  def self.add_credential(account, password, server) 
+    IO.popen("/usr/bin/security -i", "w") do |sec|
+      sec.puts "add-internet-password -a #{account} -w #{password} -s #{server}"
+      sec.close_write
+    end
+
+    get_credential(server)
+  end
+end
+
+class Keychain::Dummy
+  CRED_FILE = File.join(ENV['HOME'], '.dummy_keychain.yml')
+
+  def self.get_credential(server)
+    creds = File.exists?(CRED_FILE) ? YAML.load_file(CRED_FILE) : {}
+    return false unless creds.has_key? server
+    return {
+      :server   => server, 
+      :account  => creds[server][:account], 
+      :password => creds[server][:password]
+    }
+  end
+
+  def self.add_credential(account, password, server)
+    creds = File.exists?(CRED_FILE) ? YAML.load_file(CRED_FILE) : {}
+    creds[server] = {:account => account, :password => password}
+
+    File.open(CRED_FILE, "w+") do |fh|
+      fh.puts creds.to_yaml
+      fh.flush
+    end
+    FileUtils.chmod(0600, CRED_FILE)
+
+    get_credential(server)
+  end
+end
+
+
+Jira::CommitRunner.run

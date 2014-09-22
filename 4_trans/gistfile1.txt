@@ -1,0 +1,63 @@
+use strict;
+use warnings;
+use Benchmark qw(cmpthese);
+
+my $slash = '/foo';
+my $mid   = '?foo=bar&hoge=fuga';
+my $long  = 'foo=bar&hoge=fuga'x100;
+
+print "perl: $^V¥n";
+print "OS  : $^O¥n";
+
+bench($slash);
+bench($mid);
+bench($long);
+
+sub bench {
+    my $query = shift;
+    print "### $query¥n";
+    cmpthese(-1, {
+        regex => sub {
+            my $stuff = $query;
+            $stuff =‾ s{^([^/])}{/$1};
+        },
+        index => sub {
+            my $stuff = $query;
+            unless (index($stuff, '/') == 0) {
+                $stuff = "/$stuff";
+            }
+        },
+        substr => sub {
+            my $stuff = $query;
+            unless (substr($query, 0, 1) eq '/') {
+                $stuff = "/$stuff";
+            }
+        },
+    }, 'all');
+}
+__END__
+perl: v5.12.2OS  : darwin### /fooBenchmark: running index, regex, substr for at least 1 CPU seconds...     index:  0 wallclock secs ( 1.07 usr  0.01 sys +  0.00 cusr  0.00 csys =  1.08 CPU) @ 2998378.70/s (n=3238249)
+     regex:  1 wallclock secs ( 1.07 usr  0.01 sys +  0.00 cusr  0.00 csys =  1.08 CPU) @ 1960477.78/s (n=2117316)
+    substr:  0 wallclock secs ( 1.02 usr  0.00 sys +  0.00 cusr  0.00 csys =  1.02 CPU) @ 2570039.22/s (n=2621440)
+            Rate  regex substr  index
+regex  1960478/s     --   -24%   -35%
+substr 2570039/s    31%     --   -14%
+index  2998379/s    53%    17%     --
+### ?foo=bar&hoge=fuga
+Benchmark: running index, regex, substr for at least 1 CPU seconds...
+     index:  0 wallclock secs ( 0.99 usr  0.03 sys +  0.00 cusr  0.00 csys =  1.02 CPU) @ 1226608.82/s (n=1251141)
+     regex:  2 wallclock secs ( 1.13 usr  0.01 sys +  0.00 cusr  0.00 csys =  1.14 CPU) @ 215578.07/s (n=245759)
+    substr:  0 wallclock secs ( 1.08 usr  0.00 sys +  0.00 cusr  0.00 csys =  1.08 CPU) @ 1158463.89/s (n=1251141)
+            Rate  regex substr  index
+regex   215578/s     --   -81%   -82%
+substr 1158464/s   437%     --    -6%
+index  1226609/s   469%     6%     --
+### foo=bar&hoge=fugafoo=bar&hoge=fugafoo=bar&hoge=fugafoo=bar&hoge=fugafoo=bar&hoge=fugafoo=bar&hoge=fugafoo=bar&hoge=fugafoo=bar&hoge=fugafoo=bar&hoge=fugafoo=bar&hoge=fugafoo=bar&hoge=fugafoo=bar&hoge=fugafoo=bar&hoge=fugafoo=bar&hoge=fugafoo=bar&hoge=fugafoo=bar&hoge=fugafoo=bar&hoge=fugafoo=bar&hoge=fugafoo=bar&hoge=fugafoo=bar&hoge=fugafoo=bar&hoge=fugafoo=bar&hoge=fugafoo=bar&hoge=fugafoo=bar&hoge=fugafoo=bar&hoge=fugafoo=bar&hoge=fugafoo=bar&hoge=fugafoo=bar&hoge=fugafoo=bar&hoge=fugafoo=bar&hoge=fugafoo=bar&hoge=fugafoo=bar&hoge=fugafoo=bar&hoge=fugafoo=bar&hoge=fugafoo=bar&hoge=fugafoo=bar&hoge=fugafoo=bar&hoge=fugafoo=bar&hoge=fugafoo=bar&hoge=fugafoo=bar&hoge=fugafoo=bar&hoge=fugafoo=bar&hoge=fugafoo=bar&hoge=fugafoo=bar&hoge=fugafoo=bar&hoge=fugafoo=bar&hoge=fugafoo=bar&hoge=fugafoo=bar&hoge=fugafoo=bar&hoge=fugafoo=bar&hoge=fugafoo=bar&hoge=fugafoo=bar&hoge=fugafoo=bar&hoge=fugafoo=bar&hoge=fugafoo=bar&hoge=fugafoo=bar&hoge=fugafoo=bar&hoge=fugafoo=bar&hoge=fugafoo=bar&hoge=fugafoo=bar&hoge=fugafoo=bar&hoge=fugafoo=bar&hoge=fugafoo=bar&hoge=fugafoo=bar&hoge=fugafoo=bar&hoge=fugafoo=bar&hoge=fugafoo=bar&hoge=fugafoo=bar&hoge=fugafoo=bar&hoge=fugafoo=bar&hoge=fugafoo=bar&hoge=fugafoo=bar&hoge=fugafoo=bar&hoge=fugafoo=bar&hoge=fugafoo=bar&hoge=fugafoo=bar&hoge=fugafoo=bar&hoge=fugafoo=bar&hoge=fugafoo=bar&hoge=fugafoo=bar&hoge=fugafoo=bar&hoge=fugafoo=bar&hoge=fugafoo=bar&hoge=fugafoo=bar&hoge=fugafoo=bar&hoge=fugafoo=bar&hoge=fugafoo=bar&hoge=fugafoo=bar&hoge=fugafoo=bar&hoge=fugafoo=bar&hoge=fugafoo=bar&hoge=fugafoo=bar&hoge=fugafoo=bar&hoge=fugafoo=bar&hoge=fugafoo=bar&hoge=fugafoo=bar&hoge=fugafoo=bar&hoge=fugafoo=bar&hoge=fugafoo=bar&hoge=fugafoo=bar&hoge=fuga
+Benchmark: running index, regex, substr for at least 1 CPU seconds...
+     index:  1 wallclock secs ( 1.03 usr  0.01 sys +  0.00 cusr  0.00 csys =  1.04 CPU) @ 300754.81/s (n=312785)
+     regex:  1 wallclock secs ( 1.05 usr  0.01 sys +  0.00 cusr  0.00 csys =  1.06 CPU) @ 190933.96/s (n=202390)
+    substr:  1 wallclock secs ( 1.09 usr  0.01 sys +  0.00 cusr  0.00 csys =  1.10 CPU) @ 901120.00/s (n=991232)
+           Rate  regex  index substr
+regex  190934/s     --   -37%   -79%
+index  300755/s    58%     --   -67%
+substr 901120/s   372%   200%     --

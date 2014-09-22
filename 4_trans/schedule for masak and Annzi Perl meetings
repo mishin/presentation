@@ -1,0 +1,106 @@
+== Meeting 1: sed, awk, and perl -- historical context
+
+* sed: the world is lines
+* awk: thinking in patterns
+* perl: scan, extract, and report
+* -n and -p
+* BEGIN and END
+* next, last, redo
+* perldoc (perlintro, perlsyn, perlstyle, perlop), perldoc -f
+
+== Meeting 2: Scalars, arrays, hashes, and subs
+
+* Sigils: $ @ % &
+* Four types to cover all your needs
+* Sigil variance
+* Flattening
+* More -n and -p and one-liners
+* if, unless, for, while, until
+
+== Meeting 3: Scalars
+
+* Value context: Str, Num, Int, Bool
+* Math operators: + - * / % **
+* String operators: . x
+* String interpolation
+* Assignment operators: += -+ etc, and ++ and --
+* ord and chr
+* reverse, length, index, and rindex
+* substr
+* sprintf and printf
+* <>
+* chop and chomp
+* =~, !~, m//, s///, and tr///
+* (why vim rocks)
+* The parenthesis trap
+
+== Meeting 4: Arrays
+
+* Declaration and assignment
+* Indexing and slicing
+* Lists and arrays aren't the same thing
+* qw<>
+* Stacks: push and pop
+* Queues: push and shift
+* grep and map
+* The aliasing of $_ in loops (and 'my' in for loops)
+* next, last, redo and loop labels
+* split and join
+* sort, <=> and cmp
+* Amount context: scalar context and list context (x, <> and reverse)
+* List assignment
+
+== Meeting 5: Hashes
+
+* Declaration and assignment
+* Indexing and slicing
+* keys and values
+* exists and delete
+* Used as mappings
+* Used as sparse arrays
+* The 'seen' idiom
+* Used as sets
+* Used as dispatch tables
+* Used to make lists unique
+* Used for counting
+
+== Meeting 6: Subs
+
+* @_ and argument unpacking
+* 'return' and implicit return
+* exceptions: &eval and Try::Tiny
+* tail-calling with &goto
+* Anonymous subs
+* Higher-order functions
+* Closures
+* Callbacks
+
+== Meeting 7: References
+
+* Array references
+* Hash references
+* Deeply nested structures
+* YAML has a Dump sub, which rocks
+
+== Meeting 8: Regexes
+
+* Quantifiers
+* Character classes
+* Captures and $1, $2, $3...
+* /g
+* /i
+* /x and readability
+* /m and /s
+* /e
+
+== Meeting 9: Modules
+
+* 'use'
+* CPAN, the cradle of civilization
+* Modules you should know about
+
+== Meeting 10: Classes and objects
+
+* Blessing hash references, just for old times' sake
+* Methods are just subs in a package
+* Moose

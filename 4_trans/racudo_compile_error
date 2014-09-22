@@ -1,0 +1,7 @@
+mpilers/imcc/api.o -lcrypt -lintl 
+make: g++-4: Command not found
+make: *** [cygparrot3_8_0.dll] Error 127
+Command failed (status 512): make install-dev
+
+ uname -a
+CYGWIN_NT-6.1-WOW64 Jet 1.7.9(0.237/5/3) 2011-03-29 10:10 i686 Cygwin

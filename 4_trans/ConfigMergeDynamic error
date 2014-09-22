@@ -1,0 +1,62 @@
+Windows PowerShell
+Copyright (C) 2009 Microsoft Corporation. All rights reserved.
+
+PS U:\> cpan install Config::Merge::Dynamic
+CPAN: CPAN::SQLite loaded ok (v0.199)
+Database was generated on Wed, 05 Oct 2011 11:44:12 GMT
+Running install for module 'Config::Merge::Dynamic'
+Running make for M/ME/MEETTYA/Config-Merge-Dynamic-0.10.tar.gz
+CPAN: Digest::SHA loaded ok (v5.61)
+CPAN: Compress::Zlib loaded ok (v2.034)
+Checksum for C:\Strawberry\cpan\sources\authors\id\M\ME\MEETTYA\Config-Merge-Dynamic-0.10.tar.gz ok
+CPAN: Archive::Tar loaded ok (v1.76)
+CPAN: File::Temp loaded ok (v0.22)
+CPAN: Parse::CPAN::Meta loaded ok (v1.4401)
+CPAN: CPAN::Meta loaded ok (v2.110930)
+CPAN: Module::CoreList loaded ok (v2.49)
+CPAN: Module::Build loaded ok (v0.38)
+
+  CPAN.pm: Building M/ME/MEETTYA/Config-Merge-Dynamic-0.10.tar.gz
+
+Checking prerequisites...
+  requires:
+    !  Carp (1.17) is installed, but we need version >= 1.2
+    !  Data::Diver is not installed
+
+ERRORS/WARNINGS FOUND IN PREREQUISITES.  You may wish to install the versions
+of the modules indicated above before proceeding with this installation
+
+Created MYMETA.yml and MYMETA.json
+Creating new 'Build' script for 'Config-Merge-Dynamic' version '0.10'
+---- Unsatisfied dependencies detected during ----
+---- MEETTYA/Config-Merge-Dynamic-0.10.tar.gz ----
+    Data::Diver [requires]
+    Carp [requires]
+Running Build test
+  Delayed until after prerequisites
+Running Build install
+  Delayed until after prerequisites
+Running install for module 'Data::Diver'
+Running make for T/TY/TYEMQ/Data-Diver-1.0101.tgz
+
+Checksum mismatch for distribution file. Please investigate.
+
+Distribution id = T/TY/TYEMQ/Data-Diver-1.0101.tgz
+    CPAN_USERID  TYEMQ (Tye McQueen <tyemq@cpan.org>)
+    CPAN_VERSION 1.0101
+    CALLED_FOR   Data::Diver
+    CHECKSUM_STATUS
+    CONTAINSMODS Data::Diver
+    UPLOAD_DATE  2005-09-03
+    incommandcolor 2
+    localfile    C:\Strawberry\cpan\sources\authors\id\T\TY\TYEMQ\Data-Diver-1.0101.tgz
+    negative_prefs_cache 0
+    prefs        HASH(0x409ab9c)
+    reqtype      r
+
+I'd recommend removing
+C:\Strawberry\cpan\sources\authors\id\T\TY\TYEMQ\Data-Diver-1.0101.tgz. Its
+checksum is incorrect. Maybe you have configured your 'urllist' with
+a bad URL. Please check this array with 'o conf urllist', and
+retry.
+PS U:\>

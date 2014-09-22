@@ -1,0 +1,10 @@
+infacmd.sh convertLogFile -in /rwa/data/informatica/WorkflowLogs/wf_RMS_01.log.20110920110107.bin -fm Text -lo wf_RMS_01.log.20110920110107.bin.txt
+
+InputLog=$1
+NewLog=${InputLog##*/}.txt
+infacmd.sh convertLogFile -in $InputLog -fm Text -lo $NewLog
+
+$cat 05_test.sh
+InputLog=$1
+Path=/rwa/data/informatica/WorkflowLogs/
+infacmd.sh convertLogFile -in ${Path}$InputLog -lo ${InputLog}.txt

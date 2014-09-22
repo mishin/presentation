@@ -1,0 +1,1 @@
+c:\cygwin\cygwin_here.bat sqlsh  -d DBI:Oracle:BUSINESS.DE.DB.COM -u mishnik -p password -i < c:\Users\nmishin\Documents\svn\misc\chunk_status\sqlsh_command.sqlsh
