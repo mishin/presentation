@@ -3,7 +3,6 @@ use utf8;
 use Modern::Perl;
 use Encode::Locale;
 use Encode qw( decode encode from_to);
-use Text::Iconv;
 use Encode::Detect::Detector;
 use Data::Dumper qw( Dumper ); 
 
@@ -17,8 +16,7 @@ if (-t)
 
 my $lang = shift or die "Usage: $0 What_is_your_language?\n"; 
 my_dump('lang_01',$lang);
-my $converter = Text::Iconv->new( "cp1251", "utf-8");
-$lang = $converter->convert($lang);
+Encode::from_to($lang, 'windows-1251', 'utf-8');
 my_dump('lang_02',$lang);
 $lang = Encode::decode("utf8",$lang);
 my_dump('lang_03',$lang);
