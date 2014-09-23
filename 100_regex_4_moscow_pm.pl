@@ -16,11 +16,9 @@ if (-t)
 
 my $lang = shift or die "Usage: $0 What_is_your_language?\n"; 
 my_dump('lang_01',$lang);
-Encode::from_to($lang, 'windows-1251', 'utf-8');
+$lang = decode(locale => $lang);
 my_dump('lang_02',$lang);
-$lang = Encode::decode("utf8",$lang);
-my_dump('lang_03',$lang);
-my_dump('lang_04_перл',qq{перл});
+my_dump('lang_03_перл',qq{перл});
 
  $lang =~ /(perl|перл) (?{print "use Perl or die!!\nИспользуй Перл или умри!!";}) /ix;#русский не мачится, почему?
  
