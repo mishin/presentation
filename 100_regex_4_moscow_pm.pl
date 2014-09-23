@@ -1,7 +1,8 @@
 ﻿#!/usr/bin/env perl
 use utf8;
 use Modern::Perl;
-use Encode::Locale qw(decode_argv);
+use Encode::Locale qw(decode_argv $ENCODING_LOCALE $ENCODING_LOCALE_FS
+    $ENCODING_CONSOLE_IN $ENCODING_CONSOLE_OUT);
 
  if (-t) 
 {
@@ -17,3 +18,7 @@ my $lang = shift or die "Usage: $0 What_is_your_language?\n";
  (perl|перл) 
  (?{print "use Perl or die!!\nИспользуй Перл или умри!!";}) 
           /ix;
+
+    say "
+    $ENCODING_LOCALE $ENCODING_LOCALE_FS
+    $ENCODING_CONSOLE_IN $ENCODING_CONSOLE_OUT";
