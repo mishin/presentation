@@ -1,8 +1,7 @@
 use 5.14.0;
 use PPI;
-
 #use Smart::Comments;
-my $file_name = shift or die "Usage: $0 file_4_transform\n";
+my $file_name = shift or die "Usage: $0 file_4_transform\n"; 
 my $doc = PPI::Document->new($file_name);
 
 my $hash_name = '';
@@ -19,7 +18,7 @@ $doc->find(
     }
 );
 
-my $left_side  = join ',', map { "'$_'" } @variables;
+my $left_side = join ',', map { "'$_'" } @variables;
 my $right_side = join ',', map { "\$$_" } @variables;
 
 my $full_text = <<"end_line";
@@ -32,7 +31,5 @@ my %${hash_name}=();
       );
 end_line
 use Perl::Tidy;
-perltidy( source => \$full_text);
-#perltidy( source => \$full_text, destination => \$full_text );
-#perltidy( source => \$full_text);
-#print $full_text;
+perltidy( source => \$full_text, destination => \$full_text);
+print $full_text; 
