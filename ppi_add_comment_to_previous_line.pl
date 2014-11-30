@@ -1,7 +1,7 @@
 use 5.14.0;
 use PPI;
 
-use Smart::Comments;
+#use Smart::Comments;
 my $file_name = shift or die "Usage: $0 file_4_transform\n";
 my $doc = PPI::Document->new($file_name);
 
