@@ -1,0 +1,296 @@
+<!DOCTYPE html><html><head><title> title </title></head><body>
+<table>
+<tr><td><pre>         </pre></td>
+<td>&nbsp;&nbsp;&nbsp;</td>
+<td># my $regstr = join &#39;&#39;,  ; # The regular expression (PPI::Token::Regexp::Match): ; # <br>
+# /<br>
+#  (perl&#124;&ETH;&iquest;&ETH;&micro;&Ntilde;&#128;&ETH;&raquo;) <br>
+<b>#  (?{print &quot;use Perl or die!!\n&ETH;&#152;&Ntilde;&#129;&ETH;&iquest;&ETH;&frac34;&ETH;&raquo;&Ntilde;&#140;&ETH;&middot;&Ntilde;&#131;&ETH;&sup1; &ETH;&#159;&ETH;&micro;&Ntilde;&#128;&ETH;&raquo; &ETH;&cedil;&ETH;&raquo;&ETH;&cedil; &Ntilde;&#131;&ETH;&frac14;&Ntilde;&#128;&ETH;&cedil;!!&quot;;}) </b><br>
+#           /ix<br>
+# <br>
+# matches as follows:<br>
+#r: PPIx::Regexp / PPI::Token::Regexp::Match<br>
+<b>#r= &quot;/\n (perl&#124;\xD0\xBF\xD0\xB5\xD1\x80\xD0\xBB) \n (?{print \&quot;use Perl or die!!\\n\xD0\x98\xD1\x81\xD0\xBF\xD0\xBE\xD0\xBB\xD1\x8C\xD0\xB7\xD1\x83\xD0\xB9 \xD0\x9F\xD0\xB5\xD1\x80\xD0\xBB \xD0\xB8\xD0\xBB\xD0\xB8 \xD1\x83\xD0\xBC\xD1\x80\xD0\xB8!!\&quot;;}) \n          /ix&quot;</b><br>
+#  <br>
+</td></tr></table>
+<table>
+<tr><td><pre>          &quot;&quot;,</pre></td>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+<td><a name="/1/C0"># address=/1/C0  ; xRe::Token::Structure ; Represent structural elements.</a><br>
+#<b>&quot;&quot;,</b><br>
+# ------------------------------------------------------------------<br>
+</td></tr></table>
+<table>
+<tr><td><pre>               </pre></td>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+<td><a name="/1/C1"># address=/1/C1  ; xRe::Structure::Regexp ; Represent the top-level regular    expression</a><br>
+# ------<br>
+</td></tr></table>
+<table>
+<tr><td><pre>            &quot;/&quot;,</pre></td>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+<td><a name="/1/C1/S0"># address=/1/C1/S0  ; xRe::Token::Delimiter ; Represent the delimiters of the regular    expression</a><br>
+#<b>&quot;/&quot;,</b><br>
+# ------------------------------------------------------------------<br>
+</td></tr></table>
+<table>
+<tr><td><pre>      &quot;\n&quot;,</pre></td>
+<td>&nbsp;&nbsp;&nbsp;</td>
+<td>#<b>&quot;\n&quot;,</b><br>
+</td></tr></table>
+<table>
+<tr><td><pre>      &quot; &quot;,</pre></td>
+<td>&nbsp;&nbsp;&nbsp;</td>
+<td>#<b>&quot; &quot;,</b><br>
+</td></tr></table>
+<table>
+<tr><td><pre>                     </pre></td>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+<td># <a name="/1/C1/C0"># address=/1/C1/C0  ; xRe::Structure::Capture ; Represent capture parentheses.</a><br>
+# number=1 alias &quot;$1&quot; or &quot;\1&quot;<br>
+# ------------<br>
+</td></tr></table>
+<table>
+<tr><td><pre>                  &quot;(&quot;,</pre></td>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+<td><a name="/1/C1/C0/S0"># address=/1/C1/C0/S0  ; xRe::Token::Structure ; Represent structural elements.</a><br>
+#<b>&quot;(&quot;,</b><br>
+# ------------------------------------------------------------------<br>
+</td></tr></table>
+<table>
+<tr><td><pre>                      &quot;p&quot;,</pre></td>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+<td># <a name="/1/C1/C0/C0"># address=/1/C1/C0/C0  ; xRe::Token::Literal ; a literal character</a><br>
+# ordinal= ord( chr( 112 ) ) alias \N{U+0070} alias \160 alias LATIN SMALL LETTER P alias p<br>
+# (?i)  case-insensitive<br>
+#<b>&quot;p&quot;,</b><br>
+# ------------------------------------------------------------------<br>
+</td></tr></table>
+<table>
+<tr><td><pre>                      &quot;e&quot;,</pre></td>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+<td># <a name="/1/C1/C0/C1"># address=/1/C1/C0/C1  ; xRe::Token::Literal ; a literal character</a><br>
+# ordinal= ord( chr( 101 ) ) alias \N{U+0065} alias \145 alias LATIN SMALL LETTER E alias e<br>
+# (?i)  case-insensitive<br>
+#<b>&quot;e&quot;,</b><br>
+# ------------------------------------------------------------------<br>
+</td></tr></table>
+<table>
+<tr><td><pre>                      &quot;r&quot;,</pre></td>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+<td># <a name="/1/C1/C0/C2"># address=/1/C1/C0/C2  ; xRe::Token::Literal ; a literal character</a><br>
+# ordinal= ord( chr( 114 ) ) alias \N{U+0072} alias \162 alias LATIN SMALL LETTER R alias r<br>
+# (?i)  case-insensitive<br>
+#<b>&quot;r&quot;,</b><br>
+# ------------------------------------------------------------------<br>
+</td></tr></table>
+<table>
+<tr><td><pre>                      &quot;l&quot;,</pre></td>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+<td># <a name="/1/C1/C0/C3"># address=/1/C1/C0/C3  ; xRe::Token::Literal ; a literal character</a><br>
+# ordinal= ord( chr( 108 ) ) alias \N{U+006C} alias \154 alias LATIN SMALL LETTER L alias l<br>
+# (?i)  case-insensitive<br>
+#<b>&quot;l&quot;,</b><br>
+# ------------------------------------------------------------------<br>
+</td></tr></table>
+<table>
+<tr><td><pre>                      &quot;&#124;&quot;,</pre></td>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+<td># <a name="/1/C1/C0/C4"># address=/1/C1/C0/C4  ; xRe::Token::Operator ; Represent an operator.</a><br>
+# OR ; Alternation ; match_left OR match_right<br>
+#<b>&quot;&#124;&quot;,</b><br>
+# ------------------------------------------------------------------<br>
+</td></tr></table>
+<table>
+<tr><td><pre>                      &quot;\xD0&quot;,</pre></td>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+<td># <a name="/1/C1/C0/C5"># address=/1/C1/C0/C5  ; xRe::Token::Literal ; a literal character</a><br>
+# ordinal= ord( chr( 208 ) ) alias \N{U+00D0} alias \320 alias LATIN CAPITAL LETTER ETH alias &ETH;<br>
+# (?i)  case-insensitive<br>
+#<b>&quot;\xD0&quot;,</b><br>
+# ------------------------------------------------------------------<br>
+</td></tr></table>
+<table>
+<tr><td><pre>                      &quot;\xBF&quot;,</pre></td>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+<td># <a name="/1/C1/C0/C6"># address=/1/C1/C0/C6  ; xRe::Token::Literal ; a literal character</a><br>
+# ordinal= ord( chr( 191 ) ) alias \N{U+00BF} alias \277 alias INVERTED QUESTION MARK alias &iquest;<br>
+# (?i)  case-insensitive<br>
+#<b>&quot;\xBF&quot;,</b><br>
+# ------------------------------------------------------------------<br>
+</td></tr></table>
+<table>
+<tr><td><pre>                      &quot;\xD0&quot;,</pre></td>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+<td># <a name="/1/C1/C0/C7"># address=/1/C1/C0/C7  ; xRe::Token::Literal ; a literal character</a><br>
+# ordinal= ord( chr( 208 ) ) alias \N{U+00D0} alias \320 alias LATIN CAPITAL LETTER ETH alias &ETH;<br>
+# (?i)  case-insensitive<br>
+#<b>&quot;\xD0&quot;,</b><br>
+# ------------------------------------------------------------------<br>
+</td></tr></table>
+<table>
+<tr><td><pre>                      &quot;\xB5&quot;,</pre></td>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+<td># <a name="/1/C1/C0/C8"># address=/1/C1/C0/C8  ; xRe::Token::Literal ; a literal character</a><br>
+# ordinal= ord( chr( 181 ) ) alias \N{U+00B5} alias \265 alias MICRO SIGN alias &micro;<br>
+# (?i)  case-insensitive<br>
+#<b>&quot;\xB5&quot;,</b><br>
+# ------------------------------------------------------------------<br>
+</td></tr></table>
+<table>
+<tr><td><pre>                      &quot;\xD1&quot;,</pre></td>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+<td># <a name="/1/C1/C0/C9"># address=/1/C1/C0/C9  ; xRe::Token::Literal ; a literal character</a><br>
+# ordinal= ord( chr( 209 ) ) alias \N{U+00D1} alias \321 alias LATIN CAPITAL LETTER N TILDE alias &Ntilde;<br>
+# (?i)  case-insensitive<br>
+#<b>&quot;\xD1&quot;,</b><br>
+# ------------------------------------------------------------------<br>
+</td></tr></table>
+<table>
+<tr><td><pre>                      &quot;\x80&quot;,</pre></td>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+<td># <a name="/1/C1/C0/C10"># address=/1/C1/C0/C10  ; xRe::Token::Literal ; a literal character</a><br>
+# ordinal= ord( chr( 128 ) ) alias \N{U+0080} alias \200 alias &lt;control&gt; alias &#128;<br>
+# (?i)  case-insensitive<br>
+#<b>&quot;\x80&quot;,</b><br>
+# ------------------------------------------------------------------<br>
+</td></tr></table>
+<table>
+<tr><td><pre>                      &quot;\xD0&quot;,</pre></td>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+<td># <a name="/1/C1/C0/C11"># address=/1/C1/C0/C11  ; xRe::Token::Literal ; a literal character</a><br>
+# ordinal= ord( chr( 208 ) ) alias \N{U+00D0} alias \320 alias LATIN CAPITAL LETTER ETH alias &ETH;<br>
+# (?i)  case-insensitive<br>
+#<b>&quot;\xD0&quot;,</b><br>
+# ------------------------------------------------------------------<br>
+</td></tr></table>
+<table>
+<tr><td><pre>                      &quot;\xBB&quot;,</pre></td>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+<td># <a name="/1/C1/C0/C12"># address=/1/C1/C0/C12  ; xRe::Token::Literal ; a literal character</a><br>
+# ordinal= ord( chr( 187 ) ) alias \N{U+00BB} alias \273 alias RIGHT POINTING GUILLEMET alias &raquo;<br>
+# (?i)  case-insensitive<br>
+#<b>&quot;\xBB&quot;,</b><br>
+# ------------------------------------------------------------------<br>
+</td></tr></table>
+<table>
+<tr><td><pre>                  &quot;)&quot;,</pre></td>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+<td># <a name="/1/C1/C0/F0"># address=/1/C1/C0/F0  ; xRe::Token::Structure ; Represent structural elements.</a><br>
+# end of grouping for number=1 alias &quot;$1&quot; or &quot;\1&quot;<br>
+#<b>&quot;)&quot;,</b><br>
+# ------------------------------------------------------------------<br>
+</td></tr></table>
+<table>
+<tr><td><pre>      &quot; &quot;,</pre></td>
+<td>&nbsp;&nbsp;&nbsp;</td>
+<td>#<b>&quot; &quot;,</b><br>
+</td></tr></table>
+<table>
+<tr><td><pre>      &quot;\n&quot;,</pre></td>
+<td>&nbsp;&nbsp;&nbsp;</td>
+<td>#<b>&quot;\n&quot;,</b><br>
+</td></tr></table>
+<table>
+<tr><td><pre>      &quot; &quot;,</pre></td>
+<td>&nbsp;&nbsp;&nbsp;</td>
+<td>#<b>&quot; &quot;,</b><br>
+</td></tr></table>
+<table>
+<tr><td><pre>                  do {
+  require MIME::Base64;
+  MIME::Base64::decode(&quot;KD97cHJpbnQgInVzZSBQZXJsIG9yIGRpZSEhXG7QmNGB0L/QvtC70YzQt9GD0Lkg0J/QtdGA0Lsg0LjQu9C4INGD0LzRgNC4ISEiO30p&quot;);
+},</pre></td>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+<td># <a name="/1/C1/C4"># address=/1/C1/C4  ; xRe::Structure::Code ; Represent one of the code structures.</a><br>
+# <b>WARNING: This extended regular expression feature is considered experimental, and may be changed without notice</b><br>
+# This zero-width assertion executes any embedded Perl code. It always succeeds, and its return value is set as $^R<br>
+# <a href="http://search.cpan.org/dist/perl/pod/perlre.pod#(?{_code_})">L&lt;http://search.cpan.org/dist/perl/pod/perlre.pod#(?{_code_})&gt;</a><br>
+# <a href="http://perlmonks.com/?node=doc://perlre#(?{-code-})">L&lt;perlre/(?{ code })&gt;</a><br>
+# <a href="http://perlmonks.com/?node=doc://perlvar#$^R">L&lt;perlvar/$^R&gt;</a><br>
+# ------------------------------------------------------------------<br>
+</td></tr></table>
+<table>
+<tr><td><pre>      &quot; &quot;,</pre></td>
+<td>&nbsp;&nbsp;&nbsp;</td>
+<td>#<b>&quot; &quot;,</b><br>
+</td></tr></table>
+<table>
+<tr><td><pre>      &quot;\n&quot;,</pre></td>
+<td>&nbsp;&nbsp;&nbsp;</td>
+<td>#<b>&quot;\n&quot;,</b><br>
+</td></tr></table>
+<table>
+<tr><td><pre>      &quot; &quot;,</pre></td>
+<td>&nbsp;&nbsp;&nbsp;</td>
+<td>#<b>&quot; &quot;,</b><br>
+</td></tr></table>
+<table>
+<tr><td><pre>      &quot; &quot;,</pre></td>
+<td>&nbsp;&nbsp;&nbsp;</td>
+<td>#<b>&quot; &quot;,</b><br>
+</td></tr></table>
+<table>
+<tr><td><pre>      &quot; &quot;,</pre></td>
+<td>&nbsp;&nbsp;&nbsp;</td>
+<td>#<b>&quot; &quot;,</b><br>
+</td></tr></table>
+<table>
+<tr><td><pre>      &quot; &quot;,</pre></td>
+<td>&nbsp;&nbsp;&nbsp;</td>
+<td>#<b>&quot; &quot;,</b><br>
+</td></tr></table>
+<table>
+<tr><td><pre>      &quot; &quot;,</pre></td>
+<td>&nbsp;&nbsp;&nbsp;</td>
+<td>#<b>&quot; &quot;,</b><br>
+</td></tr></table>
+<table>
+<tr><td><pre>      &quot; &quot;,</pre></td>
+<td>&nbsp;&nbsp;&nbsp;</td>
+<td>#<b>&quot; &quot;,</b><br>
+</td></tr></table>
+<table>
+<tr><td><pre>      &quot; &quot;,</pre></td>
+<td>&nbsp;&nbsp;&nbsp;</td>
+<td>#<b>&quot; &quot;,</b><br>
+</td></tr></table>
+<table>
+<tr><td><pre>      &quot; &quot;,</pre></td>
+<td>&nbsp;&nbsp;&nbsp;</td>
+<td>#<b>&quot; &quot;,</b><br>
+</td></tr></table>
+<table>
+<tr><td><pre>      &quot; &quot;,</pre></td>
+<td>&nbsp;&nbsp;&nbsp;</td>
+<td>#<b>&quot; &quot;,</b><br>
+</td></tr></table>
+<table>
+<tr><td><pre>      &quot; &quot;,</pre></td>
+<td>&nbsp;&nbsp;&nbsp;</td>
+<td>#<b>&quot; &quot;,</b><br>
+</td></tr></table>
+<table>
+<tr><td><pre>            &quot;/&quot;,</pre></td>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+<td><a name="/1/C1/F0"># address=/1/C1/F0  ; xRe::Token::Delimiter ; Represent the delimiters of the regular    expression</a><br>
+#<b>&quot;/&quot;,</b><br>
+# ------------------------------------------------------------------<br>
+</td></tr></table>
+<table>
+<tr><td><pre>          &quot;ix&quot;,</pre></td>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+<td># <a name="/1/C2"># address=/1/C2  ; xRe::Token::Modifier ; Represent 1)embedded pattern-match modifiers or 2)(trailing) modifiers for operators match, substitution, regexp constructor </a><br>
+# (/i)  case-insensitive<br>
+# /x    disregarding whitespace and comments<br>
+#<b>&quot;ix&quot;,</b><br>
+# ------------------------------------------------------------------<br>
+</td></tr></table>
+<table>
+<tr><td><pre>         </pre></td>
+<td>&nbsp;&nbsp;&nbsp;</td>
+<td>;;;;;;;;;;
+
+<br>
+</td></tr></table>
+</body></html>
