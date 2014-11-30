@@ -1,38 +1,25 @@
 use 5.14.0;
 use PPI;
 
-#use Smart::Comments;
+use Smart::Comments;
 my $file_name = shift or die "Usage: $0 file_4_transform\n";
 my $doc = PPI::Document->new($file_name);
 
-my $hash_name = '';
-my @variables = ();
+my @comments = ();
+my @statament = ();
 $doc->find(
     sub {
         my ( $root, $node ) = @_;
-        if ( $node->isa('PPI::Token::Symbol') && $node->symbol_type eq '$' ) {
-            push @variables, substr( $node, 1 );
+        if ( $node->isa('PPI::Token::Comment')) {
+            push @comments, $node;
         }
-        if ( $node->isa('PPI::Token::Symbol') && $node->symbol_type eq '@' ) {
-            $hash_name = substr( $node, 1 );
+        if ( $node->isa('PPI::Statement')) {
+            push @statament, $node;
         }
     }
 );
-
-my $left_side  = join ',', map { "'$_'" } @variables;
-my $right_side = join ',', map { "\$$_" } @variables;
-
-my $full_text = <<"end_line";
-my %${hash_name}=();
-\@${hash_name}{
-        ${left_side}
-      }
-      = (
-        ${right_side}
-      );
-end_line
-use Perl::Tidy;
-perltidy( source => \$full_text);
-#perltidy( source => \$full_text, destination => \$full_text );
-#perltidy( source => \$full_text);
-#print $full_text;
+#$module->prune( 'PPI::Token::Comment' );
+## @comments
+## @statament
+say join "",@comments;
+say join "",@statament;
