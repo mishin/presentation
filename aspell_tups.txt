@@ -1,0 +1,19 @@
+en_US
+en_US-variant_0
+en_US-variant_1
+en_US-w_accents
+en_US-wo_accents
+ru
+ru-ye
+ru-yeyo
+ru-yo
+
+for f in *.txt; do aspell check $f; done
+
+ aspell check --lang=en,ru-yo lib/POD2/RU/perlretut.pod 
+ 
+ 
+ brew install aspell --lang=en,fi,jp
+
+
+Мама

@@ -1,0 +1,30 @@
+green='\e[0;32m'
+GREEN='\e[0;32m'
+red='\e[0;31m'
+RED='\e[1;31m'
+blue='\e[0;34m'
+BLUE='\e[1;34m'
+cyan='\e[0;36m'
+CYAN='\e[1;36m'
+NC='\e[0m'
+ 
+[ -z "$PS1" ] && return
+HISTCONTROL=ignoredups:ignorespace
+shopt -s histappend
+HISTSIZE=1000
+HISTFILESIZE=2000
+shopt -s checkwinsize
+complete -cf sudo
+PROMPT_COMMAND='history -a'
+shopt -s cdspell
+shopt -s dirspell
+ 
+export EDITOR=vim
+TERM=xterm                          # лечим баг с тмуксом (ломает хоткеи прог, считая что это скрины)
+ 
+#---{функция, запускающаяся при выходе из оболочки}---
+function _exit()
+{
+    echo -e "${CYAN}Bye, master :)${NC}"
+}
+trap _exit EXIT

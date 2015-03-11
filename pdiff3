@@ -1,0 +1,25 @@
+#!/usr/bin/perl
+
+use strict;
+use File::Basename;
+use File::DirCompare;
+use File::Compare qw(compare);
+use File::stat;
+
+die "Usage: " . basename($0) . " dir1 dir2\n" unless @ARGV == 2;
+
+my ($dir1, $dir2) = @ARGV;
+
+  # Simple diff -r --brief replacement
+  use File::Basename;
+  File::DirCompare->compare($dir1, $dir2, sub {
+    my ($a, $b) = @_;
+    if (! $b) {
+      printf "Only in %s: %s\n", dirname($a), basename($a);
+    } elsif (! $a) {
+      printf "Only in %s: %s\n", dirname($b), basename($b);
+    } else {
+      print "Files $a and $b differ\n";
+    }
+  });
+

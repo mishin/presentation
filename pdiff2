@@ -1,0 +1,36 @@
+#!/usr/bin/perl
+
+use strict;
+use File::Basename;
+use File::DirCompare;
+use File::Compare qw(compare);
+use File::stat;
+
+die "Usage: " . basename($0) . " dir1 dir2\n" unless @ARGV == 2;
+
+my ($dir1, $dir2) = @ARGV;
+
+File::DirCompare->compare($dir1, $dir2, sub {
+  my ($a, $b) = @_;
+  if (! $b) {
+    printf "Only in %s: %s\n", dirname($a), basename($a);
+  } elsif (! $a) {
+    printf "Only in %s: %s\n", dirname($b), basename($b);
+  } else {
+    my $stata = stat $a;
+    my $statb = stat $b;
+
+    # Return unless different
+    return unless compare($a, $b) != 0 ||
+      $stata->mode != $statb->mode ||
+      $stata->uid  != $statb->uid  ||
+      $stata->gid  != $statb->gid;
+
+    # Report
+    printf "%04o %s %s %s\t\t%04o %s %s %s\n",
+      $stata->mode & 07777, basename($a),
+        (getpwuid($stata->uid))[0], (getgrgid($stata->gid))[0],
+      $statb->mode & 07777, basename($b),
+        (getpwuid($statb->uid))[0], (getgrgid($statb->gid))[0];
+  }
+}, { ignore_cmp => 1 });
