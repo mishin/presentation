@@ -21,7 +21,7 @@ my $dt = DateTime->new(
     time_zone  => 'Europe/Moscow',
 );
 
-#+50
+#'Fri Jul 26 19:34:15 2013 +0200';
 my $formatter =
   DateTime::Format::Strptime->new( pattern => '%a %b %d %H:%M %Y %z' );
 
@@ -46,7 +46,6 @@ for ( 1 .. 50 ) {
 
 #git remote set-url origin git@github.com:mishin/perldoc-ru.git
 #git commit --amend --date="Sat Jan 10 14:00 2015 +0300"
-#'Fri Jul 26 19:34:15 2013 +0200';
 #my $cmd = $r->command( commit => "--amend", "--date=$date");#, { fatal => 1 }
 #say 'amend ok';
 #my @errput = $cmd->stderr->getlines();
