@@ -11,7 +11,6 @@ sub prepare_encoding_console {
         binmode( STDOUT, ":encoding(console_out)" );
         binmode( STDERR, ":encoding(console_out)" );
     }
-    Encode::Locale::decode_argv();
 }
 
 prepare_encoding_console();
