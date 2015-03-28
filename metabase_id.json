@@ -1,0 +1,32 @@
+[
+   {
+      "content" : "[{\"content\":\"Nikolay Mishin\",\"metadata\":{\"core\":{\"guid\":\"e136c63a-d1a2-11e4-84ba-bc61abe786e5\",\"schema_version\":1,\"update_time\":\"2015-03-23T21:23:42Z\",\"type\":\"Metabase-User-FullName\",\"creation_time\":\"2015-03-23T21:23:42Z\",\"resource\":\"metabase:user:e135e490-d1a2-11e4-84ba-bc61abe786e5\",\"valid\":1,\"creator\":\"metabase:user:e135e490-d1a2-11e4-84ba-bc61abe786e5\"}}},{\"metadata\":{\"core\":{\"valid\":1,\"resource\":\"metabase:user:e135e490-d1a2-11e4-84ba-bc61abe786e5\",\"creator\":\"metabase:user:e135e490-d1a2-11e4-84ba-bc61abe786e5\",\"schema_version\":1,\"type\":\"Metabase-User-EmailAddress\",\"update_time\":\"2015-03-23T21:23:42Z\",\"creation_time\":\"2015-03-23T21:23:42Z\",\"guid\":\"e136daee-d1a2-11e4-84ba-bc61abe786e5\"}},\"content\":\"mi@ya.ru\"}]",
+      "metadata" : {
+         "core" : {
+            "guid" : "e135e490-d1a2-11e4-84ba-bc61abe786e5",
+            "resource" : "metabase:user:e135e490-d1a2-11e4-84ba-bc61abe786e5",
+            "valid" : 1,
+            "creator" : "metabase:user:e135e490-d1a2-11e4-84ba-bc61abe786e5",
+            "schema_version" : 1,
+            "type" : "Metabase-User-Profile",
+            "update_time" : "2015-03-23T21:23:42Z",
+            "creation_time" : "2015-03-23T21:23:42Z"
+         }
+      }
+   },
+   {
+      "metadata" : {
+         "core" : {
+            "schema_version" : 1,
+            "update_time" : "2015-03-23T21:23:42Z",
+            "type" : "Metabase-User-Secret",
+            "creation_time" : "2015-03-23T21:23:42Z",
+            "valid" : 1,
+            "resource" : "metabase:user:e135e490-d1a2-11e4-84ba-bc61abe786e5",
+            "creator" : "metabase:user:e135e490-d1a2-11e4-84ba-bc61abe786e5",
+            "guid" : "e136f2e0-d1a2-11e4-84ba-bc61abe786e5"
+         }
+      },
+      "content" : "batman123"
+   }
+]

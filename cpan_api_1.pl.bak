@@ -1,0 +1,13 @@
+
+use MetaCPAN::Client;
+my $client = MetaCPAN::Client->new();
+my $query = { all => [
+		                      { status => 'latest' },
+				                            { maturity => 'released' },
+							                     ]};
+								     my $params = { fields => [qw/ metadata download_url /] };
+								     my $result_set = $client->release($query, $params);
+
+								     while (my $release = $result_set->next) {
+								     }
+								      
