@@ -1,6 +1,6 @@
 use Modern::Perl;
 use Git::Repository;
-use File::Slurp qw( :edit );
+use File::Slurp qw( :edit ) ;
 my $url = 'https://github.com/mishin/perldoc-ru.git';
 my $dir = '/home/mishin/github/test_repo';
 
@@ -26,10 +26,9 @@ my $formatter =
   DateTime::Format::Strptime->new( pattern => '%a %b %d %H:%M %Y %z' );
 
 $dt->set_formatter($formatter);
-my $n = 1;
+my $n=1;
 
 for ( 1 .. 50 ) {
-
     #inplace edit
     edit_file { s/__NUMBER\d+__/__NUMBER${n}__/ }
     $dir . '/pod2-ru/POD2-RU/scripts/get_pod_one_liners.md';
@@ -37,21 +36,21 @@ for ( 1 .. 50 ) {
     say 'edit ok';
     $r->run( add => '.' );
     say 'add ok';
-    my $date = $dt->_stringify();
+    my $date = $dt->_stringify(); 
     $r->run( commit => '-m', "my $n commit message", "--date=$date" );
-    say 'commit ok';
+    say 'commit ok';    
     $dt->add( days => 1 );
-    $n++;
+    $n++; 
 }
 
-#git remote set-url origin git@github.com:mishin/perldoc-ru.git
+#git remote set-url origin git@github.com:mishin/perldoc-ru.git 
 #git commit --amend --date="Sat Jan 10 14:00 2015 +0300"
-#'Fri Jul 26 19:34:15 2013 +0200';
-#my $cmd = $r->command( commit => "--amend", "--date=$date");#, { fatal => 1 }
-#say 'amend ok';
-#my @errput = $cmd->stderr->getlines();
-#say "ERROR: @errput";
-#$cmd->close;
+    #'Fri Jul 26 19:34:15 2013 +0200';
+    #my $cmd = $r->command( commit => "--amend", "--date=$date");#, { fatal => 1 } 
+    #say 'amend ok';
+    #my @errput = $cmd->stderr->getlines();
+    #say "ERROR: @errput";
+    #$cmd->close;
 
 #http://www.dagolden.com/index.php/998/how-to-script-git-with-perl-and-gitwrapper/
 #
