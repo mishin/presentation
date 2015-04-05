@@ -1,0 +1,81 @@
+#!/usr/bin/perl
+use strict;
+use warnings;
+use utf8;
+use Modern::Perl;
+use IO::Interactive qw(is_interactive);
+use Encode::Locale qw(decode_argv);
+use Text::CSV;
+
+&prepare_encoding_console();
+
+my $csv = Text::CSV->new(
+    {
+        auto_diag => 1,
+        sep_char  => '|'
+    }
+);
+my $file = $ARGV[0] or die "Need to get CSV file on the command line\n";
+my @result = ();
+open( my $data, '<:encoding(utf8)', $file )
+  or die "Could not open '$file' $!\n";
+while ( my $fields = $csv->getline($data) ) {
+    push @result,
+      "$fields->[1];$fields->[3];$fields->[4];$fields->[5];$fields->[2];";
+
+#123 | 12345678901234567890 |     760.00 |ФАМИЛИЯ       |ИМЯ            |ОТЧЕСТВО     |123456|222|888|9|RU|00007|
+#12345678901234567890;ФАМИЛИЯ;ИМЯ;ОТЧЕСТВО;760.00;
+#$sum += $fields->[2];
+}
+if ( not $csv->eof ) {
+    $csv->error_diag();
+}
+close $data;
+print join "\n", @result;
+
+sub prepare_encoding_console {
+    if ( is_interactive() ) {
+        binmode STDIN,  ':encoding(console_in)';
+        binmode STDOUT, ':encoding(console_out)';
+        binmode STDERR, ':encoding(console_out)';
+    }
+    Encode::Locale::decode_argv();
+    return 1;
+}
+
+#    print "$sum\n";
+__DATA__
+
+use File::Slurp qw(read_file  write_file);
+
+ my $csv = Text::CSV->new ({
+        quote_char      => '"',
+        escape_char     => '\\',
+        sep_char        => ';',
+        binary          => 1,
+        });
+# Here is a simple and fast way to load and save a simple config file # made of key=value lines. 
+my %conf = read_file( $file_name ) =~ /^(\w+)=(.*)$/mg ;
+ write_file( $file_name, {atomic => 1}, map "$_=$conf{$_}\n", keys %conf ) ;
+
+allow_whitespace
+
+$csv = Text::CSV->new ({
+    quote_char          => '"',
+    escape_char         => '"',
+    sep_char            => ',',
+    eol                 => $\,
+    always_quote        => 0,
+    quote_space         => 1,
+    quote_null          => 1,
+    binary              => 0,
+    decode_utf8         => 0,
+    keep_meta_info      => 0,
+    allow_loose_quotes  => 0,
+    allow_loose_escapes => 0,
+    allow_whitespace    => 0,
+    blank_is_undef      => 0,
+    empty_is_undef      => 0,
+    verbatim            => 0,
+    auto_diag           => 0,
+    });
