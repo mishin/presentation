@@ -1,3 +1,5 @@
+http://eax.me/perl5-oop/
+
 http://grep.cpan.me/?q=author%3A%28MIYAGAWA%7CDCONWAY%7CBDFOY%29+__DATA__
 
 author:(MIYAGAWA|DCONWAY|BDFOY) __DATA__
