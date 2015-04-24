@@ -1,3 +1,7 @@
+http://grep.cpan.me/?q=author%3A%28MIYAGAWA%7CDCONWAY%7CBDFOY%29+__DATA__
+
+author:(MIYAGAWA|DCONWAY|BDFOY) __DATA__
+
  →  milla-tutorial$ sp_ch () {(cat $1|aspell --lang=ru-yo list|aspell --lang=en list); };sp_ch lib/POD2/RU/perlretut.pod
   { (cat $1|aspell --lang=ru-yo list|aspell --lang=en list); }
 
