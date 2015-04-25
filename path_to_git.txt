@@ -1,3 +1,4 @@
 ﻿"%USERPROFILE%\AppData\Local\GitHub\PORTAB~1\bin\git.exe" --version
 
 set PATH=%PATH%;"%USERPROFILE%\AppData\Local\GitHub\PORTAB~1\bin"
+set HOME=c:\Users\Мишин\Documents\home
