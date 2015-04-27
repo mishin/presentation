@@ -1,0 +1,66 @@
+Tony Curcio
+DataStage Product Manager 
+IBM 
+704-291-7850 
+tcurcio@us.ibm.com 
+Местное время: 2:43
+
+Нарисовать форматтер для Datastage!
+
+=[@[SOURCE_SYSTEM_NAME]]&"_"&[@[DATASET_DH_NAME]]
+
+=REPLACE([@[SOURCE_SYSTEM_NAME]]&"_"&[@[DATASET_DH_NAME]], Start_num, Num_chars, New_text)
+
+= REPLACE ( [@[SOURCE_SYSTEM_NAME]]&"_"&[@[DATASET_DH_NAME]] , 1 , 1 , "$" )
+
+=SUBSTITUTE([@[SOURCE_SYSTEM_NAME]]&"_"&[@[DATASET_DH_NAME]], "$", "")
+
+=ПОДСТАВИТЬ([@[SOURCE_SYSTEM_NAME]]&"_"&[@[DATASET_DH_NAME]];"$";"")
+
+http://excelru.ru/excel/podstanovka-dannyx-v-excel.html
+
+ABS_BCE_FICLI_CLIENTS_VIEW
+
+Заранее искренне благодарен.
+
+
+Sometimes it's the journey that teaches you a lot about your destination.
+Drake
+
+Read more at http://www.brainyquote.com/quotes/keywords/journey.html#i0qWOh9U6VMVfOEx.99
+
+https://history.google.com/history/
+
+Остатки - 1 млрд.
+
+http://www.techport.ru/
+ - tako lungo
+ ------------
+ 
+ координаты дилера
+ tako lungo!!
+ 
+ ------------
+ 
+ http://tako-online.ru/?_openstat=ZGlyZWN0LnlhbmRleC5ydTsxMjA2NzU3Nzs3ODg4ODEyNDg7eWFuZGV4LnJ1Omd1YXJhbnRlZQ&yclid=5857821356187557545
+ 
+ ---------
+ http://remont-koljasok.ru/gb/4
+ 
+ ---------
+ 
+ 
+ http://remont-koliasok.ru/kontakty
+ 
+ ------
+ покрышки 700
+ ------
+ 10-20.00
+ ---
+ 19.00
+ http://rem-kol.ru/
+ 
+ Контакты
+Мастерская находится м.Аннино МКАД 33км Владение 6 строения 7, г.Москва, второй этаж, Гипермаркет "1001Коляска".
+
+Работаем с 10-20ч без выходных.
