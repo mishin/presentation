@@ -1,0 +1,48 @@
+1)
+.* Очень плохое, бесполезное выражение
+Begin.*?End То, что нужно, ищет до следующего End, а не до последнего, который встретится в документе.
+2)
+my @arr = '\\S', $a);#плохо, не найдет и вообще так делать нельзя
+my @arr = split( /\\S/, $a);#хорошо, правильное использование split
+3)
+Value "(?<job_identlist_value>.*?)(?<!\\)"
+(?<!\\)" - кавычка, перед которой нет обратного слеша \
+    my $IDENTLIST_RX =
+qr{BEGIN DSSUBRECORD.*?Name "IdentList".*?Value "(?<job_identlist_value>.*?)(?<!\\)".*?END DSSUBRECORD}s;
+
+use YAPE::Regex::Explain;
+my $exp = YAPE::Regex::Explain->new($IDENTLIST_RX)->explain;
+
+perl -MYAPE::Regex::Explain -e "print YAPE::Regex::Explain->new(qr/0\t2/)->explain();"
+perl -MYAPE::Regex::Explain -e "print YAPE::Regex::Explain->new(qr/BEGIN DSSUBRECORD.*?Name "IdentList".*?Value "(?<job_identlist_value>.*?)(?<!\\)".*?END DSSUBRECORD/)->explain();"
+
+4) Находит путь к файлу в windows
+use IPC::Open3;
+my ( $in, $out, $err );
+
+  use IPC::Cmd qw[can_run run run_forked];	
+my $path = can_run( 'dot' );
+    open3( $in, $out, $err, "$path -V 2>&1" );
+my $dot_version = join('',<$out>);
+print $dot_version;
+
+5) Debug
+perl -MCarp::Always program.pl
+
+# what the heck does /^\s+$/ mean?
+use YAPE::Regex::Explain;
+print YAPE::Regex::Explain->new('/^\s+$/')->explain();
+
+perl -Mre=debug foo.pl 
+
+Basic debugging checklist
+http://www.perlmonks.org/?node_id=745674
+
+sub afterinit { push @$DB::pretype, 'v' unless grep { /v/ } @$DB::pretype; 
+
+6)
+"C:\Program Files (x86)\Notepad++\notepad++.exe"
+
+7)
+
+
