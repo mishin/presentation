@@ -46,3 +46,146 @@ sub afterinit { push @$DB::pretype, 'v' unless grep { /v/ } @$DB::pretype;
 7)
 
 
+
+ack $(ls t/lib/TestPM/|awk -F'.' '{print $1}'|xargs perl -e 'print join "|" => @ARGV') aggtests/ t -l
+
+vim $(ack --perl -l 'api/v1/episode' t)
+
+
+perl -pe's/([\d.]+)/localtime $1/e;' access.log
+
+ack $(ls t/lib/TestPM/|awk -F'.' '{print $1}'|xargs perl -e 'print join "|" => @ARGV') 
+aggtests/ t -l
+
+perl -e'while(<*.avi>) { s/avi$/srt/; rename <*.srt>, $_ }'
+
+find . -name '*.whatever' | perl -lne unlink
+
+tail -F /var/log/squid/access.log | perl -ane 'BEGIN{$|++} $F[6] =~ m{\Qrad.live.com/ADSAdClient31.dll}
+&& printf "%02d:%02d:%02d %15s %9d\n", sub{reverse @_[0..2]}->(localtime $F[0]), @F[2,4]'
+
+export PATH=$(perl -F: -ane'print join q/:/, grep { !$c{$_}++ } @F'<<<$PATH)
+
+alias e2d="perl -le \"print scalar(localtime($ARGV[0]));\""
+
+perl -ple '$_=eval'
+
+perl -00 -ne 'print sort split /^/'
+
+perl -pe'1while+s/\t/" "x(8-pos()%8)/e'
+
+tail -f log | perl -ne '$s=time() unless $s; $n=time(); $d=$n-$s; if ($d>=2) { print qq
+($. lines in last $d secs, rate ),$./$d,qq(\n); $. =0; $s=$n; }'
+
+perl -MFile::Spec -e 'print join(qq(\n),File::Spec->path).qq(\n)'
+
+perl -ple "$_=eval"
+'
+export PATH=$(perl -F: -ane'print join q/:/, grep { !$c{$_}++ } @F'<<<$PATH)
+
+tail -F /var/log/squid/access.log | \
+perl -ane 'BEGIN{$|++} $F[6] =~ m{\Qrad.live.com/ADSAdClient31.dll}
+    && printf "%02d:%02d:%02d %15s %9d\n",
+        sub{reverse @_[0..2]}->(localtime $F[0]), @F[2,4]'
+		
+set path=(`echo $path | perl -e 'foreach(split(/ /,<>)){print $_," " unless $s{$_}++;}'`)
+
+perl -p -i -e 's/\r\n$/\n/' htdocs/*.asp		
+
+
+perl -l -e 'print scalar(localtime($ARGV[0]))'
+
+alias e2d="perl -le \"print scalar(localtime($ARGV[0]));\""
+
+echo 1219174516 | e2d
+
+
+3
+down vote
+I use this quite frequently to quickly convert epoch times to a useful datestamp.
+
+perl -l -e 'print scalar(localtime($ARGV[0]))'
+Make an alias in your shell:
+
+alias e2d="perl -le \"print scalar(localtime($ARGV[0]));\""
+Then pipe an epoch number to the alias.
+
+echo 1219174516 | e2d
+Many programs and utilities on Unix/Linux use epoch values to represent time, so this has proved invaluable for me.
+
+perl -e 'print join("\n",split(":",$ENV{"PATH"}))."\n"'\
+
+perl -e "print join(qq(\n),split(';',$ENV{'PATH'})).qq(\n)"
+
+perl -MFile::Spec -e 'print join(qq(\n),File::Spec->path).qq(\n)' # UNIX
+perl -MFile::Spec -e "print join(qq(\n),File::Spec->path).qq(\n)" # Windows
+
+perl -MFile::Spec -E '$,=qq(\n); say File::Spec->path'
+perl -MFile::Spec::Functions -E "$,=qq(\n); say path"
+
+perl -nle "print '  Stack Overflow        ' . $1 . '  (no change)' if /\s{20,99}([0-9,]{3,6})<\/div>/;" "SO.html"  >> SOscores.txt
+
+perl -F, -lane "if ($.==1) {@keys = @F} else{print @keys[$_].$F[$_] foreach(0..$#F)} " 
+
+perl -ne '$s=time() unless $s; $n=time(); $d=$n-$s; if ($d>=2) { print "$. lines in last $d secs, rate ",$./$d,"\n"; $. =0; $s=$n; }'
+
+
+perl -ne "print if /host ([\w\-\.]+){3}\.0 /" *.conf
+
+perl -e '%h=map{/.\s/;7x(ord$&&10)+$`,$_}`du -h`;print@h{sort%h}'
+
+perl -pe'1while+s/\t/" "x(8-pos()%8)/e'
+
+One-Liner: Replace a pattern with another one inside the file with backup
+
+Replace all occurrences of pattern1 (e.g. [0-9]) with pattern2
+perl -p -i.bak -w -e 's/pattern1/pattern2/g' inputFile
+
+http://formulapereezda.ru/calc.html
+
+https://github.com/mishin/yapc-eu/blob/master/lib/YAPC/Europe/UGR.pm
+
+http://perl101.org/command-line-switches.html
+
+
+Ирония судьбы: человек, купивший права, сбил человека, продавшего ему права. 
+
+
+http://www.pm.org/
+
+)
+prove -f --rc=.proverc  :: --project BCE_PH04_LOAD_BCE_R_LOANS_CORP_SEQ_2015-04-13 --path_2_test_dir "c:/Users/rb102870/Documents/job/bin/dsx/projects/Test_Short_description/scripts/BCE_PH04_LOAD_BCE_R_LOANS_CORP_SEQ_2015-04-13/jobs" > BCE_PH04_LOAD_BCE_R_LOANS_CORP_SEQ_2015-04-13_fail.html
+prove -b --state=failed --rc=.proverc  :: --project BCE_PH04_LOAD_BCE_R_LOANS_CORP_SEQ_2015-04-13 --path_2_test_dir "c:/Users/rb102870/Documents/job/bin/dsx/projects/Test_Short_description/scripts/BCE_PH04_LOAD_BCE_R_LOANS_CORP_SEQ_2015-04-13/jobs" > BCE_PH04_LOAD_BCE_R_LOANS_CORP_SEQ_2015-04-13_fail.html
+prove -b --state=save --rc=.proverc  :: --project BCE_PH04_LOAD_BCE_R_LOANS_CORP_SEQ_2015-04-13 --path_2_test_dir "c:/Users/rb102870/Documents/job/bin/dsx/projects/Test_Short_description/scripts/BCE_PH04_LOAD_BCE_R_LOANS_CORP_SEQ_2015-04-13/jobs" > BCE_PH04_LOAD_BCE_R_LOANS_CORP_SEQ_2015-04-13_fail.html
+prove -b --state=hot,save --rc=.proverc  :: --project BCE_PH04_LOAD_BCE_R_LOANS_CORP_SEQ_2015-04-13 --path_2_test_dir "c:/Users/rb102870/Documents/job/bin/dsx/projects/Test_Short_description/scripts/BCE_PH04_LOAD_BCE_R_LOANS_CORP_SEQ_2015-04-13/jobs" > BCE_PH04_LOAD_BCE_R_LOANS_CORP_SEQ_2015-04-13_fail.html
+
+prove -b --state=hot,save
+prove -b --state=adrian
+ # Run all tests
+    $ prove -b --state=save
+     
+    # Run failures
+    $ prove -b --state=failed
+    
+
+	 prove -b --state=failed,save
+
+prove -b --state=failed	 
+c:\Us
+
+
+нужно понять, как делать отчет только по непрошедшим тестам
+
+
+http://www.mclean.net.nz/osdc-tdd-full.pdf
+
+Ещё добавь, пожалуйста, в таблицы V_IP_CR_RESERVE_MSFO, V_IP_CR_CLIENT_DETAIL_BHFM поле LOCAL_CLIENT_ID (varchar(50)) nullable) пока просто как заглушку.
+Ждем выполнение такого CR от АБС. Как они сделают – вам напишем. 
+
+Клепова телефон:
+
+68371
+
+
+
+
