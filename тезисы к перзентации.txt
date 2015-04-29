@@ -1,0 +1,12 @@
+1. Сложности при переводе Perl документации и как мне в этом помог в этом Challenge (конкурс) на longest Stick on Github
+2. Перевод дистрибутива Perl на Dist::Milla (от Miyagawa) и создание релиза с помощью milla release и 3-х ENTER
+3. CPANTS - как я повысил Kwalitee модуля до 131.43 
+4. #pr-challenge Pull Request Challenge от Neil'a и мои успехи в нем
+5. Проверка орфографии в pod документации Perl с помощью aspell
+
+Тезисы к презентации:
+
+Объяснение параметров Kwalitee
+http://cpants.cpanauthors.org/kwalitee
+
+http://www.slideshare.net/maspalio/yapc-2007-module-kwalitee-talk
