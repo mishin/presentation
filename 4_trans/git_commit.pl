@@ -22,9 +22,18 @@ Examples:
 
 This program need to full holes on github history.
 
+=head1 LICENSE
+
+This library is free software; you can redistribute it and/or modify
+it under the same terms as Perl itself.
+
 =head1 AUTHOR
 
-Nikolay Mishin
+=over 1
+
+=item * Nikolay Mishin (L<MISHIN|https://metacpan.org/author/MISHIN>)
+
+=back
 
 =cut
 
