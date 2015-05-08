@@ -1,0 +1,273 @@
+# POSIX: 1
+# I18N:  1
+t/1-load.t ....... ok
+
+#   Failed test '"Март 23, 2008" =~ "american" - did not match as expected (nokeep).'
+#   at t/american.t line 159.
+
+#   Failed test '"Март 23, 2008" =~ "american" - did not match as expected (keep).'
+#   at t/american.t line 186.
+
+#   Failed test '"марта 23, 2008" =~ "american" - did not match as expected (nokeep).'
+#   at t/american.t line 159.
+
+#   Failed test '"марта 23, 2008" =~ "american" - did not match as expected (keep).'
+#   at t/american.t line 186.
+
+#   Failed test '"янв. 12, 1900" =~ "american" - did not match as expected (nokeep).'
+#   at t/american.t line 159.
+
+#   Failed test '"янв. 12, 1900" =~ "american" - did not match as expected (keep).'
+#   at t/american.t line 186.
+
+#   Failed test '"янв. 12, '00" =~ "american" - did not match as expected (nokeep).'
+#   at t/american.t line 159.
+
+#   Failed test '"янв. 12, '00" =~ "american" - did not match as expected (keep).'
+#   at t/american.t line 186.
+
+#   Failed test '"Январь 12, 00" =~ "american" - did not match as expected (nokeep).'
+#   at t/american.t line 159.
+
+#   Failed test '"Январь 12, 00" =~ "american" - did not match as expected (keep).'
+#   at t/american.t line 186.
+
+#   Failed test '"Январь 1, 2099" =~ "american" - did not match as expected (nokeep).'
+#   at t/american.t line 159.
+
+#   Failed test '"Январь 1, 2099" =~ "american" - did not match as expected (keep).'
+#   at t/american.t line 186.
+
+#   Failed test '"Февраль 2, 2098" =~ "american" - did not match as expected (nokeep).'
+#   at t/american.t line 159.
+
+#   Failed test '"Февраль 2, 2098" =~ "american" - did not match as expected (keep).'
+#   at t/american.t line 186.
+
+#   Failed test '"Март 3, 2097" =~ "american" - did not match as expected (nokeep).'
+#   at t/american.t line 159.
+
+#   Failed test '"Март 3, 2097" =~ "american" - did not match as expected (keep).'
+#   at t/american.t line 186.
+
+#   Failed test '"Апрель 4, 2096" =~ "american" - did not match as expected (nokeep).'
+#   at t/american.t line 159.
+
+#   Failed test '"Апрель 4, 2096" =~ "american" - did not match as expected (keep).'
+#   at t/american.t line 186.
+
+#   Failed test '"Май 5, 2095" =~ "american" - did not match as expected (nokeep).'
+#   at t/american.t line 159.
+
+#   Failed test '"Май 5, 2095" =~ "american" - did not match as expected (keep).'
+#   at t/american.t line 186.
+
+#   Failed test '"Июнь 6, 2094" =~ "american" - did not match as expected (nokeep).'
+#   at t/american.t line 159.
+
+#   Failed test '"Июнь 6, 2094" =~ "american" - did not match as expected (keep).'
+#   at t/american.t line 186.
+
+#   Failed test '"Июль 7, 2093" =~ "american" - did not match as expected (nokeep).'
+#   at t/american.t line 159.
+
+#   Failed test '"Июль 7, 2093" =~ "american" - did not match as expected (keep).'
+#   at t/american.t line 186.
+
+#   Failed test '"Август 8, 2092" =~ "american" - did not match as expected (nokeep).'
+#   at t/american.t line 159.
+
+#   Failed test '"Август 8, 2092" =~ "american" - did not match as expected (keep).'
+#   at t/american.t line 186.
+
+#   Failed test '"Сентябрь 9, 2091" =~ "american" - did not match as expected (nokeep).'
+#   at t/american.t line 159.
+
+#   Failed test '"Сентябрь 9, 2091" =~ "american" - did not match as expected (keep).'
+#   at t/american.t line 186.
+
+#   Failed test '"Октябрь 10, 2090" =~ "american" - did not match as expected (nokeep).'
+#   at t/american.t line 159.
+
+#   Failed test '"Октябрь 10, 2090" =~ "american" - did not match as expected (keep).'
+#   at t/american.t line 186.
+
+#   Failed test '"Ноябрь 11, '89" =~ "american" - did not match as expected (nokeep).'
+#   at t/american.t line 159.
+
+#   Failed test '"Ноябрь 11, '89" =~ "american" - did not match as expected (keep).'
+#   at t/american.t line 186.
+
+#   Failed test '"Декабрь 12, 87" =~ "american" - did not match as expected (nokeep).'
+#   at t/american.t line 159.
+
+#   Failed test '"Декабрь 12, 87" =~ "american" - did not match as expected (keep).'
+#   at t/american.t line 186.
+
+#   Failed test '"янв. 1, 2099" =~ "american" - did not match as expected (nokeep).'
+#   at t/american.t line 159.
+
+#   Failed test '"янв. 1, 2099" =~ "american" - did not match as expected (keep).'
+#   at t/american.t line 186.
+
+#   Failed test '"февр. 2, 2098" =~ "american" - did not match as expected (nokeep).'
+#   at t/american.t line 159.
+
+#   Failed test '"февр. 2, 2098" =~ "american" - did not match as expected (keep).'
+#   at t/american.t line 186.
+
+#   Failed test '"марта 3, 2097" =~ "american" - did not match as expected (nokeep).'
+#   at t/american.t line 159.
+
+#   Failed test '"марта 3, 2097" =~ "american" - did not match as expected (keep).'
+#   at t/american.t line 186.
+
+#   Failed test '"апр. 4, 2096" =~ "american" - did not match as expected (nokeep).'
+#   at t/american.t line 159.
+
+#   Failed test '"апр. 4, 2096" =~ "american" - did not match as expected (keep).'
+#   at t/american.t line 186.
+
+#   Failed test '"мая 5, 2095" =~ "american" - did not match as expected (nokeep).'
+#   at t/american.t line 159.
+
+#   Failed test '"мая 5, 2095" =~ "american" - did not match as expected (keep).'
+#   at t/american.t line 186.
+
+#   Failed test '"июня 6, 2094" =~ "american" - did not match as expected (nokeep).'
+#   at t/american.t line 159.
+
+#   Failed test '"июня 6, 2094" =~ "american" - did not match as expected (keep).'
+#   at t/american.t line 186.
+
+#   Failed test '"июля 7, 2093" =~ "american" - did not match as expected (nokeep).'
+#   at t/american.t line 159.
+
+#   Failed test '"июля 7, 2093" =~ "american" - did not match as expected (keep).'
+#   at t/american.t line 186.
+
+#   Failed test '"авг. 8, 2092" =~ "american" - did not match as expected (nokeep).'
+#   at t/american.t line 159.
+
+#   Failed test '"авг. 8, 2092" =~ "american" - did not match as expected (keep).'
+#   at t/american.t line 186.
+
+#   Failed test '"сент. 9, 2091" =~ "american" - did not match as expected (nokeep).'
+#   at t/american.t line 159.
+
+#   Failed test '"сент. 9, 2091" =~ "american" - did not match as expected (keep).'
+#   at t/american.t line 186.
+
+#   Failed test '"окт. 10, 2090" =~ "american" - did not match as expected (nokeep).'
+#   at t/american.t line 159.
+
+#   Failed test '"окт. 10, 2090" =~ "american" - did not match as expected (keep).'
+#   at t/american.t line 186.
+
+#   Failed test '"нояб. 11, '89" =~ "american" - did not match as expected (nokeep).'
+#   at t/american.t line 159.
+
+#   Failed test '"нояб. 11, '89" =~ "american" - did not match as expected (keep).'
+#   at t/american.t line 186.
+
+#   Failed test '"дек. 12, 87" =~ "american" - did not match as expected (nokeep).'
+#   at t/american.t line 159.
+
+#   Failed test '"дек. 12, 87" =~ "american" - did not match as expected (keep).'
+#   at t/american.t line 186.
+
+#   Failed test '"Май 5, 2001" =~ "american" - did not match as expected (nokeep).'
+#   at t/american.t line 159.
+
+#   Failed test '"Май 5, 2001" =~ "american" - did not match as expected (keep).'
+#   at t/american.t line 186.
+
+#   Failed test '"Май 5 2001" =~ "american" - did not match as expected (nokeep).'
+#   at t/american.t line 159.
+
+#   Failed test '"Май 5 2001" =~ "american" - did not match as expected (keep).'
+#   at t/american.t line 186.
+
+#   Failed test '"Май 5,2001" =~ "american" - did not match as expected (nokeep).'
+#   at t/american.t line 159.
+
+#   Failed test '"Май 5,2001" =~ "american" - did not match as expected (keep).'
+#   at t/american.t line 186.
+
+#   Failed test '"сент. 9, 1945" =~ "american" - did not match as expected (nokeep).'
+#   at t/american.t line 159.
+
+#   Failed test '"сент. 9, 1945" =~ "american" - did not match as expected (keep).'
+#   at t/american.t line 186.
+
+#   Failed test '"сент.  9, 1945" =~ "american" - did not match as expected (nokeep).'
+#   at t/american.t line 159.
+
+#   Failed test '"сент.  9, 1945" =~ "american" - did not match as expected (keep).'
+#   at t/american.t line 186.
+
+#   Failed test '"сент.  19, 1945" =~ "american" - did not match as expected (nokeep).'
+#   at t/american.t line 159.
+
+#   Failed test '"сент.  19, 1945" =~ "american" - did not match as expected (keep).'
+#   at t/american.t line 186.
+
+#   Failed test '"abcdМарт 13, 2008" =~ "american" - did not fail as expected (nokeep).'
+#   at t/american.t line 159.
+
+#   Failed test '"abcdМарт 13, 2008" =~ "american" - did not fail as expected (keep).'
+#   at t/american.t line 186.
+
+#   Failed test '"0123Март 13, 2008" =~ "american" - did not fail as expected (nokeep).'
+#   at t/american.t line 159.
+
+#   Failed test '"0123Март 13, 2008" =~ "american" - did not fail as expected (keep).'
+#   at t/american.t line 186.
+
+#   Failed test '"Март 13, 2008abcd" =~ "american" - did not match as expected (nokeep).'
+#   at t/american.t line 159.
+
+#   Failed test '"Март 13, 2008abcd" =~ "american" - did not match as expected (keep).'
+#   at t/american.t line 186.
+# Looks like you failed 76 tests of 164.
+t/american.t ..... 
+Dubious, test returned 76 (wstat 19456, 0x4c00)
+Failed 76/164 subtests 
+	(less 72 skipped subtests: 16 okay)
+# Январь
+# Февраль
+# Март
+# Апрель
+# Май
+# Июнь
+# Июль
+# Август
+# Сентябрь
+# Октябрь
+# Ноябрь
+# Декабрь
+t/dmy.t .......... ok
+t/doc.t .......... ok
+t/hms.t .......... ok
+t/mail-strict.t .. ok
+t/mail.t ......... ok
+t/mdy.t .......... ok
+t/strftime.t ..... ok
+t/tf.t ........... ok
+t/ymd.t .......... ok
+t/zone.t ......... ok
+
+Test Summary Report
+-------------------
+t/american.t   (Wstat: 19456 Tests: 164 Failed: 76)
+  Failed tests:  1, 3, 5, 7, 11, 13, 15, 17, 19, 21, 23
+                25, 27, 29, 31, 33, 35, 37, 39, 41, 43
+                45, 47, 49, 51, 53, 55, 57, 59, 61, 63
+                65, 67, 69, 71, 73, 75, 77, 79, 81, 83
+                85, 87, 89, 91, 93, 95, 97, 99, 101, 103
+                105, 107, 109, 111, 113, 115, 117, 119
+                121, 123, 125, 129, 131, 135, 137, 141
+                143, 145, 147, 153-156, 159, 161
+  Non-zero exit status: 76
+Files=12, Tests=7202,  6 wallclock secs ( 2.23 usr  0.11 sys +  5.05 cusr  0.22 csys =  7.61 CPU)
+Result: FAIL
