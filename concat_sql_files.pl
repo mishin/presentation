@@ -18,3 +18,5 @@ while (my $file = $it->()) {
     say "$file was added to $big_sql";
     write_file($big_sql, {append => 1}, read_file($file));
 }
+
+#thanks for Gabor
