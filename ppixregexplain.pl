@@ -1,6 +1,7 @@
 #!/usr/bin/perl --
 use strict;
 use warnings;
+use utf8;
 use Data::Dump qw/ dd pp /;
 use charnames (); ## for ord
 use HTML::Entities();
@@ -12,6 +13,20 @@ use PPI::Document;
 use PPIx::Regexp::Dumper;
 
 use vars qw/ $opt_pmshortcut $opt_coverage /;
+
+
+use utf8;
+use Modern::Perl;
+use Encode::Locale qw(decode_argv);
+
+ if (-t)
+{
+    binmode(STDIN, ":encoding(console_in)");
+	binmode(STDOUT, ":encoding(console_out)");
+	binmode(STDERR, ":encoding(console_out)");
+}
+
+Encode::Locale::decode_argv();
 
 unless( caller ){
     Main( @ARGV );
@@ -32,14 +47,14 @@ sub MainXplain {
       q{perlmonks|pmshortcut|pm|p!},
       q{coverage|c!},
     );
-    
+
     $opt{help} and return print Usage();
     @_         or  return print Usage();
-    
+
     $opt{text} or $opt{html}=1;
-    
+
     $opt{coverage} and $opt_coverage=1;
-    
+
     unshift @_, \%opt;
     goto &Mexplain;
 }
@@ -71,7 +86,7 @@ sub Mexplain {
                     return 1 if ref($_[1]) =~ m{
 PPI::Token::QuoteLike::Regexp
 | PPI::Token::Regexp::Match
-| PPI::Token::Regexp::Substitute 
+| PPI::Token::Regexp::Substitute
                     }ix;
                 },
             )
@@ -106,7 +121,7 @@ sub darntext {
         my $conhr = [  grep { defined $_ } $con, $hr ];
         my $chits = $ref->{chits};
         @lols = ( $start, $conhr, $chits );
-        
+
     } else {
         @lols = $ref;
     }
@@ -124,7 +139,7 @@ sub darntext {
 
 
 
-sub darnhtml{    
+sub darnhtml{
     print "<!DOCTYPE html><html><head><title> title </title></head><body>\n";;;
 #~ <base href="http://perlmonks.com/">
     &darnhtmltable;
@@ -142,7 +157,7 @@ sub darnhtmltable {
         $depth    = $ref->{depth} || 0;
         darn_table( $depth, $con, $start , $hr );
         @lols = $ref->{chits};
-        
+
     } else {
         @lols = $ref;
     }
@@ -181,7 +196,7 @@ sub darn_table {
     my( @three ) = splice @$desc, 0, 3; ## make it a tooltip?!??!??!?
 #~     unshift @$desc, '# '.join ' ; ', @three;
     unshift @$desc, 3==@three ? ( '# '.join ' ; ', @three ) : ( @three );
-    
+
 ## TO?DO? http://www.thecssninja.com/css/css-tree-menu# Pure CSS collapsible tree menu | The CSS Ninja - All things CSS, JavaScript & HTML
     local$_; for(@$desc){
         if( m{\sat\saddress=\s*(\S+)} ){
@@ -209,8 +224,8 @@ sub darn_table {
 #~             my $href = "http://perlmonks.com/?node=doc://$doc";
 #~             $href = enent($odoc) if $odoc =~ m{^http://}i;
 #~             $_ = qq{<a href="$href">}.enent($_).'</a>';
-#~             
-        
+#~
+
             my $href = "http://perlmonks.com/?node=doc://$doc";
             if( $odoc =~ m{^http://}i ){
                 my( $oleft, $oright ) = split /\|/, $odoc;
@@ -226,7 +241,7 @@ sub darn_table {
                     $_ = qq{<a href="$href">}.enent($_).'</a>';
                 }
             }
-            
+
 #~         } elsif( m{^\s*.*?(?:\bdie\b|\bwarn)}i ){
 #~             $_ = '<b>'.enent($_).'</b>';
         } else {
@@ -235,7 +250,7 @@ sub darn_table {
         $_ = "<b>$_</b>" if /\bdie\b|\bwarn/i;
     }
     if( @$desc>1 and $desc->[1] !~ /^#/ ){ $_="# $_" for @$desc; }
-    
+
     $con and $con=~/\x22,\s*$/ and push @$desc, '#<b>'.enent($con).'</b>';
     $hr and push @$desc, $hr;
     print map { "$_<br>\n" } @$desc;
@@ -266,7 +281,7 @@ sub PPIx::Regexp::Node::xplain_desc_real {
 #~     warn "@_\n"; ## grogelinginadequate
     my( $self, $key , @repos ) = @_;
     %desc or require '_desc.pl';
-    
+
     if( my $ret = $desc{ $key }  ){
         if( ref $ret ){
             return @$ret;
@@ -286,14 +301,14 @@ sub PPIx::Regexp::Node::xplain_start {
     my( $self, %args ) = @_;
     my $depth = $args{depth} || 0;
     my @ret;
-    
+
     push @ret, 'address='. $self->address;
     push @ret, $self->xplain_desc( ref $self );;
     push @ret, $self->xplain_perl_version;;
 #~     push @ret, 'address='. $self->address;
-    
+
     if( defined( my $ord = eval { $self->ordinal } ) ){
-#~         my $unicode10 = Unicode::UCD::charinfo( $ord )->{unicode10} ; 
+#~         my $unicode10 = Unicode::UCD::charinfo( $ord )->{unicode10} ;
         my $unicode10 = unicode10( $ord );
 #~         $unicode10  or warn pp( {crapola => Unicode::UCD::charinfo( $ord ) } ); ## 2013-08-18-04:12:49
         push @ret,
@@ -306,22 +321,22 @@ sub PPIx::Regexp::Node::xplain_start {
                 chr( $ord ),
             ;;;;;;;;;
     }
-    
-    
+
+
     if( not $args{no_mods} ){
         if( $self->xmods_susceptible ){
             push @ret, xplain_modifiers( $self );
         }
-        
+
         push @ret, 'is_case_sensitive' if eval { $self->is_case_sensitive };
     }
 
-    
+
     my $con       = eval { $self->{content} };
     my $xmods     = eval { $self->xmods };
     my $semantics = eval { $$xmods{match_semantics} };
-    
-#~ msixpodualgcer 
+
+#~ msixpodualgcer
     my @cons      = grep { $$xmods{$_} } qw{ m s i x p o d u a l g c e r };
     if( $con and not $args{no_con_desc} ){
         @cons = map {  $con.$_ } grep { defined $_ } @cons, $semantics, '';;
@@ -347,7 +362,7 @@ sub PPIx::Regexp::Node::address {
     my( $self, %args ) = @_;
     my $addr = $$self{_xaddr} || '';
     return $addr if $addr;
-    
+
     my @pops =  $self;
     my $prev = $self;
     while( $prev = $prev->parent ){
@@ -377,27 +392,27 @@ sub PPIx::Regexp::xplain {
     my @ret;
     my $ret = { depth => $depth, start => [@ret], chits => \@ret };
     undef @ret;
-    
-    for my $child ( eval { $self->children } ){        
-        if( eval{ $child->children } ){ #$haskids 
+
+    for my $child ( eval { $self->children } ){
+        if( eval{ $child->children } ){ #$haskids
             push @ret, $child->xplain( %args, depth => $depth + 3 );
         } else {
             push @ret, $child->xplain( %args, depth => $depth + 2 ); ## GRRRRRR
         }
     }
-    
-    
+
+
     { ## the_ter_rible xfailures
-        
+
         my @ter = (
             "my \$regstr = join '', ",
         );;;
-        
+
         my $source = $self->source  ;
         my $sourceref = ref $source ;
         $sourceref = '' if not defined $sourceref;
         $source = '' if not defined $source;
-        
+
         if( $source ){
             my $rr = $self->xplain_desc("the_regex");
             if( $sourceref ){
@@ -414,7 +429,7 @@ sub PPIx::Regexp::xplain {
             $rr =~ s{^}{# }gm;
             push @ter, split /\n/, $rr;
         }
-        
+
     #~     if( my $fail = eval { $self->failures } ){
         if( my $totalfail = eval { $self->failures + $self->{xfailures} } ){
             push @ter, pp( $self );
@@ -423,9 +438,9 @@ sub PPIx::Regexp::xplain {
             my $xfail = eval { $self->{xfailures} } ||0;
             push @ter,"# failures=$totalfail == fail($fail) + xfail($xfail)";
             push @ter, $self->xplain_desc("parsing_failures");
-            
+
         }
-        
+
         push @ter, join '', "#r: ", join ' / ', grep { defined $_ } ref( $self ), $sourceref;
         push @ter, join '', "#r= ",Data::Dump::quote( $self->content );
         push @ter, '#  ';
@@ -500,13 +515,13 @@ sub PPIx::Regexp::Structure::Quantifier::xplain {
     push @_, ( no_con_desc => 1 ); #jic
     my $ret = &PPIx::Regexp::Token::Quantifier::xplain;
     my( $n, $comma, $m , @ncm ) = $self->xn_comma_m;
-    
+
     push @{$$ret{start}},
         $self->xplain_desc( join('', '{',@ncm,'}'), 'n', 'm' ),
         $self->xplain_desc( join('', '{',@ncm,'}'), $n, $m ),
         'L<perlre/Quantifiers>',
     ;;;;;;;
-    
+
     return $ret;
 }
 
@@ -522,7 +537,7 @@ sub PPIx::Regexp::Token::Quantifier::xplain {
     }elsif( $nsc eq '?'){
         push @{$$ret{start}}, $self->xplain_desc('least_possible');
     }
-    
+
     my $ps = $self->previous_sibling;
     if( eval { $ps->isa("PPIx::Regexp::Structure::Capture") } ){
         my $number   = eval { $ps->number } ;
@@ -535,7 +550,7 @@ sub PPIx::Regexp::Token::Quantifier::xplain {
     push @{$$ret{start}},
         $pp ?  $self->xplain_desc( 'm_pat_at_add' ) . $pp
             :  $self->xplain_desc( 'quant_f_not' ) ;;;
-    
+
 #~     $$ret{start_hr} = join '', "# ", '-' x  ( 2 * $$ret{depth} ) ;
 #~     $nsgreedy or $$ret{start_hr} = join '', "# ", '-' x  ( 2 * $$ret{depth} ) ;
     $$ret{start_hr} = $nsgreedy  ? '' : join '', "# ", '-' x  ( 2 * $$ret{depth} ) ;
@@ -549,7 +564,7 @@ sub PPIx::Regexp::Token::Greediness::xplain {
     my( $self, %args ) = @_;
     $args{no_con_desc}=1;
     my $ret   = $self->PPIx::Regexp::Node::xplain( %args );
-    push @{$$ret{start}},  $self->xplain_desc( ref($self).$self->{content} ); ## grr 
+    push @{$$ret{start}},  $self->xplain_desc( ref($self).$self->{content} ); ## grr
     push @{$$ret{start}},  $self->xplain_desc( 'm_pat_at_add' ) . $self->preceding_pattern_address;
     $ret;
 }
@@ -602,7 +617,7 @@ sub PPIx::Regexp::Token::CharClass::Simple::xplain {
         }
         push @{$$ret{start}}, xplain_modifiers( $self, { GONERS => [qw/ i /] } );
     }
-    
+
     $$ret{start_hr} = join '', "# ", '-' x  ( 2 * $$ret{depth} ) ;
     return $ret;
 }
@@ -641,7 +656,7 @@ sub PPIx::Regexp::Token::xplain {
     my( $self, %args ) = @_;
     my $ret   = $self->PPIx::Regexp::Node::xplain( %args, no_elements => 1, no_mods => 0, );
     my $con   = $self->{content};
-    
+
     if( $con =~ m{\\g\d+} ){
         push @{$$ret{start}}, (
             "TODO warn REPORT BUG \\g10 UNRECOGNIZED AS A PPIx::Regexp::Token::Backreference  misparsed as PPIx::Regexp::Token::Literal (\\g10 is not \\10, can't be treated as octal)",
@@ -649,7 +664,7 @@ sub PPIx::Regexp::Token::xplain {
         );
     }
     {   no warnings 'uninitialized';
-        
+
         if( $self->ancestor_isa('PPIx::Regexp::Structure::CharClass') and $con =~ m{^\\\d+$} and eval { $self->next_sibling->{content} eq '-' } ){
             push @{$$ret{start}}, 'ERROR warn TODO REPORTBUG octals NOT PARSED AS PPIx::Regexp::Node::Range';
         }
@@ -669,7 +684,7 @@ sub PPIx::Regexp::Token::Recursion::xplain {
     my $ret      = $self->PPIx::Regexp::Node::xplain( %args );
     my $absolute = eval { $self->absolute } ;
     my $number   = eval { $self->number } ;
-    
+
     if( $number ){
         my $padd = eval{ $self->find_recursion_number( $absolute )->address };
         if(  my ( $direction ) = $number =~ /^([\-\+])/ ){
@@ -683,7 +698,7 @@ sub PPIx::Regexp::Token::Recursion::xplain {
             push @{$$ret{start}}, $self->xplain_desc('n_exist_group')
         }
     }
-    
+
     if( my $name = eval { $self->name } ){
         push @{$$ret{start}}, 'name='.$name.join(' alias ','', '"(?&'.$name.')"', '"(?P>'.$name.')"' );
         my $padd = eval{ $self->find_recursion_number( $name )->address };
@@ -693,7 +708,7 @@ sub PPIx::Regexp::Token::Recursion::xplain {
             push @{$$ret{start}}, $self->xplain_desc('n_exist_group')
         }
     }
-    
+
     return $ret;
 }
 
@@ -703,7 +718,7 @@ sub PPIx::Regexp::Token::Backreference::xplain {
     my $ret      = &PPIx::Regexp::Node::xplain;
     my $absolute = eval { $self->absolute } ;
     my $number   = eval { $self->number } ;
-    
+
     if( $number ){
         my $padd = eval{ $self->find_recursion_number( $absolute )->address };
         if(  my ( $direction ) = $number =~ /^([\-\+])/ ){
@@ -717,19 +732,19 @@ sub PPIx::Regexp::Token::Backreference::xplain {
             push @{$$ret{start}}, $self->xplain_desc('n_exist_group');;
         }
     }
-    
+
     if( my $name = eval { $self->name } ){
         push @{$$ret{start}}, 'L<perlre/(?P=NAME)>';
 #~         push @{$$ret{start}}, 'L<perldebguts/NREF>'; ## TODO?? NREFF? NREFFL? NREFFU? NREFFA? unlinkable
         push @{$$ret{start}}, 'MATCH  "\\g{'.$name.'}"'.join(' alias ','', '"\\k<'.$name.'>"', '"(?&'.$name.')"', '"(?P>'.$name.')"' );
-        
+
         if( my $capture = $self->find_recursion_number( $name ) ){
             push @{$$ret{start}}, $self->xplain_desc('m_recur_ata').$capture ->address;
         } else {
             push @{$$ret{start}}, $self->xplain_desc('n_exist_group');
         }
     }
-    
+
     return $ret;
 }
 
@@ -746,12 +761,12 @@ sub PPIx::Regexp::Token::Condition::xplain {
     my $name     = eval { $self->name } ;
     my $con      = eval { $self->content } ;
     my $check_prefix = $self->xplain_desc('check_prefix');
-    
+
     if( my( $left, $right) = $con =~ m{
 ^
-\( 
+\(
     ( # $1
-        < 
+        <
     |
         '
     |
@@ -768,7 +783,7 @@ sub PPIx::Regexp::Token::Condition::xplain {
             ( $number ? 'n' : () ),
             ( $name ? 'NAME' : () ),
         ;;;;;;;;;;;;;
-        
+
         if($name and not $gotr) {
             $desc = "(<$desc>)" ;
         } else {
@@ -776,7 +791,7 @@ sub PPIx::Regexp::Token::Condition::xplain {
         }
         push @{$$ret{start}}, $self->xplain_desc( $desc );
     }
-    
+
     if( $number ){
         my $padd = eval{ $self->find_recursion_number( $absolute )->address };
 #~ 2013-08-11-20:40:29 apparently this will never happen because (?(1)) is legal but (?(-1)) is not legal
@@ -791,12 +806,12 @@ sub PPIx::Regexp::Token::Condition::xplain {
             push @{$$ret{start}}, $self->xplain_desc('n_exist_group')
         }
     }
-    
+
     if( $name ){
         push @{$$ret{start}}, 'L<perlre/(?(condition)yes-pattern)>';
 #~         push @{$$ret{start}}, $check_prefix.'"\\g{'.$name.'}"'.join(' aka ','', '"(?&'.$name.')"', '"(?P>'.$name.')"' );
         push @{$$ret{start}}, $self->xplain_desc('check_n_capture', ($name) x 3 );
-        
+
         if( my $capture = $self->find_recursion_number( $name ) ){
             push @{$$ret{start}}, $self->xplain_desc('cm_recur_ata', $capture ->address );
         } else {
@@ -813,7 +828,7 @@ sub PPIx::Regexp::Token::Condition::xplain {
         }
     }
     return $ret;
-} ## end of fudgy sub PPIx::Regexp::Token::Condition::xplain 
+} ## end of fudgy sub PPIx::Regexp::Token::Condition::xplain
 
 
 sub PPIx::Regexp::Element::find_recursion_number  {
@@ -822,7 +837,7 @@ sub PPIx::Regexp::Element::find_recursion_number  {
 
 sub PPIx::Regexp::Node::find_recursion_number {
     my( $self, $n ) = @_;
-    
+
     $self->root->find_first( sub {
         my $type = $_[1]->isa('PPIx::Regexp::Structure::NamedCapture')
                 || $_[1]->isa('PPIx::Regexp::Structure::Capture')
@@ -840,7 +855,7 @@ sub PPIx::Regexp::Node::find_recursion_number {
     }, );
 }
 
-sub PPIx::Regexp::Structure::Capture::xplain { 
+sub PPIx::Regexp::Structure::Capture::xplain {
     my( $self )  = @_;
     my $ret      = &PPIx::Regexp::Node::xplain;
     my $number   = eval { $self->number } ;
@@ -851,7 +866,7 @@ sub PPIx::Regexp::Structure::Capture::xplain {
     $name   and push @{$$ret{start}}, $name;
     delete $ret->{start_con};
     $$ret{start_hr} = join '', "# ", '-' x  ( 2 * $$ret{depth} ) ;
-    
+
 ## the fudgyness goes on
     $number and push @{$ret->{chits}[-1]{start}}, $self->xplain_desc('eo_grouping', $number );
     $name   and push @{$ret->{chits}[-1]{start}}, $self->xplain_desc('eo_grouping', $name );
@@ -863,17 +878,17 @@ sub PPIx::Regexp::Node::xplain {
     my( $self, %args ) = @_;
     my $depth = $args{depth} || 0;
     my $start = $self->xplain_start( %args );
-        
+
     my @chits;
     my $ret = { depth => $depth, start => $start , chits => \@chits };
     $$ret{start_hr} = join '', "# ", '-' x  ( $args{hr_length} ||  66 );
     $$ret{start_con} = Data::Dump::pp( $self->content ).',';
-    
+
     if( $args{no_elements} ){
         delete $$ret{chits};
         return $ret;
     }
-    
+
     for my $start ( eval { $self->start } ){
         push @chits, $start->xplain( %args, depth => $depth );
     }
@@ -885,7 +900,7 @@ sub PPIx::Regexp::Node::xplain {
     }
 
     for my $child ( eval { $self->children } ){
-        if( eval{ $child->children } ){ #$haskids 
+        if( eval{ $child->children } ){ #$haskids
             push @chits, $child->xplain( %args, depth => $depth + 3 );
         } else {
             push @chits, $child->xplain( %args, depth => $depth + 2 );
@@ -895,11 +910,11 @@ sub PPIx::Regexp::Node::xplain {
     for my $finish ( eval { $self->finish } ){
         push @chits, $finish->xplain( %args, depth => $depth );
     }
-    
+
     if( not @$ret{chits} ){
         delete $$ret{chits};
     }
-    
+
     return $ret;
 
 } ## end of sub PPIx::Regexp::Node::xplain
@@ -947,11 +962,11 @@ sub PPIx::Regexp::Token::Operator::xplain {
         push @{$$ret{start}},  @desc ;
         my $refpc = ref($self->parent). $self->{content};
         my ( $method, $inx ) = $self->_my_inx();
-        
+
         if( $refpc eq "PPIx::Regexp::Structure::CharClass".'^' and $method ne 'type' ){
             push @{$$ret{start}},  "ERROR warn TODO REPORT BUG THIS IS LITERAL ^ NOT NEGATION";
         }
-        if( $refpc eq "PPIx::Regexp::Structure::CharClass".'^' 
+        if( $refpc eq "PPIx::Regexp::Structure::CharClass".'^'
             and $method eq 'type'
             and eval { $self->parent->child( 0 )->content eq ']' }
         ){
@@ -964,7 +979,7 @@ sub PPIx::Regexp::Token::Operator::xplain {
     {
         push @{$$ret{start}}, @desc ;
     }
-    
+
     return $ret;
 }
 
@@ -1006,7 +1021,7 @@ sub PPIx::Regexp::Token::Backtrack::xplain {
 sub PPIx::Regexp::Token::Unknown::xplain {
     my( $self ) = @_;
     my $ret = &PPIx::Regexp::Node::xplain;
-    push @{$$ret{start}},  $self->xplain_desc( ref($self).$self->{content} ); ## grr 
+    push @{$$ret{start}},  $self->xplain_desc( ref($self).$self->{content} ); ## grr
     if( '?' eq $self->{content}  ){
         push @{$$ret{start}},  $self->xplain_desc( 'quant_f_not' ); ## meh
     }
@@ -1017,7 +1032,7 @@ sub PPIx::Regexp::Token::GroupType::Switch::xplain {
     push @_, ( no_con_desc => 1 ); ## no doubling
     goto &PPIx::Regexp::Node::xplain;
 }
-sub PPIx::Regexp::Token::Delimiter::xplain { 
+sub PPIx::Regexp::Token::Delimiter::xplain {
     push @_, ( no_con_desc => 1 ); ## s\\\sex  \ with parent modifiers becomes \s
     goto &PPIx::Regexp::Node::xplain;
 }
@@ -1032,7 +1047,7 @@ sub unicode10 {
     return $uc10;
 }
 
-sub PPIx::Regexp::Node::Range::xplain { 
+sub PPIx::Regexp::Node::Range::xplain {
 #~     my( $self ) = @_;
 #~     my $ret = &PPIx::Regexp::Node::xplain;
     my( $self , %args ) = @_;
@@ -1105,7 +1120,7 @@ sub PPIx::Regexp::Node::xmods_susceptible  {
 sub PPIx::Regexp::is_compile    { return !! $_[0]->type->content eq 'qr'                 }
 sub PPIx::Regexp::is_substitute { return !! $_[0]->replacement                           }
 sub PPIx::Regexp::is_match      { return !( $_[0]->is_substitute && $_[0]->is_compile )  }
-#~ sub PPIx::Regexp::xtype         { 
+#~ sub PPIx::Regexp::xtype         {
 #~     return $_[0]->is_substitute
 #~            ? 's'
 #~            : $_[0]->is_compile
@@ -1124,12 +1139,12 @@ sub PPIx::Regexp::xtype {
 #~ 2013-07-28-16:31:40
 #~     (?see-n) would return
 #~     my( $modorder, $modcount ) = [ qw/ s e e n / ], { s => 1 , e => 2, n => 0 }
-#~     
+#~
 #~     if( exists $modcount->{e} and  my $count = $modcount->{e} ){
 #~         ## we saw it, and it was on this many times
 #~     }
-#~     
-#~ 
+#~
+#~
 sub PPIx::Regexp::Token::Modifier::xmods_explode {
     my $notroot = int eval { $_[0] != $_[0]->root->modifier };
     my $con = $_[0]->{content};
@@ -1138,9 +1153,9 @@ sub PPIx::Regexp::Token::Modifier::xmods_explode {
     $con =~ s{
 ^
 (?:
-    \Q(?\E 
+    \Q(?\E
     |
-    \Q?\E 
+    \Q?\E
 )
 |
 (?:
@@ -1149,29 +1164,29 @@ sub PPIx::Regexp::Token::Modifier::xmods_explode {
     |\Q:)\E
 ) $
     }{}gx;
-    
+
     my( $onners, $offers ) = ( split( '-', $con ), '','' );
-    
+
     my @onners = $onners =~ m/(.)/g;
     my @offers = $offers =~ m/(.)/g;
-    
+
     $mods{$_}++ for @onners;
 #~     delete @mods{@offers} ; ## OFFERS TRUMP ONNERS
     $mods{$_}=0 for @offers ; ## OFFERS TRUMP ONNERS
-    
+
     @mods = ( @onners, @offers );
-    
+
     if( $notroot ){
         if( my @goners = grep { exists $mods{ $_ } }  '?', ':', '(', ')', ){ ## JIC
             delete @mods{ @goners } ;
             $_[0]->root->{xfailures}+=int@goners ; ## GRR
         }
     }
-    
+
     if( ( my @two = grep { $mods{$_} } qw/ a d l u / ) > 1 ){
         $_[0]->root->{xfailures}+=int@two; ## GRR
     }
-    
+
     return \@mods, \%mods;
 }
 
@@ -1204,23 +1219,23 @@ sub PPIx::Regexp::xmods_propagate {
 #~                     $node->root->{xmods}{p} = $p; ## cause (?p)/p is global, propagates UP
 #~                 }
             }
-            
+
             if( $kid->xmods_susceptible ){
                 delete $xmods->{o}; ## do not propagate, mods.o, error but not UNKNOWN , grrr
                 $kid->{xmods}={%{$xmods}};
             }
-            
+
             PPIx::Regexp::xmods_propagate( $kid , $depth + 1, $xmods );
         }
     }
     return;
 }
 
-### 
+###
 sub PPIx::Regexp::Element::xmerge_mods {
     my( $self , $old, $new ) = @_;
     my %mods = %$old;
-    
+
     while( my( $mod, $on ) = each %$new ){
         if( $on ){
             $mods{$mod} = $on;
@@ -1254,21 +1269,21 @@ sub PPIx::Regexp::Element::xmerge_mods {
 sub xplain_modifiers {
     my( $self , $OPTS ) = @_;
     undef $OPTS if not ref $OPTS;
-    
+
     my @ret;
     my $can_modifiers = $self->can('modifiers');
     my $specialEEE = 0;
-    
+
     my %seen;
     my %mods = eval { $self->xmods };
     my @mods = keys %mods;
-    
+
     if( !%mods and $can_modifiers  ){
         my( $arraymods, $hashmods ) = $self->xmods_explode;
         @mods = @$arraymods;
         %mods = %$hashmods;
     }
-    
+
 #~                             (?adlupimsx-imsx)    <<< perlre
 #~                             (?^alupimsx)         <<< perlre
 #~                            (?^msixp..ual)        <<< perlre
@@ -1289,11 +1304,11 @@ sub xplain_modifiers {
 #~         delete @mods{qw/ p /}; ## (?p) is global like /p is global in 5.16, so JIC don't propagate this past root
 #~ 2013-07-30-03:13:33 mistake is mistake, propagate it, don't explain it except in PPIx::Regexp::Token::Modifier
     }
-    
-    
+
+
     delete $mods{match_semantics}; ## not used by xplain_modifiers
 
-    
+
     if( grep { $self->isa($_) } qw/ PPIx::Regexp::Token::Literal PPIx::Regexp::Token::CharClass / ){
         delete @mods{qw/ p m s x /};
         ## LITERALS are susceptible to  ^ a d l u  for case-insensitivity BUT NOT p m s x
@@ -1306,7 +1321,7 @@ sub xplain_modifiers {
 #~         \p{Latin} is  perl_version_introduced=5.006001
 #~         BUT \p{Latin} currently doesn't get called modifiers
 
-#~ 2013-07-22-03:29:41 GUESSING!!!! 
+#~ 2013-07-22-03:29:41 GUESSING!!!!
     if( grep { $self->isa($_) } qw/ PPIx::Regexp::Token::Recursion / ){
 #~         delete @mods{qw/ p match_semantics /};
 #~ 2013-08-03-16:40:48
@@ -1314,7 +1329,7 @@ sub xplain_modifiers {
 #~ 1110
         undef %mods;
     }
-    
+
 #~     2013-08-03-16:43:40
 ## susceptible to /i , not /x, cause its a string-literal not a pattern
 #~         $ perl -e " print int m{(lc)(?i:\1)} for qw/ lclc lcLC / "
@@ -1323,28 +1338,28 @@ sub xplain_modifiers {
     if( grep { $self->isa( $_ ) } qw/ PPIx::Regexp::Token::Backreference / ){
         delete @mods{qw[ x m s p a d l u ]};
     }
-    
+
     delete @mods{ eval{ @{ $OPTS->{GONERS} } } }; ###### m/\w/i
     @mods = grep { exists $mods{$_ } } @mods;
-    
-    
+
+
 ### THE LEGITIMATE DOUBLES (/aa, /ee)
     if( my $count = $mods{a} ){
         if( $count > 1 ){
             push @ret, $self->xplain_desc("match_semantics.aa" ); ## TODO more
         }
     }
-    
+
     if( $specialEEE and $can_modifiers and  $mods{e} and 1 != ( my $count = $mods{e} ) ){
         push @ret, $self->xplain_desc( 'mods/s/ee', $count-1 );
     }
-    
-    
+
+
 MODSLOOP:
     for my $mod ( @mods ){
         my $count = $mods{ $mod }  ;
         my $sufix = $count ? $mod : '-'.$mod;
-        next if not defined $count; ## exists $mods{ $mod } ## cause /(?-x:i)/x 
+        next if not defined $count; ## exists $mods{ $mod } ## cause /(?-x:i)/x
         for my $prefix( @prefix ){
             next MODSLOOP if $seen{$mod};
             if( my @desc = $self->xplain_desc( "$prefix$sufix" ) ){
@@ -1353,26 +1368,26 @@ MODSLOOP:
                 next MODSLOOP;
             }
         }
-        
+
         if( $can_modifiers and !exists$seen{$mod}  ){
             $self->root->{xfailures} ++;
             push @ret, $self->xplain_desc( "$prefix[-2]unknown", $sufix, $sufix ); ## ICK!!!
         }
     } ## end MODSLOOP
-    
+
     if( $can_modifiers ){
         for my $twice ( qw/ d l u / ){
             if( exists $mods{$twice} and $mods{$twice} > 1 ){
                 push @ret, $self->xplain_desc("mods.nottwice", $twice ); ## perlbug ## $ perl -e " m/(?ad)/ "
             }
         }
-        
+
         if( $mods{a}  ){
             if(  $mods{a} > 2 or int( grep { exists $mods{$_} } qw/ d l u / ) ){
                 push @ret, $self->xplain_desc("mods.twicemax", "a" ); ## $ perl -e " m/(?aaa)/ "
             }
         }
-        
+
         if( ( my @two = grep { $mods{$_} } qw/ a d l u / ) > 1 ){
             $self->root->{xfailures}++; ## YUCK
             while( @two > 1 ){
@@ -1381,7 +1396,7 @@ MODSLOOP:
             }
         }
     }
-        
+
     return @ret;
 } ## end of sub xplain_modifiers
 
@@ -1390,9 +1405,9 @@ MODSLOOP:
 #~ todo sub ... xis_variable      determines if fixed width pattern or variable
 #~ todo sub ... xlength           ditches structure/modifiers to return length of literals and charclasses
 #~ todo sub ... xsets             nodes/groups literals seperated by operators
-#~ todo sub ... xis_fixed_width   determines if fixed width 
+#~ todo sub ... xis_fixed_width   determines if fixed width
 #~ todo sub ... xis_variable_width
-#~ todo sub ... quantized   
+#~ todo sub ... quantized
 #~ todo sub ... quantified  group quantified nodes, establish children/finish quantifier relationship,
 #~                          no extra indentation levels, no address changes???
 #~ todo         PPIx::Regexp::Structure::Quantized
@@ -1405,7 +1420,7 @@ sub PPIx::Regexp::Node::xis_fixed_width {
     my( $self ) = @_;
     my $is_variable = 0;
 #~     $is_variable++ if  $self->find_first( sub { return 1 if $_[1]->isa('PPIx::Regexp::Token::Quantifier') ; }, );
-    my $problems = $self->find( sub { 
+    my $problems = $self->find( sub {
             return 1 if grep { $_[1]->isa( $_ ) } qw/
                     PPIx::Regexp::Token::Quantifier
                     PPIx::Regexp::Structure::Quantifier
@@ -1425,7 +1440,7 @@ sub PPIx::Regexp::Node::xis_fixed_width {
             $is_variable++;
         }
     }
-    
+
     $is_variable and return ! $is_variable; ## SAVE SOME WORK
 
 #~ perl lolabe.pl  -t -ddr " m/(?<!a|aa)E/" >2
@@ -1472,8 +1487,8 @@ sub PPIx::Regexp::Node::xis_fixed_width {
         }
         pop @lengths;
     }
-        
-## grr, too many tokens can_be_quantified 
+
+## grr, too many tokens can_be_quantified
 #~ PPIx::Regexp::Token::Structure can_be_quantified even though its structural
 #~ PPIx::Regexp::Token::Operator can_be_quantified even though its an OPERATOR
     return ! $is_variable;
@@ -1485,7 +1500,7 @@ sub PPIx::Regexp::Structure::Assertion::xplain {
     my $ret = $self->PPIx::Regexp::Structure::xplain( %args );
     if( not $self->xis_fixed_width ){
         push @{$$ret{start}},  $self->xplain_desc('errn'.$self->type->content);
-    }        
+    }
     return $ret;
 }
 
@@ -1502,7 +1517,7 @@ sub xdodgy_unicode_override {
 #~ perl lolabe.pl -t -ddr "m/\pN\p{N}\x{100}\N{Kelvin}/d" >2
     my $unicode = 0;
     my %why;
-    $self->find( sub { 
+    $self->find( sub {
 #~         $unicode += grep { $_[1]->isa( $_ ) } qw/ PPIx::Regexp::Structure::RegexSet / ;
         if( $_[1]->isa('PPIx::Regexp::Structure::RegexSet') ){
             $unicode++;
@@ -1576,7 +1591,7 @@ sub PPIx::Regexp::Token::GroupType::NamedCapture::xplain {
 #~ 2013-08-11-03:18:57
 #~ c0 PPIx::Regexp::Structure::RegexSet
 ##
-#~ sspm PPIx::Regexp::Structure::Assertion PPIx::Regexp::Structure::BranchReset PPIx::Regexp::Structure::Capture PPIx::Regexp::Structure::CharClass PPIx::Regexp::Structure::Code PPIx::Regexp::Structure::Main PPIx::Regexp::Structure::Modifier PPIx::Regexp::Structure::Quantifier PPIx::Regexp::Structure::Subexpression PPIx::Regexp::Structure::Switch PPIx::Regexp::Structure::Unknown 
+#~ sspm PPIx::Regexp::Structure::Assertion PPIx::Regexp::Structure::BranchReset PPIx::Regexp::Structure::Capture PPIx::Regexp::Structure::CharClass PPIx::Regexp::Structure::Code PPIx::Regexp::Structure::Main PPIx::Regexp::Structure::Modifier PPIx::Regexp::Structure::Quantifier PPIx::Regexp::Structure::Subexpression PPIx::Regexp::Structure::Switch PPIx::Regexp::Structure::Unknown
 ##
 #~ 2013-08-11-02:32:41
 ##
@@ -1612,7 +1627,7 @@ sub PPIx::Regexp::Token::GroupType::NamedCapture::xplain {
 #~ 2013-08-11-03:42:02
 #~ c1 PPIx::Regexp::Token::CharClass::Simple
 ##
-#~ sspm PPIx::Regexp::Token::Assertion PPIx::Regexp::Token::Backtrack PPIx::Regexp::Token::CharClass PPIx::Regexp::Token::Code PPIx::Regexp::Token::Comment PPIx::Regexp::Token::Control PPIx::Regexp::Token::Greediness PPIx::Regexp::Token::GroupType PPIx::Regexp::Token::Literal PPIx::Regexp::Token::Modifier PPIx::Regexp::Token::Operator PPIx::Regexp::Token::Quantifier PPIx::Regexp::Token::Reference PPIx::Regexp::Token::Structure PPIx::Regexp::Token::Unknown PPIx::Regexp::Token::Unmatched PPIx::Regexp::Token::Whitespace 
+#~ sspm PPIx::Regexp::Token::Assertion PPIx::Regexp::Token::Backtrack PPIx::Regexp::Token::CharClass PPIx::Regexp::Token::Code PPIx::Regexp::Token::Comment PPIx::Regexp::Token::Control PPIx::Regexp::Token::Greediness PPIx::Regexp::Token::GroupType PPIx::Regexp::Token::Literal PPIx::Regexp::Token::Modifier PPIx::Regexp::Token::Operator PPIx::Regexp::Token::Quantifier PPIx::Regexp::Token::Reference PPIx::Regexp::Token::Structure PPIx::Regexp::Token::Unknown PPIx::Regexp::Token::Unmatched PPIx::Regexp::Token::Whitespace
 #~ 2013-08-11-02:39:11
 #~ length of structural elements to be removed
 #~ to be subtracted from length of content
@@ -1622,11 +1637,11 @@ sub xstf_length {
     $depth ||= 0;
     my $length = 0;
     my @kids = eval { $node->elements };
-    
+
     if( not @kids ){
         @kids = map { eval { $node->$_ } } qw{ start type children finish };
     }
-    
+
     my $count_content = grep {
         !! $node->isa($_)
     } qw'
@@ -1644,14 +1659,14 @@ sub xstf_length {
         PPIx::Regexp::Token::CharClass
         PPIx::Regexp::Token::Literal
         ';;;;
-    
+
     if( $count_once and not @kids  and not $count_content ){ ## ICK! \w has length 2 but quantifies as 1
         return length( $node->content )-1; ## \x{} has length > 2 but quantifies as 1
     }
     if( $count_content ){
         return $length + length( $node->content ) - $count_once; ## cause charclasses/regexsets quantify as 1
     }
-    
+
     for my $kid ( @kids ){
         if( $kid->address =~ m{/[STF]\d+\s$}i ){
             $length += length $kid->content;
@@ -1660,8 +1675,8 @@ sub xstf_length {
             $length += xstf_length( $kid, $depth+1 );
         }
     }
-    
+
     return $length;
 } ## end of sub xstf_length
 #~ self-fulfilling enlightenment or gratifying ignorance.
-
+ 
