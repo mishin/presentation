@@ -15,3 +15,7 @@ https://metacpan.org/source/DCONWAY/Lingua-Romana-Perligata-0.50
 ```
 perl -M"re debug" 01_simple_regex.pl   
 ```
+
+4. Прочитать книгу
+------------------------
+http://lib.alpinadigital.ru/library/book/2951
