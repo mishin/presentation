@@ -19,3 +19,15 @@ perl -M"re debug" 01_simple_regex.pl
 4. Прочитать книгу
 ------------------------
 http://lib.alpinadigital.ru/library/book/2951
+
+5. Пока есть на наброски для презентаций: 
+------------------------
+
+“Рекурсия в регулярных выражениях” 
+------------------------
+(фактически это будут выдержки из документации perlre
+https://metacpan.org/pod/distribution/POD2-RU/lib/POD2/RU/perlre.pod )
+“Vroom - Slide Shows in Vim”
+------------------------
+(а здесь будет скорее всего улучшенный перевод
+http://blogs.perl.org/users/buddy_burden/2013/06/slideshows-in-vroom-so-noted.html )
