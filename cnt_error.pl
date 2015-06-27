@@ -1,0 +1,6 @@
+use strict;
+use warnings;
+
+my $mem=q/Memcached::libmemcached::memcached_result_st, Memcached::libmemcached::memcached_version, Memcached::libmemcached::memcached_pool, Memcached::libmemcached::memcached_auto, Memcached::libmemcached::memcached_behavior, Memcached::libmemcached::memcached_set, Memcached::libmemcached::memcached_create, Memcached::libmemcached::memcached_user_data, Memcached::libmemcached::memcached_get, Memcached::libmemcached::memcached_analyze, Memcached::libmemcached::memcached_verbosity, Memcached::libmemcached::memcached_flush_buffers, Memcached::libmemcached::memcached_flush, Memcached::libmemcached::memcached_quit, Memcached::libmemcached::memcached_generate_hash_value, Memcached::libmemcached::memcached_stats, Memcached::libmemcached::memcached_dump, Memcached::libmemcached::memcached_delete, Memcached::libmemcached::constants, Memcached::libmemcached::memcached_memory_allocators, Memcached::libmemcached::memcached_sasl, Memcached::libmemcached::memcached_servers, Memcached::libmemcached::API, Memcached::libmemcached::memcached_strerror, Memcached::libmemcached::memcached_callback, Memcached::libmemcached::memcached_server_st/;
+my @mem =split /,/,$mem;
+print scalar @mem;
