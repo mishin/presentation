@@ -124,3 +124,47 @@ complete -F _pshe пше
 	type = cat-file -t
 	dump = cat-file -p
 ````
+итак под винду взял 
+http://rakudo.org/downloads/star/rakudo-star-2015.03-x86%20(no%20JIT).msi
+используя примеры http://examples.perl6.org/ и https://github.com/perl6/perl6-examples/blob/3d47aed106ac1e033c57150906a683e466ca83b0/categories/cookbook/09directories/09-06-filenames-matching-pattern.pl
+я передалал мой скрипт concat_sql_files.pl
+https://gist.github.com/mishin/43f69757aea79f2e4d25
+на concat_sql_files.p6
+https://gist.github.com/mishin/71aadf3559674b04f4d1
+кода оказалось значительно меньше
+
+https://gist.github.com/mishin/43f69757aea79f2e4d25
+
+concat_sql_files.pl
+
+https://gist.github.com/mishin/71aadf3559674b04f4d1
+
+concat_sql_files.p6
+
+
+http://doc.perl6.org/language/io
+
+найти бы радактор, умеющий подсвечивать такой код?
+vim
+
+https://github.com/perl6/perl6-examples/blob/3d47aed106ac1e033c57150906a683e466ca83b0/categories/cookbook/09directories/09-06-filenames-matching-pattern.pl
+
+09-06-filenames-matching-pattern.pl
+
+используя примеры
+http://examples.perl6.org/
+я передалал мой скрипт 
+https://gist.github.com/mishin/43f69757aea79f2e4d25
+concat_sql_files.pl
+
+https://github.com/perl6/perl6-examples/blob/3d47aed106ac1e033c57150906a683e466ca83b0/categories/cookbook/09directories/09-05-all-files-dir.pl
+
+
+
+
+C:\rakudo\bin\perl6.bat c:\Users\rb102870\Documents\job\30062015\perl6\bin\01_mytest.p6
+
+http://perl6.org/documentation/
+
+http://learnxinyminutes.com/docs/perl6/
+
