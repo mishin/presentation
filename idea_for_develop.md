@@ -168,3 +168,6 @@ http://perl6.org/documentation/
 
 http://learnxinyminutes.com/docs/perl6/
 
+
+
+Writing the WVARCHAR column CD_ID into a VARCHAR database column can cause data loss or corruption due to character set conversions.
