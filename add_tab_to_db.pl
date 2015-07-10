@@ -81,8 +81,9 @@ sub main {
 sub add_file_to_db {
     my ($options) = @_;
     my $filename  = $options->{file};
-    my $tab_data  = read_scv($filename);
-    add_data_to_banners($tab_data);
+    my $tab_data  = read_csv($filename);
+    add_data_to_banners($tab_data)
+      or die "Unable to add data to banners table $!";
     my $msg = qq{read $filename with data } . Dumper($tab_data);
     INFO($msg);
 }
@@ -98,19 +99,19 @@ sub add_data_to_banners {
     die "Couldn't prepare queries; aborting" unless defined $insert_handle;
 
     #  start new transaction #
-    $dbh->begin_work();    #or perhaps $dbh->do("BEGIN");
+    $dbh->begin_work();
 
     foreach my $row (@$data) {
         $insert_handle->execute(@$row);
     }
 
     #  end the transaction #
-    $dbh->commit();        #or perhaps $dbh->do("COMMIT");
+    $dbh->commit();
     my $rc = $dbh->disconnect;
     return $rc;
 }
 
-sub read_scv {
+sub read_csv {
     my ($file) = @_;
     my $csv = Text::CSV->new(
         {

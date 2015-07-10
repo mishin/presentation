@@ -82,36 +82,32 @@ sub add_file_to_db {
     my ($options) = @_;
     my $filename  = $options->{file};
     my $tab_data  = read_scv($filename);
-    add_data_to_banners($tab_data);
+    add_data_to_banners($tab_data) or die "Unable to add data to banners table $!";
     my $msg = qq{read $filename with data } . Dumper($tab_data);
     INFO($msg);
 }
 
-sub add_data_to_banners{
-	my ($data)=@_;
-	
-my $dbh = DBI->connect(          
-    "dbi:SQLite:dbname=test.db", 
-    "",
-    "",
-    { RaiseError => 1}
-) or die $DBI::errstr;	
+sub add_data_to_banners {
+    my ($data) = @_;
 
-my $insert_handle = $dbh->prepare('INSERT INTO banners VALUES (?,?,?)'); 	
- die "Couldn't prepare queries; aborting" unless defined $insert_handle;
- 	 
-#  start new transaction #
-$dbh->begin_work();  #or perhaps $dbh->do("BEGIN");
+    my $dbh =
+      DBI->connect( "dbi:SQLite:dbname=test.db", "", "", { RaiseError => 1 } )
+      or die $DBI::errstr;
 
-foreach my $row (@$data)
-{
-   $insert_handle->execute(@$row);
-}
+    my $insert_handle = $dbh->prepare('INSERT INTO banners VALUES (?,?,?)');
+    die "Couldn't prepare queries; aborting" unless defined $insert_handle;
 
-#  end the transaction #
-$dbh->commit();   #or perhaps $dbh->do("COMMIT");
-my $rc  = $dbh->disconnect;	
-return $rc;
+    #  start new transaction #
+    $dbh->begin_work();
+
+    foreach my $row (@$data) {
+        $insert_handle->execute(@$row);
+    }
+
+    #  end the transaction #
+    $dbh->commit();
+    my $rc = $dbh->disconnect;
+    return $rc;
 }
 
 sub read_scv {
@@ -120,7 +116,7 @@ sub read_scv {
         {
             binary    => 1,
             auto_diag => 1,
-            sep_char => "\t",
+            sep_char  => "\t",
         }
     );
     my @result = ();
