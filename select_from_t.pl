@@ -11,13 +11,17 @@ my $dbh = DBI->connect(
 ) or die $DBI::errstr;
 
 
-$dbh->do(<<'END_SQL');
-create table banners (
-     banner_id int unsigned not null primary key,
-     title varchar(200),
-     url varchar(4000)
-)
-END_SQL
-
+my $stmt = qq(SELECT banner_id, title, url from banners;);
+my $sth = $dbh->prepare( $stmt );
+my $rv = $sth->execute() or die $DBI::errstr;
+if($rv < 0){
+   print $DBI::errstr;
+}
+while(my @row = $sth->fetchrow_array()) {
+      print "banner_id = ". $row[0] . "\n";
+      print "title = ". $row[1] ."\n";
+      print "url = ". $row[2] ."\n\n";
+}
+print "Operation done successfully\n";
 
 $dbh->disconnect();
