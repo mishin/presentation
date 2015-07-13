@@ -46,8 +46,9 @@ use Pod::Usage;
 use Cwd;
 use FindBin '$RealBin';
 use Log::Log4perl qw(:easy);
-
-use Path::Tiny qw(path);
+use Text::CSV;
+use Data::Dumper;
+use DBI;
 
 exit main();
 
@@ -79,19 +80,47 @@ sub main {
 
 sub add_file_to_db {
     my ($options) = @_;
-    my $filename = $options->{file};
-    my $tab_date=read_scv($filename);
-
-    my $msg = qq{read $filename with data }. dumper($tab_date);
+    my $filename  = $options->{file};
+    my $tab_data  = read_scv($filename);
+    add_data_to_banners($tab_data);
+    my $msg = qq{read $filename with data } . Dumper($tab_data);
     INFO($msg);
 }
 
+sub add_data_to_banners{
+	my ($data)=@_;
+	
+my $dbh = DBI->connect(          
+    "dbi:SQLite:dbname=test.db", 
+    "",
+    "",
+    { RaiseError => 1}
+) or die $DBI::errstr;	
+
+my $insert_handle = $dbh->prepare('INSERT INTO banners VALUES (?,?,?)'); 	
+ die "Couldn't prepare queries; aborting" unless defined $insert_handle;
+ 	 
+#  start new transaction #
+$dbh->begin_work();  #or perhaps $dbh->do("BEGIN");
+
+foreach my $row (@$data)
+{
+   $insert_handle->execute(@$row);
+}
+
+#  end the transaction #
+$dbh->commit();   #or perhaps $dbh->do("COMMIT");
+my $rc  = $dbh->disconnect;	
+return $rc;
+}
+
 sub read_scv {
-	my ($file)=@_;
+    my ($file) = @_;
     my $csv = Text::CSV->new(
         {
-            binary           => 1,
-            auto_diag        => 1,
+            binary    => 1,
+            auto_diag => 1,
+            sep_char => "\t",
         }
     );
     my @result = ();

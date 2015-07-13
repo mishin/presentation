@@ -87,32 +87,27 @@ sub add_file_to_db {
     INFO($msg);
 }
 
-sub add_data_to_banners{
-	my ($data)=@_;
-	
-my $dbh = DBI->connect(          
-    "dbi:SQLite:dbname=test.db", 
-    "",
-    "",
-    { RaiseError => 1}
-) or die $DBI::errstr;	
+sub add_data_to_banners {
+    my ($data) = @_;
 
-my $insert_handle = $dbh->prepare('INSERT INTO banners VALUES (?,?,?)'); 	
- die "Couldn't prepare queries; aborting" unless defined $insert_handle;
+    my $dbh =
+      DBI->connect( "dbi:SQLite:dbname=test.db", "", "", { RaiseError => 1 } )
+      or die $DBI::errstr;
 
- $insert_handle->execute($first, $last, $department) or return 0;
-	 
-#  start new transaction #
-$dbh->begin_work();  #or perhaps $dbh->do("BEGIN");
+    my $insert_handle = $dbh->prepare('INSERT INTO banners VALUES (?,?,?)');
+    die "Couldn't prepare queries; aborting" unless defined $insert_handle;
 
-foreach my $row (@$data)
-{
-   $sth->execute(@$row);
-}
+    #  start new transaction #
+    $dbh->begin_work();    #or perhaps $dbh->do("BEGIN");
 
-#  end the transaction #
-$dbh->commit();   #or perhaps $dbh->do("COMMIT");
-	
+    foreach my $row (@$data) {
+        $insert_handle->execute(@$row);
+    }
+
+    #  end the transaction #
+    $dbh->commit();        #or perhaps $dbh->do("COMMIT");
+    my $rc = $dbh->disconnect;
+    return $rc;
 }
 
 sub read_scv {
@@ -121,6 +116,7 @@ sub read_scv {
         {
             binary    => 1,
             auto_diag => 1,
+            sep_char  => "\t",
         }
     );
     my @result = ();
