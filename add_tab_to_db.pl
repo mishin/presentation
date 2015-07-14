@@ -48,6 +48,7 @@ use FindBin '$RealBin';
 use Log::Log4perl qw(:easy);
 use Text::CSV;
 use Data::Dumper;
+use DBI;
 
 exit main();
 
@@ -80,10 +81,38 @@ sub main {
 sub add_file_to_db {
     my ($options) = @_;
     my $filename  = $options->{file};
-    my $tab_date  = read_scv($filename);
-
-    my $msg = qq{read $filename with data } . Dumper($tab_date);
+    my $tab_data  = read_scv($filename);
+    add_data_to_banners($tab_data);
+    my $msg = qq{read $filename with data } . Dumper($tab_data);
     INFO($msg);
+}
+
+sub add_data_to_banners{
+	my ($data)=@_;
+	
+my $dbh = DBI->connect(          
+    "dbi:SQLite:dbname=test.db", 
+    "",
+    "",
+    { RaiseError => 1}
+) or die $DBI::errstr;	
+
+my $insert_handle = $dbh->prepare('INSERT INTO banners VALUES (?,?,?)'); 	
+ die "Couldn't prepare queries; aborting" unless defined $insert_handle;
+
+ $insert_handle->execute($first, $last, $department) or return 0;
+	 
+#  start new transaction #
+$dbh->begin_work();  #or perhaps $dbh->do("BEGIN");
+
+foreach my $row (@$data)
+{
+   $sth->execute(@$row);
+}
+
+#  end the transaction #
+$dbh->commit();   #or perhaps $dbh->do("COMMIT");
+	
 }
 
 sub read_scv {
