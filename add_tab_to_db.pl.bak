@@ -46,8 +46,8 @@ use Pod::Usage;
 use Cwd;
 use FindBin '$RealBin';
 use Log::Log4perl qw(:easy);
-use Text::CSV;
-use Data::Dumper;
+
+use Path::Tiny qw(path);
 
 exit main();
 
@@ -79,19 +79,19 @@ sub main {
 
 sub add_file_to_db {
     my ($options) = @_;
-    my $filename  = $options->{file};
-    my $tab_date  = read_scv($filename);
+    my $filename = $options->{file};
+    my $tab_date=read_scv($filename);
 
-    my $msg = qq{read $filename with data } . Dumper($tab_date);
+    my $msg = qq{read $filename with data }. dumper($tab_date);
     INFO($msg);
 }
 
 sub read_scv {
-    my ($file) = @_;
+	my ($file)=@_;
     my $csv = Text::CSV->new(
         {
-            binary    => 1,
-            auto_diag => 1,
+            binary           => 1,
+            auto_diag        => 1,
         }
     );
     my @result = ();
