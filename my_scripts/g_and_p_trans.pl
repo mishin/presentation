@@ -12,14 +12,17 @@ use strict;
 use warnings;
 
 BEGIN {
-    use Devel::CheckOS qw(os_is);
+#    use Devel::CheckOS qw(os_is);
     require 'open.pm';
-    if ( os_is('Unix') ) {
+#    if ( os_is('Unix') ) {
         open::import( 'open', 'locale' );
-    }
+#    }
 }
 
 use Modern::Perl;
+no warnings 'experimental::smartmatch';
+
+#use Bing::Translate;
 use LWP::UserAgent;
 
 use Getopt::Long;
@@ -46,6 +49,7 @@ my $from        = 'fr';
 my $to          = 'ru';
 my $text        = 'yapc';
 my $url_mashine = 'http://translate.google.com/translate_t?langpair=';
+my $url_bing_mashine = 'http://translate.google.com/translate_t?langpair=';
 
 GetOptions(
     'help|?' => \$help,
@@ -66,12 +70,13 @@ sub main {
     my ($in_param)        = @_;
     my $translate_ru_text = translate_ru_text($in_param);
     my $google_text       = translate_text($in_param);
-    my $out_text =
-      decode_entities("{g}:${google_text}{t}:${translate_ru_text}");
+    # my $bing_text       = translate_bing($in_param);
+    #my $out_text = decode_entities("{g}:${google_text}{t}:${translate_ru_text}");
+    my $out_text = decode_entities("{g}:${google_text}");
 
-    if ( os_is('MSWin32') ) {
-        $out_text = encode( term_encoding, $out_text );
-    }
+#    if ( os_is('MSWin32') ) {
+#        $out_text = encode( term_encoding, $out_text );
+#    }
     say $out_text;
     return 1;
 }
@@ -157,9 +162,8 @@ sub fill_translate_ru_page {
 key="";
 var globalJsonVar;
  uTrType = "";
-    visitLink = false;
-    closeTranslationLinks();
-    var dir = GetDir();
+ visitLink=false; 
+    //var dir = GetDir();
     var text = rtrim($("#ctl00_SiteContent_sourceText").val());
     text = encodeURIComponent(text).split("'").join("\\'");
     var templ = $("#template").val();
