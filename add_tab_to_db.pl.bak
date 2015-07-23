@@ -11,10 +11,22 @@ add_tab_to_db.pl - add tab separated file to Database
     -v, --verbose  use verbose mode
     --help         print this help message
     --file         tab separated file
-
+    --action       create: create table
+                   select: select from table
+                   drop:  drop table
 Examples:
 
+    #insert data
     perl add_tab_to_db.pl --file clients_banners.csv
+    
+    #create table
+    perl add_tab_to_db.pl --action create
+    
+    #select from table
+    perl add_tab_to_db.pl --action select
+
+    #drop table
+    perl add_tab_to_db.pl --action drop
 
 =head1 DESCRIPTION
 
@@ -68,35 +80,56 @@ sub main {
         }
     );
 
-    #or you can pass it from command line
     my %options = ( 'verbose' => $verbose, );
-    GetOptions( \%options, 'verbose', 'file=s', ) or pod2usage(1);
-    if ( !exists $options{file} ) {
-        pod2usage(1);
+    GetOptions( \%options, 'verbose', 'file=s', 'action=s' ) or pod2usage(1);
+    if ( !exists $options{file} && !exists $options{action} ) {
+        if ( defined $ARGV[0] ) {
+            $options{file} = $ARGV[0];
+        }
+        else {
+            pod2usage(1);
+        }
     }
-    add_file_to_db( \%options );
+    my $dbh = make_connect();
+    if ( exists $options{file} ) {
+        add_file_to_db( \%options, $dbh );
+    }
+    if ( exists $options{action} ) {
+        my $disp = make_dispatch_table();
+        if ( defined $disp->{ $options{action} } ) {
+            $disp->{ $options{action} }->($dbh);
+        }
+        else {
+            die "$options{action}:no such action!";
+        }
+    }
+
+    $dbh->disconnect();
     return 0;
 }
 
+sub make_dispatch_table {
+    my $dispatch = {
+        create => \&create_table,
+        select => \&select_from_table,
+        drop   => \&drop_table
+    };
+    return $dispatch;
+}
+
 sub add_file_to_db {
-    my ($options) = @_;
-    my $filename  = $options->{file};
-    my $tab_data  = read_scv($filename);
-    add_data_to_banners($tab_data) or die "Unable to add data to banners table $!";
+    my ( $options, $dbh ) = @_;
+    my $filename = $options->{file};
+    my $tab_data = read_csv($filename);
+    add_data_to_banners( $tab_data, $dbh )
+      or die "Unable to add data to banners table $!";
     my $msg = qq{read $filename with data } . Dumper($tab_data);
     INFO($msg);
 }
 
 sub add_data_to_banners {
-    my ($data) = @_;
-
-    my $dbh =
-      DBI->connect( "dbi:SQLite:dbname=test.db", "", "", { RaiseError => 1 } )
-      or die $DBI::errstr;
-
+    my ( $data, $dbh ) = @_;
     my $insert_handle = $dbh->prepare('INSERT INTO banners VALUES (?,?,?)');
-    die "Couldn't prepare queries; aborting" unless defined $insert_handle;
-
     #  start new transaction #
     $dbh->begin_work();
 
@@ -106,11 +139,14 @@ sub add_data_to_banners {
 
     #  end the transaction #
     $dbh->commit();
+    
+    my $cnt=@$data+0;
+    print "$cnt rows added to table banners\n";
     my $rc = $dbh->disconnect;
     return $rc;
 }
 
-sub read_scv {
+sub read_csv {
     my ($file) = @_;
     my $csv = Text::CSV->new(
         {
@@ -133,3 +169,50 @@ sub read_scv {
     return \@result;
 
 }
+
+sub make_connect {
+    my $dbh =
+      DBI->connect( "dbi:SQLite:dbname=test.db", "", "", { RaiseError => 1 } )
+      or die $DBI::errstr;
+    return $dbh;
+}
+
+sub create_table {
+    my ($dbh) = @_;
+    $dbh->do(<<'END_SQL');
+create table banners (
+     banner_id int unsigned not null primary key,
+     title varchar(200),
+     url varchar(4000)
+)
+END_SQL
+
+print "table banners created\n";
+}
+
+sub select_from_table {
+    my ($dbh) = @_;
+    my $stmt  = qq(SELECT banner_id, title, url from banners;);
+    my $sth   = $dbh->prepare($stmt);
+    my $rv = $sth->execute() or die $DBI::errstr;
+    if ( $rv < 0 ) {
+        print $DBI::errstr;
+    }
+    while ( my @row = $sth->fetchrow_array() ) {
+        print "banner_id = " . $row[0] . "\n";
+        print "title = " . $row[1] . "\n";
+        print "url = " . $row[2] . "\n\n";
+    }
+    print "Select done successfully\n";
+
+}
+
+sub drop_table {
+    my ($dbh) = @_;
+    $dbh->do(<<'END_SQL');
+drop table banners
+END_SQL
+
+print "table banners dropped\n";
+}
+
