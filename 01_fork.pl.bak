@@ -1,0 +1,20 @@
+use v5.10;
+
+sub step_by_n {
+    my ($start,$end) = @_;
+    say "start step_by_n($start,$end)";
+    for my $k ( $start .. $end ) {
+        say "from step_by_n($start,$end): $k";
+	if ($start<=$end){
+        step_by_n( $k + 1,$end );
+}
+        #fork();
+    }
+}
+
+#sleep 60*60*24;
+#my $n = 25;
+#my $sum = ( $n * ( $n + 1 ) ) / 2;
+#printf "%s \n", $sum;
+
+step_by_n(25,25);
