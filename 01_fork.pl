@@ -1,3 +1,4 @@
+#!/usr/bin/env perl
 use v5.10;
 
 my ( $init_start, $init_end )=@ARGV;
