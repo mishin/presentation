@@ -17,11 +17,5 @@ sub step_by_n {
     }
 }
 
-#perl 01_fork.pl 1 25|grep from|wc -l
-#33554431
-
 #sleep 60*60*24;
-#my $n = 25;
-#my $sum = ( $n * ( $n + 1 ) ) / 2;
-#printf "%s \n", $sum;
 
