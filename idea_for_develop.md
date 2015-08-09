@@ -14,6 +14,13 @@ https://metacpan.org/source/DCONWAY/Lingua-Romana-Perligata-0.50
 ------------------------
 ```
 perl -M"re debug" 01_simple_regex.pl   
+
+отладка скриптов в 1 строку:
+
+ perl -MO=Deparse signatures.pl
+
+http://perltricks.com/article/89/2014/5/15/Debunk-Perl-s-magic-with-B--Deparse
+
 ```
 
 4. Прочитать книгу
