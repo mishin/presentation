@@ -1,0 +1,57 @@
+<html>
+<head>
+<title>Plain Make config</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<script>
+function navigate(e) {
+    var keynum = (window.event) // IE
+        ? e.keyCode
+        : e.which;
+    if (keynum == 8) {
+        window.location = "002" + ".html";
+        return false;
+    }
+    if (keynum == 13 || keynum == 32) {
+        window.location = "004" + ".html";
+        return false;
+    }
+    if (keynum == 73 || keynum == 105) {
+        window.location = "index.html";
+        return false;
+    }
+    return true;
+}
+</script>
+</head>
+<body onkeydown="return navigate(event)">
+<div style="border-style: solid ; border-width: 2px ; font-size: x-large">
+<pre>
+     \---- config
+     # Basic config options.
+     title: Recursion in Regex!
+     indent: 5
+     height: 22
+     width: 85
+     skip: 0
+
+     vim: vim -S ./.vimrc
+
+     vimrc: |
+       set statusline=%-3f\ \ \ \ \ Recursioni\ in\ Regex\ (or:\ How\ parse\ IBM\ Datastage\ dsx\ file)
+       map &lt;C-C&gt; 3&lt;C-^&gt;&lt;Ctrl-Home&gt;
+       map &lt;C-O&gt; 2&lt;C-^&gt;&lt;Ctrl-Home&gt;
+       map &lt;C-E&gt; 5&lt;C-^&gt;&lt;Ctrl-Home&gt;
+       map &lt;C-P&gt; 11&lt;C-^&gt;&lt;Ctrl-Home&gt;
+       map MSM ouse Method::Signatures::Modifiers;&lt;Esc&gt;
+
+
+
+
+</pre>
+</div>
+<br>
+<div style="font-size: small">
+<p>It is config here</p><p></p>
+</div>
+</body>
+</html>
