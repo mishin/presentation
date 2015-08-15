@@ -103,9 +103,9 @@ for my $word (qw(Vroom totally rocks!)) {
 * http://github.com/ingydotnet/vroom-pm/
 
 ----
-== Vroom as HTML
+== This presentation
 
-* http://ingydotnet.github.com/vroom-pm/
+* https://github.com/mishin/presentation/tree/master/vroom_is_simple
 
 ----
 == The End

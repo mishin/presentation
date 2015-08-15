@@ -147,9 +147,9 @@ for my $word (qw(Vroom totally rocks!)) {
 * http://github.com/ingydotnet/vroom-pm/
 
 ----
-== Vroom as HTML
+== This presentaion
 
-* http://ingydotnet.github.com/vroom-pm/
+* https://github.com/mishin/presentation/tree/master/regex_recursion
 
 ----
 == The End
