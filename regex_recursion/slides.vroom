@@ -106,45 +106,17 @@ brackets
 
 ---- include amelia_9.pl
 ---- perl,i4
-
 ---- include amelia_10.pl
 ----
-== Slideshows in Vim
-
-* Hate using PowerPoint or HTML Slides for Talks?
-+* Use Vroom!
-
-+* You can write you slides in Vim...
-* ...and present them in Vim!
-
-----
-== Getting Started
-
-* Write a file called 'slides.vroom'.
-  * Do this in a new directory.
-* Run 'vroom vroom'.
-* Voilà!
-
-----
-== Navigation
-
-* Hit <SPACE> to move forward.
-* Hit <BACKSPACE> to go backwards.
-* Hit 'Q' to quit.
+% Title Slide
+It is a dsx file:
+---- include short_example.dsx
 
 ---- perl,i4
-# This is some Perl code.
-# Notice the syntax highlighting.
-# Run it with the <RR> vim command.
-for my $word (qw(Vroom totally rocks!)) {
-    print "$word\n";
-}
+---- include parse_dsx_01.pl
 
-----
-== Get Vroom!
-
-* http://search.cpan.org/dist/Vroom/
-* http://github.com/ingydotnet/vroom-pm/
+---- perl,i4
+---- include parse_dsx_02.pl
 
 ----
 == This presentaion

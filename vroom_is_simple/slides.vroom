@@ -81,6 +81,10 @@ It is config here
 ----
 \---- bash
 \---- include gen_pdf_vroom
+
+┌─[mishin@mishin-Satellite-T230]─(~/github/presentation/regex_recursion) [05:24]
+└─ →  milla-tutorial$ ../../bd2c2ba549a3470e360e/gen_pdf
+
 ----
 == Navigation
 
