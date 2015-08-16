@@ -8,6 +8,7 @@ my $data           = $ref_source_data->{$filename};#'short_example.dsx';# read_f
 
 #say Dumper $data;
 my $header_and_job = split_by_header_and_job($data);
+say Dumper $header_and_job;
 my $header_fields  = split_fields_by_new_line( $header_and_job->{header} );
 say Dumper $header_fields;
 
