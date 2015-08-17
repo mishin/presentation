@@ -42,10 +42,22 @@ sub split_fields_by_new_line {
     my @fields            = ();
     while (
         $curr_record =~ m/
-        (?<name>\w+)[ ]"(?<value>.*?)(?<!\\)"|
-        ((?<name>\w+)[ ]\Q=+=+=+=\E
+         (?(DEFINE) 
+             (?<QUOTE> ["]) 
+             (?<LONG_QUOTE> \Q=+=+=+=\E) 
+             (?<ALL_QUOTE> &QUOTE|&LONG_QUOTE) 
+         )         
+        (?<name>\w+)[ ]
+        (?&QUOTE)
         (?<value>.*?)
-        \Q=+=+=+=\E)
+        (?<!\\)
+        (?&QUOTE)
+        |
+        ((?<name>\w+)[ ]
+        (?&LONG_QUOTE)
+        (?<value>.*?)
+        (?&LONG_QUOTE)
+        )
         /xsg
       )
     {
