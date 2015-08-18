@@ -9,7 +9,7 @@ my $data           = $ref_source_data->{$filename};#'short_example.dsx';# read_f
 
 #say Dumper $data;
 my $header_and_job = split_by_header_and_job($data);
-say Dumper $header_and_job;
+#say Dumper $header_and_job;
 my $header_fields  = split_fields_by_new_line( $header_and_job->{header} );
 say Dumper $header_fields;
 
@@ -37,32 +37,19 @@ END[ ]DSJOB )
 
 sub split_fields_by_new_line {
     my ($curr_record)     = @_;
-    my %fields_and_values = ();
+    #my %fields_and_values = ();
     my @fields            = ();
     local $/ = '';    # Paragraph mode
     while (
         $curr_record =~ m/
-         (?(DEFINE) 
-             (?<QUOTE> ["]) 
-             (?<LONG_QUOTE> \Q=+=+=+=\E) 
-         )         
-        (?<name>\w+)[ ]
-        (?&QUOTE)
+        (?<name>\w+)[ ]"(?<value>.*?)(?<!\\)"|
+        ((?<name>\w+)[ ]\Q=+=+=+=\E
         (?<value>.*?)
-        (?<!\\)
-        (?&QUOTE)
-        |
-        ((?<name>\w+)[ ]
-        (?&LONG_QUOTE)
-        (?<value>.*?)
-        (?&LONG_QUOTE)
-        )
+        \Q=+=+=+=\E)
         /xsg
       )
     {
-        my $name       = $+{name};
-        my $value      = $+{value};
-        my %hash_value = ();
+        my %hash_value = %+;
         push @fields, \%hash_value;
     }
     return \@fields;
