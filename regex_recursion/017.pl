@@ -1,18 +1,42 @@
-    #use v5.12;
     use Modern::Perl;
 
-    #use File::Slurp qw(read_file write_file);
-    use Data::Dumper qw(Dumper);
-    my $filename = 'short_example.dsx';
+    #use Data::Dumper qw(Dumper);
+    my $filename        = 'short_example.dsx';
     my $ref_source_data = import_sql_and_data();
-    my $data           = $ref_source_data->{$filename};#'short_example.dsx';# read_file($filename);
+    my $data            = $ref_source_data->{$filename};
 
-    #say Dumper $data;
     my $header_and_job = split_by_header_and_job($data);
+
     #say Dumper $header_and_job;
-    my $header_fields  = split_fields_by_new_line( $header_and_job->{header} );
-    #my $header_fields  = split_fields_by_new_line( $header_and_job->{job} );
-    say Dumper $header_fields;
+    my $header_fields = split_fields_by_new_line( $header_and_job->{header} );  #job
+
+    #say Dumper $header_fields;
+    #my $Num_Tests=1;
+    use Test::More tests => 1;
+    use Test::Deep;
+
+    cmp_deeply(
+        $header_fields,
+        [
+            {
+                'name'  => 'CharacterSet',
+                'value' => 'CP1251'
+            },
+            {
+                'name'  => 'ExportingTool',
+                'value' => 'IBM Websphere DataStage Export'
+            },
+            {
+                'name'  => 'ServerName',
+                'value' => 'YAPC'
+            },
+            {
+                'name'  => 'ToolInstanceID',
+                'value' => 'Russia'
+            }
+        ],
+        "header parsed successful"
+    );
 
     sub split_by_header_and_job {
         my $data = shift;
@@ -37,8 +61,8 @@
     }
 
     sub split_fields_by_new_line {
-        my ($curr_record)     = @_;
-        my @fields            = ();
+        my ($curr_record) = @_;
+        my @fields = ();
         local $/ = '';    # Paragraph mode
         while (
             $curr_record =~ m/
@@ -63,15 +87,16 @@
     }
 
     sub import_sql_and_data {
-        print {*STDERR} "Reading sql query...\n";
+
+        #    print {*STDERR} "Reading sql query...\n";
         my %contents_of = do { local $/; "", split /_____\[ (\S+) \]_+\n/, <DATA> };
         for ( values %contents_of ) {
             s/^!=([a-z])/=$1/gxms;
         }
-        print {*STDERR} "done\n";
+
+        #    print {*STDERR} "done\n";
         return \%contents_of;
     }
-
 
     __DATA__
 

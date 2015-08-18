@@ -66,7 +66,6 @@ sub split_fields_by_new_line {
     local $/ = '';    # Paragraph mode
     while (
         $curr_record =~ m/
-        (?&VALUE) (?{ $_ = $^R->[1] })
     (?(DEFINE)
         (?<short_quote> ["] )
 	    (?<long_quote> \Q=+=+=+=\E )
