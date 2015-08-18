@@ -1,3 +1,4 @@
+#use v5.12;
 use Modern::Perl;
 
 #use File::Slurp qw(read_file write_file);
@@ -17,8 +18,6 @@ sub split_by_header_and_job {
     local $/ = '';    # Paragraph mode
     my %header_and_job = ();
     my @fields         = ();
-
-    #@fields = (
     $data =~ /
 (?<header>
 BEGIN[ ]HEADER
@@ -40,12 +39,12 @@ sub split_fields_by_new_line {
     my ($curr_record)     = @_;
     my %fields_and_values = ();
     my @fields            = ();
+    local $/ = '';    # Paragraph mode
     while (
         $curr_record =~ m/
          (?(DEFINE) 
              (?<QUOTE> ["]) 
              (?<LONG_QUOTE> \Q=+=+=+=\E) 
-             (?<ALL_QUOTE> &QUOTE|&LONG_QUOTE) 
          )         
         (?<name>\w+)[ ]
         (?&QUOTE)
