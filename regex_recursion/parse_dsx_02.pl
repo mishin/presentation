@@ -42,19 +42,13 @@ sub split_fields_by_new_line {
          (?(DEFINE) 
              (?<QUOTE> ["]) 
              (?<LONG_QUOTE> \Q=+=+=+=\E) 
-             (?<ALL_QUOTE> &QUOTE|&LONG_QUOTE) 
+             (?<ALL_QUOTE> (?&QUOTE|?&LONG_QUOTE)) 
          )         
         (?<name>\w+)[ ]
-        (?&QUOTE)
+        (?&ALL_QUOTE)
         (?<value>.*?)
         (?<!\\)
-        (?&QUOTE)
-        |
-        ((?<name>\w+)[ ]
-        (?&LONG_QUOTE)
-        (?<value>.*?)
-        (?&LONG_QUOTE)
-        )
+        (?&ALL_QUOTE)
         /xsg
       )
     {

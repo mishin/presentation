@@ -11,6 +11,7 @@ my $data           = $ref_source_data->{$filename};#'short_example.dsx';# read_f
 my $header_and_job = split_by_header_and_job($data);
 #say Dumper $header_and_job;
 my $header_fields  = split_fields_by_new_line( $header_and_job->{header} );
+#my $header_fields  = split_fields_by_new_line( $header_and_job->{job} );
 say Dumper $header_fields;
 
 sub split_by_header_and_job {
@@ -42,11 +43,19 @@ sub split_fields_by_new_line {
     local $/ = '';    # Paragraph mode
     while (
         $curr_record =~ m/
-        (?<name>\w+)[ ]"(?<value>.*?)(?<!\\)"|
-        ((?<name>\w+)[ ]\Q=+=+=+=\E
+   (?(DEFINE)
+            (?<short_quote> ["] )
+	        (?<long_quote> \Q=+=+=+=\E )
+	        (?<not_back_slash> (?<!\\) )
+	        (?<quote> (?&short_quote)|(?&long_quote) )
+	        (?<val> (?<value>.*?) )
+	    )        
+        (?<name>\w+)[ ]
+        (?&quote)
         (?<value>.*?)
-        \Q=+=+=+=\E)
-        /xsg
+        (?&not_back_slash)
+        (?&quote)
+        /xsg	    
       )
     {
         my %hash_value = %+;
