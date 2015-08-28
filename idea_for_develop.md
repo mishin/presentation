@@ -180,7 +180,7 @@ http://learnxinyminutes.com/docs/perl6/
 Writing the WVARCHAR column CD_ID into a VARCHAR database column can cause data loss or corruption due to character set conversions.
 
 
-7. Разобраться с моудлем по генеалогии
+7. Разобраться с модулем по генеалогии
 ------------------------
 
 https://github.com/mishin/ftree
