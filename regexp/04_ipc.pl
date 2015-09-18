@@ -10,10 +10,6 @@ use Encode::Locale qw(decode_argv);
     binmode(STDERR, ":encoding(console_out)");
 }
 
-Encode::Locale::decode_argv();
-my $lang = shift or die "Usage: $0 What_is_your_language?\n"; 
+use IPC::System::Simple qw(capture);
 
- $lang =~ /
- (perl|перл) 
- (?{print "use Perl or die!!\nИспользуй Перл или умри!!";}) 
-          /ix;
+my $rout = capture('perldoc -l perldoc');
