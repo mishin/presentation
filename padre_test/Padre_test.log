@@ -1,0 +1,277 @@
+blib\lib\auto\share\dist\Padre\locale -> blib\lib\auto\share\dist\Padre\locale
+blib\lib\auto\share\dist\Padre\locale\pt-br.po -> blib\lib\auto\share\dist\Padre\locale\pt-br.mo
+blib\lib\auto\share\dist\Padre\locale\ru.po -> blib\lib\auto\share\dist\Padre\locale\ru.mo
+blib\lib\auto\share\dist\Padre\locale\fa.po -> blib\lib\auto\share\dist\Padre\locale\fa.mo
+blib\lib\auto\share\dist\Padre\locale\ja.po -> blib\lib\auto\share\dist\Padre\locale\ja.mo
+blib\lib\auto\share\dist\Padre\locale\de.po -> blib\lib\auto\share\dist\Padre\locale\de.mo
+blib\lib\auto\share\dist\Padre\locale\fr.po -> blib\lib\auto\share\dist\Padre\locale\fr.mo
+blib\lib\auto\share\dist\Padre\locale\hu.po -> blib\lib\auto\share\dist\Padre\locale\hu.mo
+blib\lib\auto\share\dist\Padre\locale\zh-tw.po -> blib\lib\auto\share\dist\Padre\locale\zh-tw.mo
+blib\lib\auto\share\dist\Padre\locale\no.po -> blib\lib\auto\share\dist\Padre\locale\no.mo
+blib\lib\auto\share\dist\Padre\locale\it-it.po -> blib\lib\auto\share\dist\Padre\locale\it-it.mo
+blib\lib\auto\share\dist\Padre\locale\tr.po -> blib\lib\auto\share\dist\Padre\locale\tr.mo
+blib\lib\auto\share\dist\Padre\locale\es-es.po -> blib\lib\auto\share\dist\Padre\locale\es-es.mo
+blib\lib\auto\share\dist\Padre\locale\cz.po -> blib\lib\auto\share\dist\Padre\locale\cz.mo
+blib\lib\auto\share\dist\Padre\locale\pl.po -> blib\lib\auto\share\dist\Padre\locale\pl.mo
+blib\lib\auto\share\dist\Padre\locale\nl-nl.po -> blib\lib\auto\share\dist\Padre\locale\nl-nl.mo
+blib\lib\auto\share\dist\Padre\locale\ar.po -> blib\lib\auto\share\dist\Padre\locale\ar.mo
+blib\lib\auto\share\dist\Padre\locale\zh-cn.po -> blib\lib\auto\share\dist\Padre\locale\zh-cn.mo
+blib\lib\auto\share\dist\Padre\locale\he.po -> blib\lib\auto\share\dist\Padre\locale\he.mo
+blib\lib\auto\share\dist\Padre\locale\ko.po -> blib\lib\auto\share\dist\Padre\locale\ko.mo
+-blib\lib\auto\share\dist\Padre\locale\messages.pot
+"C:\Users\TOSH\Documents\job\perl\strawberry-perl-5.20.0.1-32bit-PDL\perl\bin\perl.exe" "-MExtUtils::Command::MM" "-MTest::Harness" "-e" "undef *Test::Harness::Switches; test_harness(0, 'inc', 'blib\lib', 'blib\arch')" t/*.t t/perl/*.t t/python/*.t t/ruby/*.t t/java/*.t t/csharp/*.t xt/*.t
+# Tests find Wx: 0.9927 wxWidgets 3.0.2
+t/01_compile.t ............. ok
+Invalid version format (non-numeric data) at C:\Users\TOSH\Documents\GitHub\padre-mi\blib\lib/Padre/Wx/Menu/Debug.pm line 5.
+BEGIN failed--compilation aborted at C:\Users\TOSH\Documents\GitHub\padre-mi\blib\lib/Padre/Wx/Menu/Debug.pm line 5.
+Compilation failed in require at C:\Users\TOSH\Documents\GitHub\padre-mi\blib\lib/Padre/Wx/Menubar.pm line 72.
+# Looks like you planned 62 tests but ran 1.
+# Looks like your test exited with 255 just after 1.
+t/02_new.t ................. 
+Dubious, test returned 255 (wstat 65280, 0xff00)
+Failed 61/62 subtests 
+t/03_db.t .................. ok
+t/04_config.t .............. ok
+Invalid version format (non-numeric data) at C:\Users\TOSH\Documents\GitHub\padre-mi\blib\lib/Padre/Wx/Menu/Debug.pm line 5.
+BEGIN failed--compilation aborted at C:\Users\TOSH\Documents\GitHub\padre-mi\blib\lib/Padre/Wx/Menu/Debug.pm line 5.
+Compilation failed in require at C:\Users\TOSH\Documents\GitHub\padre-mi\blib\lib/Padre/Wx/Menubar.pm line 72.
+# Looks like you planned 16 tests but ran 2.
+# Looks like your test exited with 255 just after 2.
+t/05_project.t ............. 
+Dubious, test returned 255 (wstat 65280, 0xff00)
+Failed 14/16 subtests 
+t/06_utils.t ............... ok
+t/07_version.t ............. ok
+t/08_style.t ............... ok
+t/09_search.t .............. ok
+Invalid version format (non-numeric data) at C:\Users\TOSH\Documents\GitHub\padre-mi\blib\lib/Padre/Wx/Menu/Debug.pm line 5.
+BEGIN failed--compilation aborted at C:\Users\TOSH\Documents\GitHub\padre-mi\blib\lib/Padre/Wx/Menu/Debug.pm line 5.
+Compilation failed in require at C:\Users\TOSH\Documents\GitHub\padre-mi\blib\lib/Padre/Wx/Menubar.pm line 72.
+# Looks like you planned 14 tests but ran 7.
+# Looks like your test exited with 255 just after 7.
+t/10_delta.t ............... 
+Dubious, test returned 255 (wstat 65280, 0xff00)
+Failed 7/14 subtests 
+t/11_svn.t ................. skipped: Not in an SVN checkout
+t/12_mime.t ................ ok
+t/13_findinfiles.t ......... ok
+t/14_warnings.t ............ ok
+Invalid version format (non-numeric data) at C:\Users\TOSH\Documents\GitHub\padre-mi\blib\lib/Padre/Wx/Menu/Debug.pm line 5.
+BEGIN failed--compilation aborted at C:\Users\TOSH\Documents\GitHub\padre-mi\blib\lib/Padre/Wx/Menu/Debug.pm line 5.
+Compilation failed in require at C:\Users\TOSH\Documents\GitHub\padre-mi\blib\lib/Padre/Wx/Menubar.pm line 72.
+# Looks like you planned 7 tests but ran 1.
+# Looks like your test exited with 255 just after 1.
+t/15_locale.t .............. 
+Dubious, test returned 255 (wstat 65280, 0xff00)
+Failed 6/7 subtests 
+t/16_locale_format.t ....... ok
+t/17_messages.t ............ ok
+t/18_newline.t ............. ok
+t/19_search.t .............. ok
+t/20_comment.t ............. ok
+t/21_sloc.t ................ ok
+t/31_task_queue.t .......... ok
+t/32_task_worker.t ......... ok
+t/33_task_chain.t .......... ok
+t/34_task_master.t ......... ok
+t/35_task_handle.t ......... ok
+t/36_task_eval.t ........... ok
+t/37_task_signal.t ......... ok
+t/38_task_manager.t ........ ok
+t/39_task_nothreads.t ...... ok
+t/40_display.t ............. ok
+Invalid version format (non-numeric data) at C:\Users\TOSH\Documents\GitHub\padre-mi\blib\lib/Padre/Wx/Menu/Debug.pm line 5.
+BEGIN failed--compilation aborted at C:\Users\TOSH\Documents\GitHub\padre-mi\blib\lib/Padre/Wx/Menu/Debug.pm line 5.
+Compilation failed in require at C:\Users\TOSH\Documents\GitHub\padre-mi\blib\lib/Padre/Wx/Menubar.pm line 72.
+# Looks like you planned 28 tests but ran 1.
+# Looks like your test exited with 255 just after 1.
+t/41_editor.t .............. 
+Dubious, test returned 255 (wstat 65280, 0xff00)
+Failed 27/28 subtests 
+t/42_document.t ............ ok
+t/43_frame_html.t .......... ok
+t/50_browser.t ............. skipped: Cannot run as root
+t/61_directory_path.t ...... ok
+t/74_history_combobox.t .... ok
+t/75_autocomplete.t ........ ok
+
+#   Failed test 'Padre->new() died'
+#   at t/76_preferences.t line 22.
+#     Error was:  Invalid version format (non-numeric data) at C:\Users\TOSH\Documents\GitHub\padre-mi\blib\lib/Padre/Wx/Menu/Debug.pm line 5.
+# BEGIN failed--compilation aborted at C:\Users\TOSH\Documents\GitHub\padre-mi\blib\lib/Padre/Wx/Menu/Debug.pm line 5.
+# Compilation failed in require at C:\Users\TOSH\Documents\GitHub\padre-mi\blib\lib/Padre/Wx/Menubar.pm line 72.
+Can't call method "wx" on an undefined value at t/76_preferences.t line 23.
+# Looks like you planned 10 tests but ran 3.
+# Looks like you failed 1 test of 3 run.
+# Looks like your test exited with 255 just after 3.
+t/76_preferences.t ......... 
+Dubious, test returned 255 (wstat 65280, 0xff00)
+Failed 8/10 subtests 
+Invalid version format (non-numeric data) at C:\Users\TOSH\Documents\GitHub\padre-mi\blib\lib/Padre/Wx/Menu/Debug.pm line 5.
+BEGIN failed--compilation aborted at C:\Users\TOSH\Documents\GitHub\padre-mi\blib\lib/Padre/Wx/Menu/Debug.pm line 5.
+Compilation failed in require at C:\Users\TOSH\Documents\GitHub\padre-mi\blib\lib/Padre/Wx/Menubar.pm line 72.
+# Looks like you planned 29 tests but ran 1.
+# Looks like your test exited with 255 just after 1.
+t/82_plugin_manager.t ...... 
+Dubious, test returned 255 (wstat 65280, 0xff00)
+Failed 28/29 subtests 
+t/83_autosave.t ............ ok
+t/85_commandline.t ......... ok
+t/90_autocomplete.t ........ ok
+t/91_vi.t .................. ok
+t/92_padre_file.t .......... ok
+t/93_padre_filename_win.t .. ok
+t/94_padre_file_remote.t ... ok
+
+#   Failed test 'Padre->new() died'
+#   at t/95_edit_patch.t line 25.
+#     Error was:  Invalid version format (non-numeric data) at C:\Users\TOSH\Documents\GitHub\padre-mi\blib\lib/Padre/Wx/Menu/Debug.pm line 5.
+# BEGIN failed--compilation aborted at C:\Users\TOSH\Documents\GitHub\padre-mi\blib\lib/Padre/Wx/Menu/Debug.pm line 5.
+# Compilation failed in require at C:\Users\TOSH\Documents\GitHub\padre-mi\blib\lib/Padre/Wx/Menubar.pm line 72.
+Can't call method "wx" on an undefined value at t/95_edit_patch.t line 26.
+# Looks like you planned 27 tests but ran 3.
+# Looks like you failed 1 test of 3 run.
+# Looks like your test exited with 255 just after 3.
+t/95_edit_patch.t .......... 
+Dubious, test returned 255 (wstat 65280, 0xff00)
+Failed 25/27 subtests 
+
+#   Failed test 'Padre->new() died'
+#   at t/96_help_about.t line 27.
+#     Error was:  Invalid version format (non-numeric data) at C:\Users\TOSH\Documents\GitHub\padre-mi\blib\lib/Padre/Wx/Menu/Debug.pm line 5.
+# BEGIN failed--compilation aborted at C:\Users\TOSH\Documents\GitHub\padre-mi\blib\lib/Padre/Wx/Menu/Debug.pm line 5.
+# Compilation failed in require at C:\Users\TOSH\Documents\GitHub\padre-mi\blib\lib/Padre/Wx/Menubar.pm line 72.
+Can't call method "wx" on an undefined value at t/96_help_about.t line 28.
+# Looks like you planned 9 tests but ran 3.
+# Looks like you failed 1 test of 3 run.
+# Looks like your test exited with 255 just after 3.
+t/96_help_about.t .......... 
+Dubious, test returned 255 (wstat 65280, 0xff00)
+Failed 7/9 subtests 
+
+#   Failed test 'Padre->new() died'
+#   at t/97_debug_debugger.t line 26.
+#     Error was:  Invalid version format (non-numeric data) at C:\Users\TOSH\Documents\GitHub\padre-mi\blib\lib/Padre/Wx/Menu/Debug.pm line 5.
+# BEGIN failed--compilation aborted at C:\Users\TOSH\Documents\GitHub\padre-mi\blib\lib/Padre/Wx/Menu/Debug.pm line 5.
+# Compilation failed in require at C:\Users\TOSH\Documents\GitHub\padre-mi\blib\lib/Padre/Wx/Menubar.pm line 72.
+Can't call method "wx" on an undefined value at t/97_debug_debugger.t line 27.
+# Looks like you planned 55 tests but ran 4.
+# Looks like you failed 1 test of 4 run.
+# Looks like your test exited with 255 just after 4.
+t/97_debug_debugger.t ...... 
+Dubious, test returned 255 (wstat 65280, 0xff00)
+Failed 52/55 subtests 
+
+#   Failed test 'Padre->new() died'
+#   at t/98_debug_breakpoints.t line 25.
+#     Error was:  Invalid version format (non-numeric data) at C:\Users\TOSH\Documents\GitHub\padre-mi\blib\lib/Padre/Wx/Menu/Debug.pm line 5.
+# BEGIN failed--compilation aborted at C:\Users\TOSH\Documents\GitHub\padre-mi\blib\lib/Padre/Wx/Menu/Debug.pm line 5.
+# Compilation failed in require at C:\Users\TOSH\Documents\GitHub\padre-mi\blib\lib/Padre/Wx/Menubar.pm line 72.
+Can't call method "wx" on an undefined value at t/98_debug_breakpoints.t line 26.
+# Looks like you planned 22 tests but ran 3.
+# Looks like you failed 1 test of 3 run.
+# Looks like your test exited with 255 just after 3.
+t/98_debug_breakpoints.t ... 
+Dubious, test returned 255 (wstat 65280, 0xff00)
+Failed 20/22 subtests 
+
+#   Failed test 'Padre->new() died'
+#   at t/99_debug_debugoutput.t line 25.
+#     Error was:  Invalid version format (non-numeric data) at C:\Users\TOSH\Documents\GitHub\padre-mi\blib\lib/Padre/Wx/Menu/Debug.pm line 5.
+# BEGIN failed--compilation aborted at C:\Users\TOSH\Documents\GitHub\padre-mi\blib\lib/Padre/Wx/Menu/Debug.pm line 5.
+# Compilation failed in require at C:\Users\TOSH\Documents\GitHub\padre-mi\blib\lib/Padre/Wx/Menubar.pm line 72.
+Can't call method "wx" on an undefined value at t/99_debug_debugoutput.t line 26.
+# Looks like you planned 17 tests but ran 3.
+# Looks like you failed 1 test of 3 run.
+# Looks like your test exited with 255 just after 3.
+t/99_debug_debugoutput.t ... 
+Dubious, test returned 255 (wstat 65280, 0xff00)
+Failed 15/17 subtests 
+t/csharp/functionlist.t .... ok
+t/java/functionlist.t ...... ok
+t/perl/functionlist.t ...... ok
+Invalid version format (non-numeric data) at C:\Users\TOSH\Documents\GitHub\padre-mi\blib\lib/Padre/Wx/Menu/Debug.pm line 5.
+BEGIN failed--compilation aborted at C:\Users\TOSH\Documents\GitHub\padre-mi\blib\lib/Padre/Wx/Menu/Debug.pm line 5.
+Compilation failed in require at C:\Users\TOSH\Documents\GitHub\padre-mi\blib\lib/Padre/Wx/Menubar.pm line 72.
+# Looks like you planned 40 tests but ran 1.
+# Looks like your test exited with 255 just after 1.
+t/perl/general.t ........... 
+Dubious, test returned 255 (wstat 65280, 0xff00)
+Failed 39/40 subtests 
+t/perl/project.t ........... ok
+t/perl/project_temp.t ...... ok
+t/perl/starter.t ........... ok
+t/perl/syntax.t ............ ok
+t/python/functionlist.t .... ok
+t/ruby/functionlist.t ...... ok
+xt/actions.t ............... skipped: Author tests not required for installation
+xt/actiontest.t ............ skipped: Author tests not required for installation
+xt/badcode.t ............... skipped: Author tests not required for installation
+xt/blockers.t .............. skipped: Author tests not required for installation
+xt/compile.t ............... skipped: Author tests not required for installation
+xt/copyright.t ............. skipped: Author tests not required for installation
+xt/crashtest.t ............. skipped: Author tests not required for installation
+xt/critic-core.t ........... skipped: Author tests not required for installation
+xt/critic-util.t ........... skipped: Author tests not required for installation
+xt/eol.t ................... skipped: Author tests not required for installation
+xt/meta.t .................. skipped: Author tests not required for installation
+xt/mimetype.t .............. skipped: Author tests not required for installation
+xt/perl-beginner.t ......... skipped: Author tests not required for installation
+xt/pmv.t ................... skipped: Author tests not required for installation
+xt/pod.t ................... skipped: Author tests not required for installation
+xt/pragmas.t ............... skipped: Author tests not required for installation
+xt/test-plugin.t ........... skipped: Author tests not required for installation
+
+Test Summary Report
+-------------------
+t/02_new.t               (Wstat: 65280 Tests: 1 Failed: 0)
+  Non-zero exit status: 255
+  Parse errors: Bad plan.  You planned 62 tests but ran 1.
+t/05_project.t           (Wstat: 65280 Tests: 2 Failed: 0)
+  Non-zero exit status: 255
+  Parse errors: Bad plan.  You planned 16 tests but ran 2.
+t/10_delta.t             (Wstat: 65280 Tests: 7 Failed: 0)
+  Non-zero exit status: 255
+  Parse errors: Bad plan.  You planned 14 tests but ran 7.
+t/15_locale.t            (Wstat: 65280 Tests: 1 Failed: 0)
+  Non-zero exit status: 255
+  Parse errors: Bad plan.  You planned 7 tests but ran 1.
+t/41_editor.t            (Wstat: 65280 Tests: 1 Failed: 0)
+  Non-zero exit status: 255
+  Parse errors: Bad plan.  You planned 28 tests but ran 1.
+t/76_preferences.t       (Wstat: 65280 Tests: 3 Failed: 1)
+  Failed test:  2
+  Non-zero exit status: 255
+  Parse errors: Bad plan.  You planned 10 tests but ran 3.
+t/82_plugin_manager.t    (Wstat: 65280 Tests: 1 Failed: 0)
+  Non-zero exit status: 255
+  Parse errors: Bad plan.  You planned 29 tests but ran 1.
+t/93_padre_filename_win.t (Wstat: 0 Tests: 7 Failed: 0)
+  TODO passed:   1-7
+t/95_edit_patch.t        (Wstat: 65280 Tests: 3 Failed: 1)
+  Failed test:  2
+  Non-zero exit status: 255
+  Parse errors: Bad plan.  You planned 27 tests but ran 3.
+t/96_help_about.t        (Wstat: 65280 Tests: 3 Failed: 1)
+  Failed test:  2
+  Non-zero exit status: 255
+  Parse errors: Bad plan.  You planned 9 tests but ran 3.
+t/97_debug_debugger.t    (Wstat: 65280 Tests: 4 Failed: 1)
+  Failed test:  3
+  Non-zero exit status: 255
+  Parse errors: Bad plan.  You planned 55 tests but ran 4.
+t/98_debug_breakpoints.t (Wstat: 65280 Tests: 3 Failed: 1)
+  Failed test:  2
+  Non-zero exit status: 255
+  Parse errors: Bad plan.  You planned 22 tests but ran 3.
+t/99_debug_debugoutput.t (Wstat: 65280 Tests: 3 Failed: 1)
+  Failed test:  2
+  Non-zero exit status: 255
+  Parse errors: Bad plan.  You planned 17 tests but ran 3.
+t/perl/general.t         (Wstat: 65280 Tests: 1 Failed: 0)
+  Non-zero exit status: 255
+  Parse errors: Bad plan.  You planned 40 tests but ran 1.
+Files=79, Tests=2225, 173 wallclock secs ( 2.15 usr +  0.33 sys =  2.48 CPU)
+Result: FAIL
+Failed 13/79 test programs. 6/2225 subtests failed.
+dmake:  Error code 255, while making 'test_dynamic'
