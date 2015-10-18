@@ -17,3 +17,16 @@ my $lang = shift or die "Usage: $0 What_is_your_language?\n";
  (perl|перл) 
  (?{print "use Perl or die!!\nИспользуй Перл или умри!!";}) 
           /ix;
+
+
+
+
+
+
+
+
+
+
+
+
+
