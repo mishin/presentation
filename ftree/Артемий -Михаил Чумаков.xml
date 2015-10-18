@@ -1,0 +1,1262 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<GenoPro>
+  <Software>GenoPro
+    <Name>GenoPro® - Picture Your Family Tree!(TM)</Name>
+    <Version>2.5.4.1</Version>
+    <Address>http://www.genopro.com</Address>
+  </Software>
+  <Date>14 Oct 2015</Date>
+
+<Global>
+  <Name>
+    <Full Format="%T %F (%N) %M %L (%L2) %S"/>
+    <Display Format="%F %M %L (%L2)" Lines="3"/>
+  </Name>
+  <Font>Arial</Font>
+  <Display>
+    <Tag>YoB_YoD</Tag>
+    <Colors>
+      <Gender Symbol="#000000" Text="#000000" Fill="#FFFFFF">
+        <Fill>
+          <Top Left="#FF0000" Right="#FF0000"/>
+          <Bottom Left="#FF0000" Right="#FF0000"/>
+        </Fill>
+      </Gender>
+      <Border Outline="#000080">
+        <Fill>#FFFF80</Fill>
+      </Border>
+      <Label Top="#000000" Bottom="#000000">
+        <Fill Top="#FFFFFF" Bottom="#FFFFFF"/>
+      </Label>
+    </Colors>
+  </Display>
+  <ActiveGenoMap>GenoMap3</ActiveGenoMap>
+</Global>
+<GenoMaps>
+<GenoMap Name="Доможиров Дмитрий Григорьевич" Zoom="95" Position="26,169" BoundaryRect="-421,242,-65,-261">
+  <Selection>ind00008</Selection>
+</GenoMap>
+<GenoMap Name="Чумаков Николай Иванович" Zoom="90" Position="-360,95" BoundaryRect="-1011,239,118,-250">
+  <Selection>fam00004, fam00005, fam00006, fam00008, ind00011, ind00012, ind00013, ind00014, ind00015, ind00016, ind00017, ind00018, ind00019, ind00020, ind00026, ind00029</Selection>
+</GenoMap>
+<GenoMap Name="GenoMap3" Zoom="90" Position="-2447,92" BoundaryRect="-3200,592,-2113,-116"/>
+</GenoMaps>
+<Individuals>
+<Individual ID="ind00001">
+  <Name>Дмитрий Григорьевич Доможиров
+    <Display Format="%L (%L2) %F %M">Доможиров Дмитрий Григорьевич</Display>
+    <First>Дмитрий</First>
+    <Middle>Григорьевич</Middle>
+    <Last>Доможиров</Last>
+  </Name>
+  <Position BoundaryRect="-271,242,-190,149">-230,210</Position>
+  <Gender>M</Gender>
+  <Birth>
+    <Date>28 Sep 1877</Date>
+  </Birth>
+  <IsDead>Y</IsDead>
+  <Death>
+    <Date>13 Nov 1937</Date>
+  </Death>
+</Individual>
+<Individual ID="ind00002">
+  <Name Format="Custom">Елена (Ёлочка) Николаевна Доможирова (Бескодарова)
+    <Display Format="Custom">Доможирова (Бескодарова) Елена Николаевна</Display>
+    <First>Елена</First>
+    <Middle>Николаевна</Middle>
+    <Last>Бескодарова</Last>
+    <Last2>Доможирова</Last2>
+    <Nick>Ёлочка</Nick>
+    <Alternative>Баба Лёля, тетя Лёля</Alternative>
+  </Name>
+  <Position BoundaryRect="-175,242,-65,149">-120,210</Position>
+  <Gender>F</Gender>
+  <Birth>
+    <Date>9 Apr 1893</Date>
+  </Birth>
+  <IsDead>Y</IsDead>
+  <Death>
+    <Date>9 Jan 1976</Date>
+  </Death>
+</Individual>
+<Individual ID="ind00003">
+  <Name>Григорий Дмитриевич Доможиров
+    <Display Format="%L (%L2) %F %M">Доможиров Григорий Дмитриевич</Display>
+    <First>Григорий</First>
+    <Middle>Дмитриевич</Middle>
+    <Last>Доможиров</Last>
+  </Name>
+  <Position BoundaryRect="-161,92,-80,-1">-120,60</Position>
+  <Gender>M</Gender>
+  <Birth>
+    <Date>6 Jan 1920</Date>
+  </Birth>
+  <IsDead>Y</IsDead>
+  <Death Childless="Y">
+    <Date>20 Aug 1943</Date>
+  </Death>
+</Individual>
+<Individual ID="ind00004">
+  <Name Format="Custom">Галли Дмитриевна Доможирова
+    <Display Format="%L (%L2) %F %M">Доможирова Галли Дмитриевна</Display>
+    <First>Галли</First>
+    <Middle>Дмитриевна</Middle>
+    <Last>Доможирова</Last>
+  </Name>
+  <Position BoundaryRect="-272,92,-189,-1">-230,60</Position>
+  <Gender>F</Gender>
+  <Birth>
+    <Date>11 Jun 1917</Date>
+    <Place>place00001</Place>
+  </Birth>
+  <IsDead>Y</IsDead>
+  <Death>
+    <Date>14 Feb 1989</Date>
+  </Death>
+  <Educations>edu00001</Educations>
+</Individual>
+<Individual ID="ind00005">
+  <Name>Елена (Лёка) Леонидовна Доможирова (Доможирова)
+    <Display Format="%T %L %F %M %S">Доможирова Елена Леонидовна</Display>
+    <First>Елена</First>
+    <Middle>Леонидовна</Middle>
+    <Last>Доможирова</Last>
+    <Last2>Доможирова</Last2>
+    <Nick>Лёка</Nick>
+  </Name>
+  <Position BoundaryRect="-312,-38,-229,-131">-270,-70</Position>
+  <Gender>F</Gender>
+  <Birth>
+    <Date>20 Apr 1949</Date>
+  </Birth>
+  <Death Childless="N"/>
+</Individual>
+<Individual ID="ind00006">
+  <Position BoundaryRect="-336,66,-284,14">-310,40</Position>
+  <Gender>M</Gender>
+</Individual>
+<Individual ID="ind00007">
+  <Name>Лев Яльмарович Чумаков (Чумаков)
+    <Display Format="%T %L %F %M %S">Чумаков Лев Яльмарович</Display>
+    <First>Лев</First>
+    <Middle>Яльмарович</Middle>
+    <Last>Чумаков</Last>
+    <Last2>Чумаков</Last2>
+  </Name>
+  <Position BoundaryRect="-421,-38,-340,-131">-380,-70</Position>
+  <Gender>M</Gender>
+  <Birth>
+    <Date>13 Apr 1933</Date>
+  </Birth>
+  <Death Childless="N"/>
+</Individual>
+<Individual ID="ind00008">
+  <Name>Григорий Львович Доможиров (Доможиров)
+    <Display Format="%T %L %F %M %S">Доможиров Григорий Львович</Display>
+    <First>Григорий</First>
+    <Middle>Львович</Middle>
+    <Last>Доможиров</Last>
+    <Last2>Доможиров</Last2>
+  </Name>
+  <Position BoundaryRect="-359,-168,-282,-261">-320,-200</Position>
+  <Gender>M</Gender>
+  <Birth>
+    <Date>28 Jul 1989</Date>
+  </Birth>
+</Individual>
+<Individual ID="ind00009">
+  <Name Format="Custom">&#32;Чумаков Николай Иванович
+    <Display Format="Custom">Чумаков Николай Иванович&#32;</Display>
+    <First>Николай</First>
+    <Middle>Иванович</Middle>
+    <Last>Чумаков</Last>
+  </Name>
+  <Position GenoMap="Чумаков Николай Иванович" BoundaryRect="-625,239,-556,146">-590,207</Position>
+  <Gender>M</Gender>
+  <IsDead>Y</IsDead>
+  <Death Childless="N">
+    <Date>1930</Date>
+  </Death>
+</Individual>
+<Individual ID="ind00010">
+  <Name Format="Custom">&#32;Чумакова Екатерина Петровна
+    <Display Format="Custom">&#32;Чумакова (ур.Заботина) Екатерина Петровна&#32;</Display>
+    <First>Екатерина</First>
+    <Middle>Петровна</Middle>
+    <Last>Заботина</Last>
+    <Last2>Чумакова</Last2>
+  </Name>
+  <Position GenoMap="Чумаков Николай Иванович" BoundaryRect="-543,239,-421,146">-482,207</Position>
+  <Gender>F</Gender>
+  <Birth>
+    <Date>1872</Date>
+  </Birth>
+  <IsDead>Y</IsDead>
+  <Death Childless="N">
+    <Date>1950</Date>
+  </Death>
+</Individual>
+<Individual ID="ind00011">
+  <Name Format="Custom">Цветкова (ур.Чумакова) Ольга Николаевна
+    <Display Format="Custom" Lines="4">Цветкова (ур.Чумакова) Ольга Николаевна</Display>
+    <First>Ольга</First>
+    <Middle>Николаевна</Middle>
+    <Last>Чумакова</Last>
+    <Last2>Цветкова</Last2>
+  </Name>
+  <Position GenoMap="Чумаков Николай Иванович" BoundaryRect="-885,43,-796,-64">-840,11</Position>
+  <Gender>F</Gender>
+  <Birth>
+    <Date>24 Jul 1886</Date>
+  </Birth>
+  <IsDead>Y</IsDead>
+  <Death Childless="Y">
+    <Date>3 Nov 1968</Date>
+  </Death>
+</Individual>
+<Individual ID="ind00012">
+  <Name Format="Custom">Чумаков Михаил Николаевич
+    <Display Format="Custom">Чумаков Михаил Николаевич</Display>
+    <First>Михаил</First>
+    <Middle>Николаевич</Middle>
+    <Last>Чумаков</Last>
+    <Last2>Чумаков</Last2>
+  </Name>
+  <Position GenoMap="Чумаков Николай Иванович" BoundaryRect="-779,43,-702,-50">-740,11</Position>
+  <Gender>M</Gender>
+  <Birth>
+    <Date>24 Jan 1888</Date>
+  </Birth>
+  <IsDead>Y</IsDead>
+  <Death Childless="N">
+    <Date>1969</Date>
+  </Death>
+</Individual>
+<Individual ID="ind00013">
+  <Name Format="Custom">&#32;Чумаков Сергей Николаевич
+    <Display Format="%L (%L2) %F %M">Чумаков Сергей Николаевич</Display>
+    <First>Сергей</First>
+    <Middle>Николаевич</Middle>
+    <Last>Чумаков</Last>
+  </Name>
+  <Position GenoMap="Чумаков Николай Иванович" BoundaryRect="-601,46,-524,-47">-562,14</Position>
+  <Gender>M</Gender>
+  <Birth>
+    <Date>20 Oct 1889</Date>
+  </Birth>
+  <IsDead>Y</IsDead>
+  <Death Childless="N">
+    <Date>20 Jun 1965</Date>
+  </Death>
+</Individual>
+<Individual ID="ind00014">
+  <Name Format="Custom">Хохлова (ур. Чумакова) Анна Николаевна&#32;
+    <Display Format="Custom" Lines="4">Хохлова&#32; (ур. Чумакова) Анна Николаевна&#32;</Display>
+    <First>Анна</First>
+    <Middle>Николаевна</Middle>
+    <Last>Чумакова</Last>
+    <Last2>Хохлова</Last2>
+  </Name>
+  <Position GenoMap="Чумаков Николай Иванович" BoundaryRect="-370,43,-285,-64">-327,11</Position>
+  <Gender>F</Gender>
+  <Birth>
+    <Date>14 Feb 1892</Date>
+  </Birth>
+  <IsDead>Y</IsDead>
+  <Death Childless="N">
+    <Date>20 Oct 1939</Date>
+  </Death>
+</Individual>
+<Individual ID="ind00015">
+  <Name Format="Custom">&#32;Чумаков Павел Николаевич
+    <Display Format="Custom">Чумаков Павел Николаевич&#32;</Display>
+    <First>Павел</First>
+    <Middle>Николаевич</Middle>
+    <Last2>Чумаков</Last2>
+  </Name>
+  <Position GenoMap="Чумаков Николай Иванович" BoundaryRect="-290,43,-213,-50">-251,11</Position>
+  <Gender>M</Gender>
+  <Birth>
+    <Date>1894</Date>
+  </Birth>
+  <IsDead>Y</IsDead>
+  <Death Childless="Y">
+    <Date>1894</Date>
+  </Death>
+</Individual>
+<Individual ID="ind00016">
+  <Name Format="%L (%L2) %F %M">Чумакова Елена Николаевна
+    <Display Format="%L (%L2) %F %M">Чумакова Елена Николаевна</Display>
+    <First>Елена</First>
+    <Middle>Николаевна</Middle>
+    <Last>Чумакова</Last>
+  </Name>
+  <Position GenoMap="Чумаков Николай Иванович" BoundaryRect="-216,43,-139,-50">-177,11</Position>
+  <Gender>F</Gender>
+  <Birth>
+    <Date>1894</Date>
+  </Birth>
+  <IsDead>Y</IsDead>
+  <Death Childless="Y">
+    <Date>17 Mar 1897</Date>
+  </Death>
+</Individual>
+<Individual ID="ind00017">
+  <Name Format="Custom">&#32;Чумаков Александр Николаевич
+    <Display Format="%L (%L2) %F %M">Чумаков Александр Николаевич</Display>
+    <First>Александр</First>
+    <Middle>Николаевич</Middle>
+    <Last>Чумаков</Last>
+  </Name>
+  <Position GenoMap="Чумаков Николай Иванович" BoundaryRect="-143,43,-66,-50">-104,11</Position>
+  <Gender>M</Gender>
+  <Birth>
+    <Date>12 Aug 1896</Date>
+  </Birth>
+  <IsDead>Y</IsDead>
+  <Death Childless="Y">
+    <Date>19 Jun 1916</Date>
+  </Death>
+</Individual>
+<Individual ID="ind00018">
+  <Name Format="Custom">Чумакова Зинаида Николаевна&#32;
+    <Display Format="Custom">Чумакова Зинаида Николаевна&#32;</Display>
+    <First>Зинаида</First>
+    <Middle>Николаевна</Middle>
+    <Last>Чумакова</Last>
+    <Last2>Чумакова</Last2>
+  </Name>
+  <Position GenoMap="Чумаков Николай Иванович" BoundaryRect="-59,43,18,-50">-20,11</Position>
+  <Gender>F</Gender>
+  <Birth>
+    <Date>4 Oct 1899</Date>
+  </Birth>
+  <IsDead>Y</IsDead>
+  <Death Childless="N">
+    <Date>1 Sep 1974</Date>
+  </Death>
+</Individual>
+<Individual ID="ind00019">
+  <Name Format="Custom">&#32; Волкова (ур. Чумакова) Александра Николаевна&#32;
+    <Display Format="Custom" Lines="4">&#32;Волкова (ур. Чумакова) Александра Николаевна&#32;</Display>
+    <First>Александра</First>
+    <Middle>Николаевна</Middle>
+    <Last>Чумакова</Last>
+    <Last2>Волкова</Last2>
+  </Name>
+  <Position GenoMap="Чумаков Николай Иванович" BoundaryRect="34,43,118,-64">76,11</Position>
+  <Gender>F</Gender>
+  <Birth>
+    <Date>2 Apr 1901</Date>
+  </Birth>
+  <IsDead>Y</IsDead>
+  <Death Childless="N">
+    <Date>1990</Date>
+  </Death>
+</Individual>
+<Individual ID="ind00020">
+  <Name Format="Custom">Чумакова (ур.Селиванова) Евстолия Ивановна
+    <Display Format="Custom" Lines="4">Чумакова (ур.Селиванова)&#32; Евстолия Ивановна</Display>
+    <First>Евстолия</First>
+    <Middle>Ивановна</Middle>
+    <Last>Селиванова</Last>
+    <Last2>Чумакова</Last2>
+  </Name>
+  <Position GenoMap="Чумаков Николай Иванович" BoundaryRect="-709,43,-607,-64">-658,11</Position>
+  <Gender>F</Gender>
+  <Birth>
+    <Date>18 Jul 1892</Date>
+  </Birth>
+  <IsDead>Y</IsDead>
+  <Death Childless="N">
+    <Date>3 Nov 1974</Date>
+  </Death>
+</Individual>
+<Individual ID="ind00021">
+  <Name Format="Custom">Чумакова Марианна Михайловна
+    <Display Format="Custom">Чумакова Марианна Михайловна</Display>
+    <First>Марианна</First>
+    <Middle>Николаевна</Middle>
+    <Last>Чумакова</Last>
+  </Name>
+  <Position GenoMap="Чумаков Николай Иванович" BoundaryRect="-1011,-143,-932,-236">-971,-175</Position>
+  <Gender>F</Gender>
+  <Birth>
+    <Date>1921</Date>
+  </Birth>
+  <IsDead>Y</IsDead>
+  <Death>
+    <Date>1921</Date>
+  </Death>
+</Individual>
+<Individual ID="ind00022">
+  <Name Format="Custom">Адамова (ур. Чумакова) Галина Михайловна&#32;
+    <Display Format="Custom" Lines="4">Адамова (ур. Чумакова) Галина Михайловна&#32;</Display>
+    <First>Галина</First>
+    <Middle>Михайловна</Middle>
+    <Last>Чумакова</Last>
+  </Name>
+  <Position GenoMap="Чумаков Николай Иванович" BoundaryRect="-919,-143,-834,-250">-876,-175</Position>
+  <Gender>F</Gender>
+  <Birth>
+    <Date>8 May 1923</Date>
+  </Birth>
+  <IsDead>Y</IsDead>
+  <Death>
+    <Date>2 Jul 2009</Date>
+  </Death>
+</Individual>
+<Individual ID="ind00023">
+  <Name Format="Custom">Чумакова Татьяна Михайловна&#32;
+    <Display Format="Custom">Чумакова Татьяна Михайловна&#32;</Display>
+    <First>Татьяна</First>
+    <Middle>Михайловна</Middle>
+    <Last>Чумакова</Last>
+  </Name>
+  <Position GenoMap="Чумаков Николай Иванович" BoundaryRect="-830,-143,-751,-236">-790,-175</Position>
+  <Gender>M</Gender>
+  <Birth>
+    <Date>22 Sep 1925</Date>
+  </Birth>
+  <IsDead>Y</IsDead>
+  <Death>
+    <Date>18 Apr 1993</Date>
+  </Death>
+</Individual>
+<Individual ID="ind00024">
+  <Name Format="Custom">Чумаков Николай Михайлович&#32;
+    <Display Format="Custom">Чумаков Николай Михайлович&#32;</Display>
+    <First>Николай</First>
+    <Middle>Михайлович</Middle>
+    <Last>Чумаков</Last>
+  </Name>
+  <Position GenoMap="Чумаков Николай Иванович" BoundaryRect="-745,-143,-666,-236">-705,-175</Position>
+  <Gender>M</Gender>
+  <Birth>
+    <Date>13 May 1927</Date>
+  </Birth>
+</Individual>
+<Individual ID="ind00025">
+  <Name Format="Custom">Балакай (ур. Чумакова)&#32; Мария Михайловна Чумакова
+    <Display Format="Custom" Lines="4">Балакай (ур. Чумакова) Мария Михайловна</Display>
+    <First>Мария</First>
+    <Middle>Михайловна</Middle>
+    <Last>Чумакова</Last>
+  </Name>
+  <Position GenoMap="Чумаков Николай Иванович" BoundaryRect="-660,-138,-580,-245">-620,-170</Position>
+  <Gender>F</Gender>
+  <Birth>
+    <Date>9 Jul 1931</Date>
+  </Birth>
+</Individual>
+<Individual ID="ind00026">
+  <Name Format="Custom">Чумакова (Чудецкая, Борзыкина) Римма Ивановна
+    <Display Format="Custom" Lines="5">Чумакова (Чудецкая, Борзыкина) Римма Ивановна</Display>
+    <First>Римма</First>
+    <Middle>ивановна</Middle>
+    <Last>Чудецкая</Last>
+    <Last2>Чумакова</Last2>
+  </Name>
+  <Position GenoMap="Чумаков Николай Иванович" BoundaryRect="-510,43,-435,-78">-472,11</Position>
+  <Gender>F</Gender>
+  <Birth>
+    <Date>25 Feb 1891</Date>
+  </Birth>
+  <IsDead>Y</IsDead>
+  <Death>
+    <Date>1975</Date>
+  </Death>
+</Individual>
+<Individual ID="ind00027">
+  <Name>Сергей Всеволодович Чумаков
+    <Display>Сергей Всеволодович Чумаков</Display>
+    <First>Сергей</First>
+    <Middle>Всеволодович</Middle>
+    <Last>Чумаков</Last>
+  </Name>
+  <Position GenoMap="Чумаков Николай Иванович" BoundaryRect="-567,-113,-476,-206">-521,-145</Position>
+  <Gender>M</Gender>
+  <Birth>
+    <Date>18 Jul 1918</Date>
+  </Birth>
+</Individual>
+<Individual ID="ind00028">
+  <Name>Цветков
+    <Display Format="Custom">Цветков</Display>
+    <First>Цветков</First>
+  </Name>
+  <Position GenoMap="Чумаков Николай Иванович" BoundaryRect="-950,36,-890,-23">-920,10</Position>
+  <Gender>M</Gender>
+  <Death Childless="Y"/>
+</Individual>
+<Individual ID="ind00029">
+  <Name Format="Custom">Хозлов Сергей Григорьевич
+    <Display Format="Custom">Хохлов Сергей Григорьевич</Display>
+    <First>Сергей</First>
+    <Middle>Григорьевич</Middle>
+  </Name>
+  <Position GenoMap="Чумаков Николай Иванович" BoundaryRect="-441,36,-360,-51">-400,10</Position>
+  <Gender>M</Gender>
+  <Death Childless="N"/>
+</Individual>
+<Individual ID="ind00030">
+  <Name Format="Custom">&#32;Чумаков Николай Иванович
+    <Display Format="Custom">Чумаков Николай Иванович&#32;</Display>
+    <First>Николай</First>
+    <Middle>Иванович</Middle>
+    <Last>Чумаков</Last>
+  </Name>
+  <Position GenoMap="GenoMap3" BoundaryRect="-2375,242,-2306,149">-2340,210</Position>
+  <Gender>M</Gender>
+  <Birth>
+    <Date>1858</Date>
+  </Birth>
+  <IsDead>Y</IsDead>
+  <Death Childless="N">
+    <Date>1930</Date>
+  </Death>
+  <Occupations>occu00003</Occupations>
+</Individual>
+<Individual ID="ind00031">
+  <Name Format="Custom">&#32;Чумакова Екатерина Петровна
+    <Display Format="Custom">&#32;Чумакова (ур.Заботина) Екатерина Петровна&#32;</Display>
+    <First>Екатерина</First>
+    <Middle>Петровна</Middle>
+    <Last>Заботина</Last>
+    <Last2>Чумакова</Last2>
+  </Name>
+  <Position GenoMap="GenoMap3" BoundaryRect="-2293,242,-2171,149">-2232,210</Position>
+  <Gender>F</Gender>
+  <Birth>
+    <Date>1872</Date>
+  </Birth>
+  <IsDead>Y</IsDead>
+  <Death Childless="N">
+    <Date>1950</Date>
+  </Death>
+</Individual>
+<Individual ID="ind00032">
+  <Name>Павел Иванов Чумаков
+    <Display Format="Custom">&#32;Чумаков Павел Иванов</Display>
+    <First>Павел</First>
+    <Middle>Иванов</Middle>
+    <Last>Чумаков</Last>
+  </Name>
+  <Position GenoMap="GenoMap3" BoundaryRect="-2484,242,-2416,149">-2450,210</Position>
+  <Gender>M</Gender>
+  <Birth>
+    <Date>1844</Date>
+  </Birth>
+  <Death Childless="N"/>
+  <Occupations>occu00004</Occupations>
+</Individual>
+<Individual ID="ind00033">
+  <Name>Пелагея Иванова Чумакова (Тарбинская)
+    <Display Format="Custom" Lines="4">Тарбинская (ур.Чумакова ) Пелагея Иванова&#32;</Display>
+    <First>Пелагея</First>
+    <Middle>Иванова</Middle>
+    <Last>Чумакова</Last>
+    <Last2>Тарбинская</Last2>
+  </Name>
+  <Position GenoMap="GenoMap3" BoundaryRect="-2733,242,-2648,135">-2690,210</Position>
+  <Gender>F</Gender>
+  <Birth>
+    <Date>1840</Date>
+  </Birth>
+  <IsDead>Y</IsDead>
+  <Death Childless="N">
+    <Date>1917</Date>
+  </Death>
+</Individual>
+<Individual ID="ind00036">
+  <Name>Александра Николаева Чумакова
+    <Display Format="Custom">&#32;Чумакова Александра Николаева</Display>
+    <First>Александра</First>
+    <Middle>Николаева</Middle>
+    <Last>Чумакова</Last>
+  </Name>
+  <Position GenoMap="GenoMap3" BoundaryRect="-2599,242,-2522,149">-2560,210</Position>
+  <Gender>F</Gender>
+  <Birth>
+    <Date>1853</Date>
+  </Birth>
+  <Death Childless="N"/>
+</Individual>
+<Individual ID="ind00037">
+  <Name>Иван Артемьев Чумаков
+    <Display Format="Custom">&#32;Чумаков Иван Артемьев</Display>
+    <First>Иван</First>
+    <Middle>Артемьев</Middle>
+    <Last>Чумаков</Last>
+  </Name>
+  <Position GenoMap="GenoMap3" BoundaryRect="-2665,442,-2596,349">-2630,410</Position>
+  <Gender>M</Gender>
+  <Birth>
+    <Date>1819</Date>
+  </Birth>
+  <IsDead>Y</IsDead>
+  <Death Childless="N">
+    <Date>1857</Date>
+  </Death>
+  <Occupations>occu00002</Occupations>
+</Individual>
+<Individual ID="ind00038">
+  <Name>Мария Сергеева Чумакова
+    <Display Format="Custom">&#32;Чумакова Мария Сергеева</Display>
+    <First>Мария</First>
+    <Middle>Сергеева</Middle>
+    <Last>Чумакова</Last>
+  </Name>
+  <Position GenoMap="GenoMap3" BoundaryRect="-2555,442,-2486,349">-2520,410</Position>
+  <Gender>F</Gender>
+  <Birth>
+    <Date>1822</Date>
+  </Birth>
+  <Death Childless="N"/>
+</Individual>
+<Individual ID="ind00039">
+  <Name>Артемий Иванов Чумаков
+    <Display Format="Custom">&#32;Чумаков Артемий Иванов</Display>
+    <First>Артемий</First>
+    <Middle>Иванов</Middle>
+    <Last>Чумаков</Last>
+  </Name>
+  <Position GenoMap="GenoMap3" BoundaryRect="-2854,592,-2786,499">-2820,560</Position>
+  <Gender>M</Gender>
+  <Birth>
+    <Date>1770</Date>
+  </Birth>
+  <IsDead>Y</IsDead>
+  <Death Childless="N">
+    <Date>1835</Date>
+  </Death>
+  <Occupations>occu00001</Occupations>
+</Individual>
+<Individual ID="ind00040">
+  <Name>Анна Адрианова Чумакова
+    <Display Format="Custom">Чумакова Анна Адрианова&#32;</Display>
+    <First>Анна</First>
+    <Middle>Адрианова</Middle>
+    <Last>Чумакова</Last>
+  </Name>
+  <Position GenoMap="GenoMap3" BoundaryRect="-2757,586,-2684,499">-2720,560</Position>
+  <Gender>F</Gender>
+  <Death Childless="N"/>
+</Individual>
+<Individual ID="ind00041">
+  <Name Format="Custom">Василий Петрович Тарбинский
+    <Display Format="Custom">&#32;Тарбинский Василий Петрович</Display>
+    <First>Василий</First>
+    <Middle>Петрович</Middle>
+    <Last2>Тарбинский</Last2>
+  </Name>
+  <Position GenoMap="GenoMap3" BoundaryRect="-2819,236,-2741,149">-2780,210</Position>
+  <Gender>M</Gender>
+  <Death Childless="N"/>
+</Individual>
+<Individual ID="ind00042">
+  <Name>Михаил Артемьев Чумаков
+    <Display Format="Custom">Чумаков Михаил Артемьев&#32;</Display>
+    <First>Михаил</First>
+    <Middle>Артемьев</Middle>
+    <Last>Чумаков</Last>
+  </Name>
+  <Position GenoMap="GenoMap3" BoundaryRect="-2905,442,-2836,349">-2870,410</Position>
+  <Gender>M</Gender>
+  <Birth>
+    <Date>1808</Date>
+  </Birth>
+  <IsDead>Y</IsDead>
+  <Death Childless="N">
+    <Date>1847</Date>
+  </Death>
+  <Occupations>occu00005</Occupations>
+</Individual>
+<Individual ID="ind00043">
+  <Position GenoMap="GenoMap3" BoundaryRect="-2986,436,-2934,384">-2960,410</Position>
+  <Gender>F</Gender>
+</Individual>
+<Individual ID="ind00044">
+  <Name>Петр Михайлов Чумаков
+    <Display Format="Custom">&#32;Чумаков Петр&#32; Михайлов</Display>
+    <First>Петр</First>
+    <Middle>Михайлов</Middle>
+    <Last>Чумаков</Last>
+  </Name>
+  <Position GenoMap="GenoMap3" BoundaryRect="-2914,232,-2846,139">-2880,200</Position>
+  <Gender>M</Gender>
+  <Birth>
+    <Date>1839</Date>
+  </Birth>
+  <Death Childless="N"/>
+</Individual>
+<Individual ID="ind00045">
+  <Name>федор Михайлов Чумаков
+    <Display Format="Custom">&#32;Чумаков Федор Михайлов</Display>
+    <First>федор</First>
+    <Middle>Михайлов</Middle>
+    <Last>Чумаков</Last>
+  </Name>
+  <Position GenoMap="GenoMap3" BoundaryRect="-2994,232,-2926,139">-2960,200</Position>
+  <Gender>M</Gender>
+  <Birth>
+    <Date>1838</Date>
+  </Birth>
+  <Death Childless="N"/>
+</Individual>
+<Individual ID="ind00046">
+  <Name>Павел Михайлов (Чумаков)
+    <Display Format="Custom">Чумаков Павел Михайлов</Display>
+    <First>Павел</First>
+    <Middle>Михайлов</Middle>
+    <Last2>Чумаков</Last2>
+  </Name>
+  <Position GenoMap="GenoMap3" BoundaryRect="-3084,232,-3016,139">-3050,200</Position>
+  <Gender>M</Gender>
+  <Birth>
+    <Date>1834</Date>
+  </Birth>
+  <Death Childless="N"/>
+  <Occupations>occu00006</Occupations>
+</Individual>
+<Individual ID="ind00047">
+  <Name Format="Custom">Цветкова (ур.Чумакова) Ольга Николаевна
+    <Display Format="Custom" Lines="4">Цветкова (ур.Чумакова) Ольга Николаевна</Display>
+    <First>Ольга</First>
+    <Middle>Николаевна</Middle>
+    <Last>Чумакова</Last>
+    <Last2>Цветкова</Last2>
+  </Name>
+  <Position GenoMap="GenoMap3" BoundaryRect="-3145,32,-3056,-75">-3100,0</Position>
+  <Gender>F</Gender>
+  <Birth>
+    <Date>24 Jul 1886</Date>
+  </Birth>
+  <IsDead>Y</IsDead>
+  <Death Childless="Y">
+    <Date>3 Nov 1968</Date>
+  </Death>
+</Individual>
+<Individual ID="ind00048">
+  <Name Format="Custom">Чумаков Михаил Николаевич
+    <Display Format="Custom">Чумаков Михаил Николаевич</Display>
+    <First>Михаил</First>
+    <Middle>Николаевич</Middle>
+    <Last>Чумаков</Last>
+    <Last2>Чумаков</Last2>
+  </Name>
+  <Position GenoMap="GenoMap3" BoundaryRect="-3049,32,-2972,-61">-3010,0</Position>
+  <Gender>M</Gender>
+  <Birth>
+    <Date>24 Jan 1888</Date>
+  </Birth>
+  <IsDead>Y</IsDead>
+  <Death Childless="N">
+    <Date>1969</Date>
+  </Death>
+</Individual>
+<Individual ID="ind00049">
+  <Name Format="Custom">&#32;Чумаков Сергей Николаевич
+    <Display Format="%L (%L2) %F %M">Чумаков Сергей Николаевич</Display>
+    <First>Сергей</First>
+    <Middle>Николаевич</Middle>
+    <Last>Чумаков</Last>
+  </Name>
+  <Position GenoMap="GenoMap3" BoundaryRect="-2881,35,-2804,-58">-2842,3</Position>
+  <Gender>M</Gender>
+  <Birth>
+    <Date>20 Oct 1889</Date>
+  </Birth>
+  <IsDead>Y</IsDead>
+  <Death Childless="N">
+    <Date>20 Jun 1965</Date>
+  </Death>
+</Individual>
+<Individual ID="ind00050">
+  <Name Format="Custom">Хохлова (ур. Чумакова) Анна Николаевна&#32;
+    <Display Format="Custom" Lines="4">Хохлова&#32; (ур. Чумакова) Анна Николаевна&#32;</Display>
+    <First>Анна</First>
+    <Middle>Николаевна</Middle>
+    <Last>Чумакова</Last>
+    <Last2>Хохлова</Last2>
+  </Name>
+  <Position GenoMap="GenoMap3" BoundaryRect="-2660,32,-2575,-75">-2617,0</Position>
+  <Gender>F</Gender>
+  <Birth>
+    <Date>14 Feb 1892</Date>
+  </Birth>
+  <IsDead>Y</IsDead>
+  <Death Childless="N">
+    <Date>20 Oct 1939</Date>
+  </Death>
+</Individual>
+<Individual ID="ind00051">
+  <Name Format="Custom">&#32;Чумаков Павел Николаевич
+    <Display Format="Custom">Чумаков Павел Николаевич&#32;</Display>
+    <First>Павел</First>
+    <Middle>Николаевич</Middle>
+    <Last2>Чумаков</Last2>
+  </Name>
+  <Position GenoMap="GenoMap3" BoundaryRect="-2580,32,-2503,-61">-2541,0</Position>
+  <Gender>M</Gender>
+  <Birth>
+    <Date>1894</Date>
+  </Birth>
+  <IsDead>Y</IsDead>
+  <Death Childless="Y">
+    <Date>1894</Date>
+  </Death>
+</Individual>
+<Individual ID="ind00052">
+  <Name Format="%L (%L2) %F %M">Чумакова Елена Николаевна
+    <Display Format="%L (%L2) %F %M">Чумакова Елена Николаевна</Display>
+    <First>Елена</First>
+    <Middle>Николаевна</Middle>
+    <Last>Чумакова</Last>
+  </Name>
+  <Position GenoMap="GenoMap3" BoundaryRect="-2506,32,-2429,-61">-2467,0</Position>
+  <Gender>F</Gender>
+  <Birth>
+    <Date>1894</Date>
+  </Birth>
+  <IsDead>Y</IsDead>
+  <Death Childless="Y">
+    <Date>17 Mar 1897</Date>
+  </Death>
+</Individual>
+<Individual ID="ind00053">
+  <Name Format="Custom">&#32;Чумаков Александр Николаевич
+    <Display Format="%L (%L2) %F %M">Чумаков Александр Николаевич</Display>
+    <First>Александр</First>
+    <Middle>Николаевич</Middle>
+    <Last>Чумаков</Last>
+  </Name>
+  <Position GenoMap="GenoMap3" BoundaryRect="-2433,32,-2356,-61">-2394,0</Position>
+  <Gender>M</Gender>
+  <Birth>
+    <Date>12 Aug 1896</Date>
+  </Birth>
+  <IsDead>Y</IsDead>
+  <Death Childless="Y">
+    <Date>19 Jun 1916</Date>
+  </Death>
+</Individual>
+<Individual ID="ind00054">
+  <Name Format="Custom">Чумакова Зинаида Николаевна&#32;
+    <Display Format="Custom">Чумакова Зинаида Николаевна&#32;</Display>
+    <First>Зинаида</First>
+    <Middle>Николаевна</Middle>
+    <Last>Чумакова</Last>
+    <Last2>Чумакова</Last2>
+  </Name>
+  <Position GenoMap="GenoMap3" BoundaryRect="-2349,32,-2272,-61">-2310,0</Position>
+  <Gender>F</Gender>
+  <Birth>
+    <Date>4 Oct 1899</Date>
+  </Birth>
+  <IsDead>Y</IsDead>
+  <Death Childless="N">
+    <Date>1 Sep 1974</Date>
+  </Death>
+</Individual>
+<Individual ID="ind00055">
+  <Name Format="Custom">&#32; Волкова (ур. Чумакова) Александра Николаевна&#32;
+    <Display Format="Custom" Lines="4">&#32;Волкова (ур. Чумакова) Александра Николаевна&#32;</Display>
+    <First>Александра</First>
+    <Middle>Николаевна</Middle>
+    <Last>Чумакова</Last>
+    <Last2>Волкова</Last2>
+  </Name>
+  <Position GenoMap="GenoMap3" BoundaryRect="-2266,32,-2182,-75">-2224,0</Position>
+  <Gender>F</Gender>
+  <Birth>
+    <Date>2 Apr 1901</Date>
+  </Birth>
+  <IsDead>Y</IsDead>
+  <Death Childless="N">
+    <Date>1990</Date>
+  </Death>
+</Individual>
+<Individual ID="ind00056">
+  <Name Format="Custom">Чумакова (ур.Селиванова) Евстолия Ивановна
+    <Display Format="Custom" Lines="4">Чумакова (ур.Селиванова)&#32; Евстолия Ивановна</Display>
+    <First>Евстолия</First>
+    <Middle>Ивановна</Middle>
+    <Last>Селиванова</Last>
+    <Last2>Чумакова</Last2>
+  </Name>
+  <Position GenoMap="GenoMap3" BoundaryRect="-2979,32,-2877,-75">-2928,0</Position>
+  <Gender>F</Gender>
+  <Birth>
+    <Date>18 Jul 1892</Date>
+  </Birth>
+  <IsDead>Y</IsDead>
+  <Death Childless="N">
+    <Date>3 Nov 1974</Date>
+  </Death>
+</Individual>
+<Individual ID="ind00057">
+  <Name Format="Custom">Чумакова (Чудецкая, Борзыкина) Римма Ивановна
+    <Display Format="Custom" Lines="5">Чумакова (Чудецкая, Борзыкина) Римма Ивановна</Display>
+    <First>Римма</First>
+    <Middle>ивановна</Middle>
+    <Last>Чудецкая</Last>
+    <Last2>Чумакова</Last2>
+  </Name>
+  <Position GenoMap="GenoMap3" BoundaryRect="-2800,32,-2725,-89">-2762,0</Position>
+  <Gender>F</Gender>
+  <Birth>
+    <Date>25 Feb 1891</Date>
+  </Birth>
+  <IsDead>Y</IsDead>
+  <Death>
+    <Date>1975</Date>
+  </Death>
+</Individual>
+<Individual ID="ind00058">
+  <Name Format="Custom">Хохлов Сергей Григорьевич
+    <Display Format="Custom">Хохлов Сергей Григорьевич</Display>
+    <First>Сергей</First>
+    <Middle>Григорьевич</Middle>
+  </Name>
+  <Position GenoMap="GenoMap3" BoundaryRect="-2731,31,-2650,-62">-2690,-1</Position>
+  <Gender>M</Gender>
+  <Birth>
+    <Date>20 Oct 1888</Date>
+  </Birth>
+  <IsDead>Y</IsDead>
+  <Death Childless="N">
+    <Date>10 Jul 1964</Date>
+  </Death>
+</Individual>
+<Individual ID="ind00059">
+  <Name Format="Custom">Волков Павел Матвеевич&#32;
+    <Display Format="Custom">Волков Павел Матвеевич&#32;</Display>
+    <First>Павел</First>
+    <Middle>Матвеевич</Middle>
+    <Last2>Волков</Last2>
+  </Name>
+  <Position GenoMap="GenoMap3" BoundaryRect="-2187,26,-2113,-61">-2150,0</Position>
+  <Gender>M</Gender>
+</Individual>
+<Individual ID="ind00060">
+  <Name Format="Custom">Цветков
+    <Display Format="Custom">Цветков</Display>
+    <Last2>Цветков</Last2>
+  </Name>
+  <Position GenoMap="GenoMap3" BoundaryRect="-3200,26,-3140,-33">-3170,0</Position>
+  <Gender>M</Gender>
+  <Death Childless="Y"/>
+</Individual>
+</Individuals>
+<Families>
+<Family ID="fam00001">
+  <Position>-170,140
+    <Top>
+      <Left>-230,140</Left>
+      <Right>-120,140</Right>
+    </Top>
+    <Bottom>
+      <Left>-230,100</Left>
+      <Right>-120,100</Right>
+    </Bottom>
+    <Points>-170,140, -170,130, -170,120, -170,100</Points>
+  </Position>
+</Family>
+<Family ID="fam00002">
+  <Position>-280,-20
+    <Top>
+      <Left>-310,-20</Left>
+      <Right>-230,-20</Right>
+    </Top>
+  </Position>
+</Family>
+<Family ID="fam00003">
+  <Position>-350,-150
+    <Top>
+      <Left>-380,-150</Left>
+      <Right>-270,-150</Right>
+    </Top>
+  </Position>
+</Family>
+<Family ID="fam00004">
+  <Position GenoMap="Чумаков Николай Иванович">-550,120
+    <Top>
+      <Left>-590,120</Left>
+      <Right>-482,120</Right>
+    </Top>
+    <Bottom>
+      <Left>-840,90</Left>
+      <Right>76,90</Right>
+    </Bottom>
+  </Position>
+</Family>
+<Family ID="fam00005">
+  <Position GenoMap="Чумаков Николай Иванович">-720,-80
+    <Top>
+      <Left>-740,-80</Left>
+      <Right>-660,-80</Right>
+    </Top>
+    <Bottom>-670,-110
+      <Left>-970,-110</Left>
+      <Right>-620,-110</Right>
+    </Bottom>
+    <Points>-720,-80, -720,-80, -670,-80, -670,-110</Points>
+  </Position>
+</Family>
+<Family ID="fam00006">
+  <Position GenoMap="Чумаков Николай Иванович">-520,-80
+    <Top>
+      <Left>-562,-80</Left>
+      <Right>-472,-80</Right>
+    </Top>
+  </Position>
+</Family>
+<Family ID="fam00007">
+  <Position GenoMap="Чумаков Николай Иванович">-880,-80
+    <Top>
+      <Left>-920,-80</Left>
+      <Right>-840,-80</Right>
+    </Top>
+  </Position>
+</Family>
+<Family ID="fam00008">
+  <Position GenoMap="Чумаков Николай Иванович">-380,-80
+    <Top>
+      <Left>-400,-80</Left>
+      <Right>-327,-80</Right>
+    </Top>
+  </Position>
+</Family>
+<Family ID="fam00010">
+  <Position GenoMap="GenoMap3">-2620,270
+    <Top>
+      <Left>-2690,270</Left>
+      <Right>-2340,270</Right>
+    </Top>
+  </Position>
+</Family>
+<Family ID="fam00013">
+  <Position GenoMap="GenoMap3">-2750,470
+    <Top>
+      <Left>-2870,470</Left>
+      <Right>-2630,470</Right>
+    </Top>
+  </Position>
+</Family>
+<Family ID="fam00014">
+  <Position GenoMap="GenoMap3">-2735,120
+    <Top>
+      <Left>-2780,120</Left>
+      <Right>-2690,120</Right>
+    </Top>
+  </Position>
+</Family>
+<Family ID="fam00015">
+  <Position GenoMap="GenoMap3">-2910,310
+    <Top>
+      <Left>-2960,310</Left>
+      <Right>-2870,310</Right>
+    </Top>
+    <Bottom>
+      <Left>-3050,270</Left>
+      <Right>-2880,270</Right>
+    </Bottom>
+  </Position>
+</Family>
+<Family ID="fam00016">
+  <Position GenoMap="GenoMap3">-2590,310
+    <Top>
+      <Left>-2630,310</Left>
+      <Right>-2520,310</Right>
+    </Top>
+    <Bottom>
+      <Left>-2650,270</Left>
+      <Right>-2540,270</Right>
+    </Bottom>
+  </Position>
+</Family>
+<Family ID="fam00017">
+  <Position GenoMap="GenoMap3">-2560,120
+    <Top>
+      <Left>-2560,120</Left>
+      <Right>-2450,120</Right>
+    </Top>
+  </Position>
+</Family>
+<Family ID="fam00018">
+  <Position GenoMap="GenoMap3">-2340,120
+    <Top>
+      <Left>-2340,120</Left>
+      <Right>-2232,120</Right>
+    </Top>
+  </Position>
+</Family>
+<Family ID="fam00019">
+  <Position GenoMap="GenoMap3">-2270,120
+    <Top>
+      <Left>-2270,120</Left>
+      <Right>-2270,120</Right>
+    </Top>
+    <Bottom>
+      <Left>-3100,50</Left>
+      <Right>-2220,50</Right>
+    </Bottom>
+    <Points>-2270,120, -2270,120, -2270,50</Points>
+  </Position>
+</Family>
+<Family ID="fam00020">
+  <Position GenoMap="GenoMap3">-2810,-101
+    <Top>
+      <Left>-2842,-101</Left>
+      <Right>-2762,-101</Right>
+    </Top>
+  </Position>
+</Family>
+<Family ID="fam00021">
+  <Position GenoMap="GenoMap3">-2670,-101
+    <Top>
+      <Left>-2690,-101</Left>
+      <Right>-2617,-101</Right>
+    </Top>
+  </Position>
+</Family>
+<Family ID="fam00022">
+  <Position GenoMap="GenoMap3">-3000,-101
+    <Top>
+      <Left>-3010,-101</Left>
+      <Right>-2930,-101</Right>
+    </Top>
+  </Position>
+</Family>
+<Family ID="fam00023">
+  <Position GenoMap="GenoMap3">-2214,-100
+    <Top>
+      <Left>-2224,-100</Left>
+      <Right>-2150,-100</Right>
+    </Top>
+  </Position>
+</Family>
+<Family ID="fam00024">
+  <Position GenoMap="GenoMap3">-3135,-100
+    <Top>
+      <Left>-3170,-100</Left>
+      <Right>-3100,-100</Right>
+    </Top>
+  </Position>
+</Family>
+</Families>
+<PedigreeLinks>
+<PedigreeLink PedigreeLink="Parent" Family="fam00001" Individual="ind00001"/>
+<PedigreeLink PedigreeLink="Parent" Family="fam00001" Individual="ind00002"/>
+<PedigreeLink PedigreeLink="Biological" Family="fam00001" Individual="ind00003"/>
+<PedigreeLink PedigreeLink="Biological" Family="fam00001" Individual="ind00004"/>
+<PedigreeLink PedigreeLink="Parent" Family="fam00002" Individual="ind00004"/>
+<PedigreeLink PedigreeLink="Biological" Family="fam00002" Individual="ind00005"/>
+<PedigreeLink PedigreeLink="Parent" Family="fam00002" Individual="ind00006"/>
+<PedigreeLink PedigreeLink="Parent" Family="fam00003" Individual="ind00005"/>
+<PedigreeLink PedigreeLink="Parent" Family="fam00003" Individual="ind00007"/>
+<PedigreeLink PedigreeLink="Biological" Family="fam00003" Individual="ind00008">
+  <Position>
+    <Points>-320,-170</Points>
+  </Position>
+</PedigreeLink>
+<PedigreeLink PedigreeLink="Parent" Family="fam00004" Individual="ind00009"/>
+<PedigreeLink PedigreeLink="Parent" Family="fam00004" Individual="ind00010"/>
+<PedigreeLink PedigreeLink="Biological" Family="fam00004" Individual="ind00011"/>
+<PedigreeLink PedigreeLink="Biological" Family="fam00004" Individual="ind00012"/>
+<PedigreeLink PedigreeLink="Biological" Family="fam00004" Individual="ind00013"/>
+<PedigreeLink PedigreeLink="Biological" Family="fam00004" Individual="ind00014"/>
+<PedigreeLink PedigreeLink="Biological" Family="fam00004" Individual="ind00015"/>
+<PedigreeLink PedigreeLink="Biological" Family="fam00004" Individual="ind00016"/>
+<PedigreeLink PedigreeLink="Biological" Family="fam00004" Individual="ind00017"/>
+<PedigreeLink PedigreeLink="Biological" Family="fam00004" Individual="ind00018"/>
+<PedigreeLink PedigreeLink="Biological" Family="fam00004" Individual="ind00019"/>
+<PedigreeLink PedigreeLink="Parent" Family="fam00005" Individual="ind00012"/>
+<PedigreeLink PedigreeLink="Parent" Family="fam00005" Individual="ind00020"/>
+<PedigreeLink PedigreeLink="Biological" Family="fam00005" Individual="ind00021"/>
+<PedigreeLink PedigreeLink="Biological" Family="fam00005" Individual="ind00022"/>
+<PedigreeLink PedigreeLink="Biological" Family="fam00005" Individual="ind00023"/>
+<PedigreeLink PedigreeLink="Biological" Family="fam00005" Individual="ind00024"/>
+<PedigreeLink PedigreeLink="Biological" Family="fam00005" Individual="ind00025"/>
+<PedigreeLink PedigreeLink="Parent" Family="fam00006" Individual="ind00013"/>
+<PedigreeLink PedigreeLink="Parent" Family="fam00006" Individual="ind00026"/>
+<PedigreeLink PedigreeLink="Biological" Family="fam00006" Individual="ind00027"/>
+<PedigreeLink PedigreeLink="Parent" Family="fam00007" Individual="ind00028"/>
+<PedigreeLink PedigreeLink="Parent" Family="fam00007" Individual="ind00011"/>
+<PedigreeLink PedigreeLink="Parent" Family="fam00008" Individual="ind00029"/>
+<PedigreeLink PedigreeLink="Parent" Family="fam00008" Individual="ind00014"/>
+<PedigreeLink PedigreeLink="Biological" Family="fam00010" Individual="ind00033"/>
+<PedigreeLink PedigreeLink="Biological" Family="fam00010" Individual="ind00033"/>
+<PedigreeLink PedigreeLink="Biological" Family="fam00010" Individual="ind00032"/>
+<PedigreeLink PedigreeLink="Biological" Family="fam00010" Individual="ind00030"/>
+<PedigreeLink PedigreeLink="Parent" Family="fam00013" Individual="ind00040"/>
+<PedigreeLink PedigreeLink="Parent" Family="fam00013" Individual="ind00039"/>
+<PedigreeLink PedigreeLink="Biological" Family="fam00013" Individual="ind00037"/>
+<PedigreeLink PedigreeLink="Parent" Family="fam00014" Individual="ind00041"/>
+<PedigreeLink PedigreeLink="Parent" Family="fam00014" Individual="ind00033"/>
+<PedigreeLink PedigreeLink="Parent" Family="fam00015" Individual="ind00043"/>
+<PedigreeLink PedigreeLink="Parent" Family="fam00015" Individual="ind00042"/>
+<PedigreeLink PedigreeLink="Biological" Family="fam00013" Individual="ind00042"/>
+<PedigreeLink PedigreeLink="Biological" Family="fam00015" Individual="ind00045"/>
+<PedigreeLink PedigreeLink="Biological" Family="fam00015" Individual="ind00046"/>
+<PedigreeLink PedigreeLink="Biological" Family="fam00015" Individual="ind00044"/>
+<PedigreeLink PedigreeLink="Parent" Family="fam00016" Individual="ind00037"/>
+<PedigreeLink PedigreeLink="Parent" Family="fam00016" Individual="ind00038"/>
+<PedigreeLink PedigreeLink="Parent" Family="fam00017" Individual="ind00032"/>
+<PedigreeLink PedigreeLink="Parent" Family="fam00017" Individual="ind00036"/>
+<PedigreeLink PedigreeLink="Parent" Family="fam00018" Individual="ind00030"/>
+<PedigreeLink PedigreeLink="Parent" Family="fam00018" Individual="ind00031"/>
+<PedigreeLink PedigreeLink="Biological" Family="fam00019" Individual="ind00047"/>
+<PedigreeLink PedigreeLink="Biological" Family="fam00019" Individual="ind00048"/>
+<PedigreeLink PedigreeLink="Biological" Family="fam00019" Individual="ind00049"/>
+<PedigreeLink PedigreeLink="Biological" Family="fam00019" Individual="ind00050"/>
+<PedigreeLink PedigreeLink="Biological" Family="fam00019" Individual="ind00051"/>
+<PedigreeLink PedigreeLink="Biological" Family="fam00019" Individual="ind00052"/>
+<PedigreeLink PedigreeLink="Biological" Family="fam00019" Individual="ind00053"/>
+<PedigreeLink PedigreeLink="Biological" Family="fam00019" Individual="ind00054"/>
+<PedigreeLink PedigreeLink="Biological" Family="fam00019" Individual="ind00055"/>
+<PedigreeLink PedigreeLink="Parent" Family="fam00020" Individual="ind00049"/>
+<PedigreeLink PedigreeLink="Parent" Family="fam00020" Individual="ind00057"/>
+<PedigreeLink PedigreeLink="Parent" Family="fam00021" Individual="ind00058"/>
+<PedigreeLink PedigreeLink="Parent" Family="fam00021" Individual="ind00050"/>
+<PedigreeLink PedigreeLink="Parent" Family="fam00022" Individual="ind00048"/>
+<PedigreeLink PedigreeLink="Parent" Family="fam00022" Individual="ind00056"/>
+<PedigreeLink PedigreeLink="Parent" Family="fam00023" Individual="ind00059"/>
+<PedigreeLink PedigreeLink="Parent" Family="fam00023" Individual="ind00055"/>
+<PedigreeLink PedigreeLink="Parent" Family="fam00024" Individual="ind00047"/>
+<PedigreeLink PedigreeLink="Parent" Family="fam00024" Individual="ind00060"/>
+</PedigreeLinks>
+<Places>
+<Place ID="place00001">
+  <Name>г.Москва</Name>
+</Place>
+</Places>
+<Educations>
+<Education ID="edu00001">
+  <Institution>Московский полиграфический институт</Institution>
+  <Level>High School</Level>
+  <StudyType>Full</StudyType>
+</Education>
+</Educations>
+<Occupations>
+<Occupation ID="occu00001">
+  <Title>серебряник</Title>
+</Occupation>
+<Occupation ID="occu00002">
+  <Title>серебряник</Title>
+</Occupation>
+<Occupation ID="occu00003">
+  <Title>серебряник</Title>
+</Occupation>
+<Occupation ID="occu00004">
+  <Title>серебряник</Title>
+</Occupation>
+<Occupation ID="occu00005">
+  <Title>серебряник</Title>
+</Occupation>
+<Occupation ID="occu00006">
+  <Title>серебряник</Title>
+</Occupation>
+</Occupations>
+</GenoPro>

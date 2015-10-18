@@ -1,0 +1,8 @@
+﻿perl -Ilib t\01_compile.t > 01_test.log 2>&1
+
+perl -MTest::More -Ilib -e "use_ok('Padre::Util');done_testing()"
+ok 1 - use Padre::Util;
+1..1
+
+c:\Users\TOSH\Documents\GitHub\padre-mi>
+perl -Ilib t\02_new.t
