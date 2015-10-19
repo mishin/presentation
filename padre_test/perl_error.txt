@@ -1,0 +1,25 @@
+perl -de1
+
+Loading DB routines from perl5db.pl version 1.44_01
+Editor support available.
+
+Enter h or 'h h' for help, or 'perldoc perldebug' for more help.
+
+main::(-e:1):   1
+ SetConsoleMode failed, LastError=|6| at C:/Users/MishinNA/Documents/programs/strawberry-perl-5.20.3.1-32bit-PDL/perl/vendor/lib/Term/ReadKey.pm line 334.
+ at C:/Users/MishinNA/Documents/programs/strawberry-perl-5.20.3.1-32bit-PDL/perl
+/vendor/lib/Term/ReadLine/readline.pm line 1581.
+        readline::readline("  DB<1> ") called at C:/Users/MishinNA/Documents/pro
+grams/strawberry-perl-5.20.3.1-32bit-PDL/perl/vendor/lib/Term/ReadLine/Perl.pm l
+ine 11
+        Term::ReadLine::Perl::readline(Term::ReadLine::Perl=ARRAY(0x2b7f044), "
+ DB<1> ") called at C:/Users/MishinNA/Documents/programs/strawberry-perl-5.20.3.
+1-32bit-PDL/perl/lib/perl5db.pl line 7286
+        DB::readline("  DB<1> ") called at C:/Users/MishinNA/Documents/programs/
+strawberry-perl-5.20.3.1-32bit-PDL/perl/lib/perl5db.pl line 1833
+        DB::_DB__read_next_cmd(undef) called at C:/Users/MishinNA/Documents/prog
+rams/strawberry-perl-5.20.3.1-32bit-PDL/perl/lib/perl5db.pl line 2746
+        DB::DB called at -e line 1
+  DB<1>
+  
+   TERM=dumb 
