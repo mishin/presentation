@@ -12,10 +12,8 @@ sub solution {
     # print "\$binary_number: $binary_number\n";
     my $counter     = 0;
     my $max_counter = 0;
-
-    # my $ret_counter   = 0;
     my $lenght_string = length $binary_number;
-    my $start_gap     = '0';
+
     for ( my $i = 0 ; $i < $lenght_string ; $i++ ) {
         my $char      = substr( $binary_number, $i,     1 );
         my $prev_char = substr( $binary_number, $i - 1, 1 );
