@@ -16,3 +16,9 @@
     (sum-of-square (max x y) (max (max x y) z)))
 
 (max3 4 2 3)
+
+(define (abs x) (if (< x 0) (- x) x))
+(define (square x) (* x x))
+(define (average x y) (/ (+ x y) 2))
+(define (improve guess x) (average guess (/ x guess)))
+(define (good-enough? guess x) (< (/ (abs (- (improve guess x) guess)) guess) 0.001))
