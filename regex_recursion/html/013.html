@@ -1,0 +1,92 @@
+<html>
+<head>
+<title>Title Slide</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<script>
+function navigate(e) {
+    var keynum = (window.event) // IE
+        ? e.keyCode
+        : e.which;
+    if (keynum == 8) {
+        window.location = "012.pl" + ".html";
+        return false;
+    }
+    if (keynum == 13 || keynum == 32) {
+        window.location = "014.pl" + ".html";
+        return false;
+    }
+    if (keynum == 73 || keynum == 105) {
+        window.location = "index.html";
+        return false;
+    }
+    return true;
+}
+</script>
+</head>
+<body onkeydown="return navigate(event)">
+<div style="border-style: solid ; border-width: 2px ; font-size: x-large">
+<pre>     It is a dsx file:
+     BEGIN HEADER
+        CharacterSet &quot;CP1251&quot;
+        ExportingTool &quot;IBM Websphere DataStage Export&quot;
+        ServerName &quot;YAPC&quot;
+        ToolInstanceID &quot;Russia&quot;
+     END HEADER
+     BEGIN DSJOB
+        Identifier &quot;Parse_DSX&quot;
+        DateModified &quot;2024-09-08&quot;
+        TimeModified &quot;13.03.02&quot;
+        BEGIN DSRECORD
+           Identifier &quot;ROOT&quot;
+           OLEType &quot;CJobDefn&quot;
+           Readonly &quot;0&quot;
+           Name &quot;Parse_DSX&quot;
+           ControlAfterSubr &quot;0&quot;
+           Parameters &quot;CParameters&quot;
+           MetaBag &quot;CMetaProperty&quot;
+           BEGIN DSSUBRECORD
+              Owner &quot;APT&quot;
+              Name &quot;AdvancedRuntimeOptions&quot;
+              Value &quot;#DSProjectARTOptions#&quot;
+           END DSSUBRECORD
+           BEGIN DSSUBRECORD
+              Owner &quot;APT&quot;
+              Name &quot;ClientCodePage&quot;
+              Value &quot;1251&quot;
+           END DSSUBRECORD
+           NULLIndicatorPosition &quot;0&quot;
+           OrchestrateCode =+=+=+=
+     #################################################################
+     #### STAGE: T201
+     ## Operator
+     transform
+     ## Operator options
+     -flag run
+     -name 'Russia_YAPC_Ryasan_2015'
+
+     ## General options
+     [ident('T201'); jobmon_ident('T201')]
+     ## Inputs
+     0&lt; [] 'Ryazan_client:L201.v'
+     ## Outputs
+     0&gt; [] 'T201:L01.v'
+     1&gt; [] 'T201:L202.v'
+     ;
+
+
+     =+=+=+=
+           IsTemplate &quot;0&quot;
+           NLSLocale &quot;,,,,&quot;
+           JobType &quot;3&quot;
+           ValidationStatus &quot;0&quot;
+           RecordPerformanceResults &quot;0&quot;
+        END DSRECORD
+     END DSJOB
+</pre>
+</div>
+<br>
+<div style="font-size: small">
+<p></p>
+</div>
+</body>
+</html>

@@ -1,0 +1,93 @@
+ok 1 - use Wx;
+# Tests find Wx: 0.9927 wxWidgets 3.0.2
+ok 2 - use t::lib::Padre;
+ok 3 - use Padre::Util;
+not ok 4 - use Padre::Config;
+#   Failed test 'use Padre::Config;'
+#   at t\01_compile.t line 27.
+#     Tried to use 'Padre::Config'.
+#     Error:  Failed to find share dir for dist 'Padre' at lib/Padre/Util.pm line 408.
+# Compilation failed in require at t\01_compile.t line 27.
+# BEGIN failed--compilation aborted at t\01_compile.t line 27.
+not ok 5 - use Padre::Config::Apply;
+#   Failed test 'use Padre::Config::Apply;'
+#   at t\01_compile.t line 28.
+#     Tried to use 'Padre::Config::Apply'.
+#     Error:  Attempt to reload Padre/Config.pm aborted.
+# Compilation failed in require at lib/Padre/Feature.pm line 40.
+# BEGIN failed--compilation aborted at lib/Padre/Feature.pm line 40.
+# Compilation failed in require at lib/Padre/Config/Apply.pm line 53.
+# BEGIN failed--compilation aborted at lib/Padre/Config/Apply.pm line 53.
+# Compilation failed in require at t\01_compile.t line 28.
+# BEGIN failed--compilation aborted at t\01_compile.t line 28.
+ok 6 - use Padre::Config::Project;
+ok 7 - use Padre::DB::Timeline;
+ok 8 - use Padre::DB;
+ok 9 - use Padre::Project;
+ok 10 - use Padre::Wx;
+ok 11 - use Padre::Wx::HtmlWindow;
+ok 12 - use Padre::Wx::Printout;
+not ok 13 - use Padre::Wx::Dialog::PluginManager;
+#   Failed test 'use Padre::Wx::Dialog::PluginManager;'
+#   at t\01_compile.t line 36.
+#     Tried to use 'Padre::Wx::Dialog::PluginManager'.
+#     Error:  Failed to find share dir for dist 'Padre' at lib/Padre/Util.pm line 408.
+# BEGIN failed--compilation aborted at lib/Padre/Wx/Icon.pm line 31.
+# Compilation failed in require at lib/Padre/Wx/Dialog/PluginManager.pm line 9.
+# BEGIN failed--compilation aborted at lib/Padre/Wx/Dialog/PluginManager.pm line 9.
+# Compilation failed in require at t\01_compile.t line 36.
+# BEGIN failed--compilation aborted at t\01_compile.t line 36.
+not ok 14 - use Padre::Wx::Dialog::Preferences;
+#   Failed test 'use Padre::Wx::Dialog::Preferences;'
+#   at t\01_compile.t line 37.
+#     Tried to use 'Padre::Wx::Dialog::Preferences'.
+#     Error:  Attempt to reload Padre/Config.pm aborted.
+# Compilation failed in require at lib/Padre/Locale.pm line 47.
+# BEGIN failed--compilation aborted at lib/Padre/Locale.pm line 47.
+# Compilation failed in require at lib/Padre/Wx/Dialog/Preferences.pm line 6.
+# BEGIN failed--compilation aborted at lib/Padre/Wx/Dialog/Preferences.pm line 6.
+# Compilation failed in require at t\01_compile.t line 37.
+# BEGIN failed--compilation aborted at t\01_compile.t line 37.
+ok 15 - use Padre::Wx::TextEntryDialog::History;
+ok 16 - use Padre::Wx::ComboBox::History;
+ok 17 - use Padre::Wx::ComboBox::FindTerm;
+not ok 18 - use Padre;
+#   Failed test 'use Padre;'
+#   at t\01_compile.t line 41.
+#     Tried to use 'Padre'.
+#     Error:  Attempt to reload Padre/Config.pm aborted.
+# Compilation failed in require at lib/Padre.pm line 29.
+# BEGIN failed--compilation aborted at lib/Padre.pm line 29.
+# Compilation failed in require at t\01_compile.t line 41.
+# BEGIN failed--compilation aborted at t\01_compile.t line 41.
+ok 19 - use Padre::Pod2HTML;
+ok 20 - use Padre::Plugin::Devel;
+ok 21 - use Padre::Plugin::My;
+ok 22 - use Padre::Task;
+ok 23 - use Padre::TaskWorker;
+ok 24 - use Padre::TaskHandle;
+not ok 25 - use Padre::TaskManager;
+#   Failed test 'use Padre::TaskManager;'
+#   at t\01_compile.t line 50.
+#     Tried to use 'Padre::TaskManager'.
+#     Error:  Attempt to reload Padre/Config.pm aborted.
+# Compilation failed in require at lib/Padre/TaskManager.pm line 59.
+# BEGIN failed--compilation aborted at lib/Padre/TaskManager.pm line 59.
+# Compilation failed in require at t\01_compile.t line 50.
+# BEGIN failed--compilation aborted at t\01_compile.t line 50.
+ok 26 - use Padre::Role::Task;
+Use of uninitialized value $loaded in concatenation (.) or string at t\01_compile.t line 56.
+not ok 27 - Loaded the remaining  classes ok
+#   Failed test 'Loaded the remaining  classes ok'
+#   at t\01_compile.t line 56.
+ok 28 - Script script/padre compiles
+ok 29 - Script share/examples/wx/01_simple_frame.pl compiles
+ok 30 - Script share/examples/wx/02_label.pl compiles
+ok 31 - Script share/examples/wx/03_button.pl compiles
+ok 32 - Script share/examples/wx/04_button_with_event.pl compiles
+ok 33 - Script share/examples/wx/05_button_with_event_and_message_box.pl compiles
+ok 34 - Script share/examples/wx/21_progress_bar.pl compiles
+ok 35 - Script share/examples/wx/22_notebook.pl compiles
+ok 36 - Script share/examples/wx/30_editor.pl compiles
+1..36
+# Looks like you failed 7 tests of 36.

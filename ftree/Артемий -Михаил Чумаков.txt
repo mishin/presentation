@@ -1,0 +1,107 @@
+[Charset=windows-1251]
+
+[Individuals]
+ID	Gender	Name.First	Name.Middle	Name.Last	Comment	IsAdopted	FamilyRank	Birth.Date	Birthday	Age	Birth.Place	IsDead	Death.Date	Death.Cause	Death.Cause.Description	Death.Place	Death.Childless	Pictures.Count	Pictures	Sources	Mates	Fathers	FathersAgeAtBirth	Mothers	MothersAgeAtBirth	Siblings.Twins	Siblings	Siblings.Half	Siblings.Step	Siblings.Other	Children	Children.Age	AgeAtChildBirths	Employer	Occupation	Occupations	Educations	Contacts	Contact.Address	Contact.Telephone	Contact.TelephoneMobile	Contact.TelephoneWork	Contact.Email	Contact.Homepage	Hyperlink.Internal	Hyperlink	Birth.Baptism.Date	Birth.Baptism.Place	Birth.Baptism.Officiator.Title	Birth.Baptism.Officiator	Birth.Baptism.Godfather	Birth.Baptism.Godmother	Birth.Baptism.Source	Death.Funerals.Date	Death.Funerals.Agency	Death.Funerals.Place	Death.Funerals.Source	Death.Disposition.Type	Death.Disposition.Date	Death.Disposition.Place	Death.Disposition.Source	DataLevel	custom_tag1	custom_tag2	custom_tag3	custom_tag4	custom_tag5
+ind00001	M	Дмитрий	Григорьевич	Доможиров				28 Sep 1877	28 Sep	60y 1m 16d		Y	13 Nov 1937								ind00002										ind00004, ind00003	71, 23	39, 42																													3					
+ind00002	F	Елена	Николаевна	Бескодарова				9 Apr 1893	9 Apr	82y 9m 0d		Y	9 Jan 1976								ind00001										ind00004, ind00003	71, 23	24, 26																													3					
+ind00003	M	Григорий	Дмитриевич	Доможиров			2	6 Jan 1920	6 Jan	23y 7m 14d		Y	20 Aug 1943				Y					ind00001	42	ind00002	26		ind00004																																			3					
+ind00004	F	Галли	Дмитриевна	Доможирова			1	11 Jun 1917	11 Jun	71y 8m 3d	place00001	Y	14 Feb 1989								ind00006	ind00001	39	ind00002	24		ind00003				ind00005	66	31				edu00001																									5					
+ind00005	F	Елена	Леонидовна	Доможирова			1	20 Apr 1949	20 Apr	66y 5m 24d		N					N				ind00007	ind00006		ind00004	31						ind00008	26	40																													2					
+ind00006	M											N									ind00004										ind00005	66																																			
+ind00007	M	Лев	Яльмарович	Чумаков				13 Apr 1933	13 Apr	82y 6m 1d		N					N				ind00005										ind00008	26	56																													2					
+ind00008	M	Григорий	Львович	Доможиров			1	28 Jul 1989	28 Jul	26y 2m 16d		N										ind00007	56	ind00005	40																																					2					
+ind00009	M	Николай	Иванович	Чумаков								Y	1930				N				ind00010										ind00011, ind00012, ind00013, ind00014, ind00015, ind00016, ind00017, ind00018, ind00019	82, 81, 75, 47, 0, 3, 19, 74, 89	, , , , , , , , 																													2					
+ind00010	F	Екатерина	Петровна	Заботина				1872		78		Y	1950				N				ind00009										ind00011, ind00012, ind00013, ind00014, ind00015, ind00016, ind00017, ind00018, ind00019	82, 81, 75, 47, 0, 3, 19, 74, 89	14, 16, 17, 20, 22, 22, 24, 27, 29																													3					
+ind00011	F	Ольга	Николаевна	Чумакова			1	24 Jul 1886	24 Jul	82y 3m 10d		Y	3 Nov 1968				Y				ind00028	ind00009		ind00010	14		ind00012, ind00013, ind00014, ind00015, ind00016, ind00017, ind00018, ind00019																																			3					
+ind00012	M	Михаил	Николаевич	Чумаков			2	24 Jan 1888	24 Jan	81		Y	1969				N				ind00020	ind00009		ind00010	16		ind00011, ind00013, ind00014, ind00015, ind00016, ind00017, ind00018, ind00019				ind00021, ind00022, ind00023, ind00024, ind00025	0, 86, 67, 88, 84	33, 35, 37, 39, 43																													3					
+ind00013	M	Сергей	Николаевич	Чумаков			3	20 Oct 1889	20 Oct	75y 8m 0d		Y	20 Jun 1965				N				ind00026	ind00009		ind00010	17		ind00011, ind00012, ind00014, ind00015, ind00016, ind00017, ind00018, ind00019				ind00027	97	28																													3					
+ind00014	F	Анна	Николаевна	Чумакова			4	14 Feb 1892	14 Feb	47y 8m 6d		Y	20 Oct 1939				N				ind00029	ind00009		ind00010	20		ind00011, ind00012, ind00013, ind00015, ind00016, ind00017, ind00018, ind00019																																			3					
+ind00015	M	Павел	Николаевич				5	1894				Y	1894				Y					ind00009		ind00010	22		ind00011, ind00012, ind00013, ind00014, ind00016, ind00017, ind00018, ind00019																																			3					
+ind00016	F	Елена	Николаевна	Чумакова			6	1894		3		Y	17 Mar 1897				Y					ind00009		ind00010	22		ind00011, ind00012, ind00013, ind00014, ind00015, ind00017, ind00018, ind00019																																			3					
+ind00017	M	Александр	Николаевич	Чумаков			7	12 Aug 1896	12 Aug	19y 10m 7d		Y	19 Jun 1916				Y					ind00009		ind00010	24		ind00011, ind00012, ind00013, ind00014, ind00015, ind00016, ind00018, ind00019																																			3					
+ind00018	F	Зинаида	Николаевна	Чумакова			8	4 Oct 1899	4 Oct	74y 10m 28d		Y	1 Sep 1974				N					ind00009		ind00010	27		ind00011, ind00012, ind00013, ind00014, ind00015, ind00016, ind00017, ind00019																																			3					
+ind00019	F	Александра	Николаевна	Чумакова			9	2 Apr 1901	2 Apr	89		Y	1990				N					ind00009		ind00010	29		ind00011, ind00012, ind00013, ind00014, ind00015, ind00016, ind00017, ind00018																																			3					
+ind00020	F	Евстолия	Ивановна	Селиванова				18 Jul 1892	18 Jul	82y 3m 16d		Y	3 Nov 1974				N				ind00012										ind00021, ind00022, ind00023, ind00024, ind00025	0, 86, 67, 88, 84	29, 30, 33, 34, 38																													3					
+ind00021	F	Марианна	Николаевна	Чумакова			1	1921				Y	1921									ind00012	33	ind00020	29		ind00022, ind00023, ind00024, ind00025																																			3					
+ind00022	F	Галина	Михайловна	Чумакова			2	8 May 1923	8 May	86y 1m 24d		Y	2 Jul 2009									ind00012	35	ind00020	30		ind00021, ind00023, ind00024, ind00025																																			3					
+ind00023	M	Татьяна	Михайловна	Чумакова			3	22 Sep 1925	22 Sep	67y 6m 27d		Y	18 Apr 1993									ind00012	37	ind00020	33		ind00021, ind00022, ind00024, ind00025																																			3					
+ind00024	M	Николай	Михайлович	Чумаков			4	13 May 1927	13 May	88y 5m 1d		N										ind00012	39	ind00020	34		ind00021, ind00022, ind00023, ind00025																																			2					
+ind00025	F	Мария	Михайловна	Чумакова			5	9 Jul 1931	9 Jul	84y 3m 5d		N										ind00012	43	ind00020	38		ind00021, ind00022, ind00023, ind00024																																			2					
+ind00026	F	Римма	ивановна	Чудецкая				25 Feb 1891	25 Feb	84		Y	1975								ind00013										ind00027	97	27																													3					
+ind00027	M	Сергей	Всеволодович	Чумаков			1	18 Jul 1918	18 Jul	97y 2m 26d		N										ind00013	28	ind00026	27																																					2					
+ind00028	M	Цветков										N					Y				ind00011																																									1					
+ind00029	M	Сергей	Григорьевич									N					N				ind00014																																									1					
+ind00030	M	Николай	Иванович	Чумаков			3	1858		72		Y	1930				N				ind00031						ind00033, ind00032								серебряник	occu00003																										4					
+ind00031	F	Екатерина	Петровна	Заботина				1872		78		Y	1950				N				ind00030																																									3					
+ind00032	M	Павел	Иванов	Чумаков			2	1844		171		N					N				ind00036						ind00033, ind00030								серебряник	occu00004																										3					
+ind00033	F	Пелагея	Иванова	Чумакова			1	1840		77		Y	1917				N				ind00041						ind00032, ind00030																																			3					
+ind00036	F	Александра	Николаева	Чумакова				1853		162		N					N				ind00032																																									2					
+ind00037	M	Иван	Артемьев	Чумаков			2	1819		38		Y	1857				N				ind00038	ind00039	49	ind00040			ind00042								серебряник	occu00002																										4					
+ind00038	F	Мария	Сергеева	Чумакова				1822		193		N					N				ind00037																																									2					
+ind00039	M	Артемий	Иванов	Чумаков				1770		65		Y	1835				N				ind00040										ind00042, ind00037	39, 38	38, 49		серебряник	occu00001																										4					
+ind00040	F	Анна	Адрианова	Чумакова								N					N				ind00039										ind00042, ind00037	39, 38	, 																													1					
+ind00041	M	Василий	Петрович									N					N				ind00033																																									1					
+ind00042	M	Михаил	Артемьев	Чумаков			1	1808		39		Y	1847				N				ind00043	ind00039	38	ind00040			ind00037				ind00046, ind00045, ind00044	181, 177, 176	26, 30, 31		серебряник	occu00005																										4					
+ind00043	F											N									ind00042										ind00046, ind00045, ind00044	181, 177, 176	, , 																																		
+ind00044	M	Петр	Михайлов	Чумаков			3	1839		176		N					N					ind00042	31	ind00043			ind00046, ind00045																																			2					
+ind00045	M	федор	Михайлов	Чумаков			2	1838		177		N					N					ind00042	30	ind00043			ind00046, ind00044																																			2					
+ind00046	M	Павел	Михайлов				1	1834		181		N					N					ind00042	26	ind00043			ind00045, ind00044								серебряник	occu00006																										3					
+ind00047	F	Ольга	Николаевна	Чумакова			1	24 Jul 1886	24 Jul	82y 3m 10d		Y	3 Nov 1968				Y				ind00060						ind00048, ind00049, ind00050, ind00051, ind00052, ind00053, ind00054, ind00055																																			3					
+ind00048	M	Михаил	Николаевич	Чумаков			2	24 Jan 1888	24 Jan	81		Y	1969				N				ind00056						ind00047, ind00049, ind00050, ind00051, ind00052, ind00053, ind00054, ind00055																																			3					
+ind00049	M	Сергей	Николаевич	Чумаков			3	20 Oct 1889	20 Oct	75y 8m 0d		Y	20 Jun 1965				N				ind00057						ind00047, ind00048, ind00050, ind00051, ind00052, ind00053, ind00054, ind00055																																			3					
+ind00050	F	Анна	Николаевна	Чумакова			4	14 Feb 1892	14 Feb	47y 8m 6d		Y	20 Oct 1939				N				ind00058						ind00047, ind00048, ind00049, ind00051, ind00052, ind00053, ind00054, ind00055																																			3					
+ind00051	M	Павел	Николаевич				5	1894				Y	1894				Y										ind00047, ind00048, ind00049, ind00050, ind00052, ind00053, ind00054, ind00055																																			3					
+ind00052	F	Елена	Николаевна	Чумакова			6	1894		3		Y	17 Mar 1897				Y										ind00047, ind00048, ind00049, ind00050, ind00051, ind00053, ind00054, ind00055																																			3					
+ind00053	M	Александр	Николаевич	Чумаков			7	12 Aug 1896	12 Aug	19y 10m 7d		Y	19 Jun 1916				Y										ind00047, ind00048, ind00049, ind00050, ind00051, ind00052, ind00054, ind00055																																			3					
+ind00054	F	Зинаида	Николаевна	Чумакова			8	4 Oct 1899	4 Oct	74y 10m 28d		Y	1 Sep 1974				N										ind00047, ind00048, ind00049, ind00050, ind00051, ind00052, ind00053, ind00055																																			3					
+ind00055	F	Александра	Николаевна	Чумакова			9	2 Apr 1901	2 Apr	89		Y	1990				N				ind00059						ind00047, ind00048, ind00049, ind00050, ind00051, ind00052, ind00053, ind00054																																			3					
+ind00056	F	Евстолия	Ивановна	Селиванова				18 Jul 1892	18 Jul	82y 3m 16d		Y	3 Nov 1974				N				ind00048																																									3					
+ind00057	F	Римма	ивановна	Чудецкая				25 Feb 1891	25 Feb	84		Y	1975								ind00049																																									3					
+ind00058	M	Сергей	Григорьевич					20 Oct 1888	20 Oct	75y 8m 20d		Y	10 Jul 1964				N				ind00050																																									3					
+ind00059	M	Павел	Матвеевич									N									ind00055																																									1					
+ind00060	M											N					Y				ind00047																																									1					
+[Families]
+Position.Width	IsLabel	DisplayText	Relationships	Relation	GotMarried	AreTogether	Marriage.Date	Unions	Husband	AgeAtWeddingHusband	Wife	AgeAtWeddingWife	Children	Children.OrderUnknown	Children.Age	FamilyLine	EndOfFamily	Pictures.Count	Pictures	Sources	Comment	DataLevel
+110	N				N	N			ind00001		ind00002		ind00004, ind00003	N	71, 23		N					
+80	N				N	N			ind00006		ind00004		ind00005	N	66		N					
+110	N				N	Y			ind00007		ind00005		ind00008	N	26		N					
+108	N				N	N			ind00009		ind00010		ind00011, ind00012, ind00013, ind00014, ind00015, ind00016, ind00017, ind00018, ind00019	N	82, 81, 75, 47, 0, 3, 19, 74, 89		N					
+80	N				N	N			ind00012		ind00020		ind00021, ind00022, ind00023, ind00024, ind00025	N	0, 86, 67, 88, 84		N					
+90	N				N	N			ind00013		ind00026		ind00027	N	97		N					
+80	N				N	N			ind00028		ind00011			N			N					
+73	N				N	N			ind00029		ind00014			N			N					
+350	N				N	Y							ind00033, ind00032, ind00030	N	77, 171, 72		N					
+240	N				N	N			ind00039		ind00040		ind00042, ind00037	N	39, 38		N					
+90	N				N	N			ind00041		ind00033			N			N					
+90	N				N	N			ind00042		ind00043		ind00046, ind00045, ind00044	N	181, 177, 176		N					
+110	N				N	N			ind00037		ind00038			N			N					
+110	N				N	Y			ind00032		ind00036			N			N					
+108	N				N	N			ind00030		ind00031			N			N					
+0	N				N	Y							ind00047, ind00048, ind00049, ind00050, ind00051, ind00052, ind00053, ind00054, ind00055	N	82, 81, 75, 47, 0, 3, 19, 74, 89		N					
+80	N				N	N			ind00049		ind00057			N			N					
+73	N				N	N			ind00058		ind00050			N			N					
+80	N				N	N			ind00048		ind00056			N			N					
+74	N				N	N			ind00059		ind00055			N			N					
+70	N				N	N			ind00060		ind00047			N			N					
+[Marriages]
+Type	Date	Place	Officiator.Title	Officiator	Witnesses	Source	IsAnnulled	Divorce.RequestedBy	Divorce.Date	Divorce.Place	Divorce.Source	Divorce.Officiator	Divorce.Attorney.Husband	Divorce.Attorney.Wife	Comment	References	DataLevel
+[Pictures]
+Name	Date	Place	Source	Sources	Path.Relative	Path.Preserve	Path	Cache.FileSizeKB	Cache.Dimension	Cache.Megapixels	Cache.DPI	Comment	References	DataLevel
+[Places]
+Parent	Children	Category	Name	Prefix	NameNarrative	Description	Pictures.Count	Pictures	Sources	Address	Street	City	County	State	Zip	Latitude	Longitude	Country	Comment	References	DataLevel
+			г.Москва		 в г.Москва															ind00004	1
+[Educations]
+Program	Institution	Place	Source	Comment	Level	Level.Years	Achievement	StudyType	DateStart	DateEnd	Duration	Termination	Pictures.Count	Pictures	Sources	References	DataLevel
+	Московский полиграфический институт				High School			Full								ind00004	3
+[Occupations]
+Title	Comment	Industry	Company	Place	Source	WorkType	DateStart	DateEnd	Duration	Termination	Pictures.Count	Pictures	Sources	References	DataLevel
+серебряник														ind00039	1
+серебряник														ind00037	1
+серебряник														ind00030	1
+серебряник														ind00032	1
+серебряник														ind00042	1
+серебряник														ind00046	1
+[Contacts]
+Type	Summary	Place	Source	Telephone	Mobile	Fax	Email	Homepage	DateStart	DateEnd	Duration	Comment	References	DataLevel
+[SourcesAndCitations]
+Parent	Children	Title	Subtitle	Description	MediaType	QuotedText	WhereInSource	Pictures.Count	Pictures	Originator	Editor	Edition	Series.Name	Series.Issue	ISBN	ReferenceNumber	Publication.Date	Publication.Place	Publication.Publisher	Repository	Url	ConfidenceLevel	Comment	References	DataLevel

@@ -1,0 +1,5 @@
+ perl -MPOD2::RU -e 'print_pods'
+ 
+ 
+  PERL5OPT=-MDevel::Cover=-coverage,statement,branch,condition,path,subroutine prove -lrsv t
+cover -ignore_re '[.]t$|prove'

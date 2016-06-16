@@ -1,0 +1,115 @@
+# This is a sample Vroom input file. It should help you get started.
+#
+# Edit this file with your content. Then run `vroom vroom` to start
+# the show!
+#
+# See `perldoc Vroom` for complete details.
+#
+---- config
+# Basic config options.
+title: Vroom is Simple!
+indent: 5
+height: 22
+width: 85
+skip: 0
+
+vim: vim -S ./.vimrc
+
+vimrc: |
+  set statusline=%-3f\ \ \ \ \ Vroom\ is\ Simple
+  map <C-C> 3<C-^><Ctrl-Home>
+  map <C-O> 2<C-^><Ctrl-Home>
+  map <C-E> 5<C-^><Ctrl-Home>
+  map <C-P> 11<C-^><Ctrl-Home>
+  map MSM ouse Method::Signatures::Modifiers;<Esc>
+
+#indent: 5
+#auto_size: 1
+# height: 18
+# width: 69
+#vim_opts: '-u NONE'
+#skip: 0
+
+# The following options are for Gvim usage.
+# vim: gvim
+# gvimrc: |
+#   set fuopt=maxhorz,maxvert
+#   set guioptions=egmLtT
+#   set guifont=Bitstream_Vera_Sans_Mono:h18
+#   set guicursor=a:blinkon0-ver25-Cursor
+#   colorscheme default
+
+---- center
+% Title Slide
+Vroom 
+
+is a vim based presentaiton software by INGY
+====
+
+Vroom is cool
+
+
+---- center
+     I  just show basic future
+
+====
+
+ Lets see it
+---- 
+% Plain Make config
+
+---- include config_1.yml
+====
+
+It is config here
+
+
+----
+---- include page_2.yml
+
+----
+---- include include_3.yml
+
+== Getting Started
+
+* Write a file called 'slides.vroom'.
+  * Do this in a new directory.
+* Run 'vroom vroom'.
+* Voilà!
+---- bash
+---- include gen_pdf_vroom
+----
+\---- bash
+\---- include gen_pdf_vroom
+
+┌─[mishin@mishin-Satellite-T230]─(~/github/presentation/regex_recursion) [05:24]
+└─ →  milla-tutorial$ ../../bd2c2ba549a3470e360e/gen_pdf
+
+----
+== Navigation
+
+* Hit <SPACE> to move forward.
+* Hit <BACKSPACE> to go backwards.
+* Hit 'Q' to quit.
+
+---- perl,i4
+# This is some Perl code.
+# Notice the syntax highlighting.
+# Run it with the <RR> vim command.
+for my $word (qw(Vroom totally rocks!)) {
+    print "$word\n";
+}
+
+----
+== Get Vroom!
+
+* http://search.cpan.org/dist/Vroom/
+* http://github.com/ingydotnet/vroom-pm/
+
+----
+== This presentation
+
+* https://github.com/mishin/presentation/tree/master/vroom_is_simple
+
+----
+== The End

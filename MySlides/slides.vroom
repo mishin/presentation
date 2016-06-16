@@ -1,0 +1,78 @@
+# This is a sample Vroom input file. It should help you get started.
+#
+# Edit this file with your content. Then run `vroom vroom` to start
+# the show!
+#
+# See `perldoc Vroom` for complete details.
+#
+---- config
+# Basic config options.
+title: Vroom!
+indent: 5
+auto_size: 1
+# height: 18
+# width: 69
+vim_opts: '-u NONE'
+skip: 0
+
+# The following options are for Gvim usage.
+# vim: gvim
+# gvimrc: |
+#   set fuopt=maxhorz,maxvert
+#   set guioptions=egmLtT
+#   set guifont=Bitstream_Vera_Sans_Mono:h18
+#   set guicursor=a:blinkon0-ver25-Cursor
+#   colorscheme default
+
+---- center
+Vroom!
+
+by Ingy döt Net
+
+(hint: press the spacebar)
+
+----
+== Slideshows in Vim
+
+* Hate using PowerPoint or HTML Slides for Talks?
++* Use Vroom!
+
++* You can write you slides in Vim...
+* ...and present them in Vim!
+
+----
+== Getting Started
+
+* Write a file called 'slides.vroom'.
+  * Do this in a new directory.
+* Run 'vroom vroom'.
+* Voilà!
+
+----
+== Navigation
+
+* Hit <SPACE> to move forward.
+* Hit <BACKSPACE> to go backwards.
+* Hit 'Q' to quit.
+
+---- perl,i4
+# This is some Perl code.
+# Notice the syntax highlighting.
+# Run it with the <RR> vim command.
+for my $word (qw(Vroom totally rocks!)) {
+    print "$word\n";
+}
+
+----
+== Get Vroom!
+
+* http://search.cpan.org/dist/Vroom/
+* http://github.com/ingydotnet/vroom-pm/
+
+----
+== Vroom as HTML
+
+* http://ingydotnet.github.com/vroom-pm/
+
+----
+== The End

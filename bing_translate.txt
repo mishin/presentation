@@ -1,0 +1,27 @@
+http://translate.google.com/translate_t?langpair='
+
+http://www.bing.com/translator/ fromLang toLang sourceText
+
+bing translator fromLang toLang sourceText
+
+http://api.microsofttranslator.com/v2/Http.svc/Translate?text=word&from=en&to=ru;
+
+ $("#editResultWin_test").hide();
+ $("#PhrasesBlock").hide();
+ hideEditTranslationWin(0);
+ $("#editResult_test").val('');
+ $("#editResult_test").css('height','');
+$("#SiteContent_sourceText").css('height','');
+ //jQuery("textarea[class*=expand]").TextAreaExpander();
+ $("#blurResult").show();
+if (chST==1) {savedUID = "";}
+if (rtrim($("#SiteContent_sourceText").val())=="") {
+$("#blurResult").hide();$("#SiteContent_sourceText").val('');
+$("#ttSourceText").slideDown(300);$("#btt").slideDown(300);
+$('#ttSourceText').css('color','#FC575E'); 
+setTimeout("$('#ttSourceText').css('color','#45697E');",2000);
+return false;}
+if ((document.getElementById("SiteContent_sourceTextDict"))&&(rtrim(document.getElementById("SiteContent_sourceTextDict").val==''))){return;}
+var dir=GetDir();
+ TranslType = "text";
+ ReceiveServerData("");

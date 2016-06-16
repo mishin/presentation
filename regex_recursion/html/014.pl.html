@@ -1,0 +1,90 @@
+<html>
+<head>
+<title>Slide 14</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<script>
+function navigate(e) {
+    var keynum = (window.event) // IE
+        ? e.keyCode
+        : e.which;
+    if (keynum == 8) {
+        window.location = "013" + ".html";
+        return false;
+    }
+    if (keynum == 13 || keynum == 32) {
+        window.location = "015.pl" + ".html";
+        return false;
+    }
+    if (keynum == 73 || keynum == 105) {
+        window.location = "index.html";
+        return false;
+    }
+    return true;
+}
+</script>
+</head>
+<body onkeydown="return navigate(event)">
+<div style="border-style: solid ; border-width: 2px ; font-size: x-large">
+<pre>    use Modern::Perl;
+
+    use File::Slurp qw(read_file write_file);
+    use Data::Dumper qw(Dumper);
+    my $filename = 'short_example.dsx';
+
+    my $data           = read_file($filename);
+    my $header_and_job = split_by_header_and_job($data);
+    my $header_fields  = split_fields_by_new_line( $header_and_job-&gt;{header} );
+    say Dumper $header_fields;
+
+    sub split_by_header_and_job {
+        my $data = shift;
+        local $/ = '';    # Paragraph mode
+        my %header_and_job = ();
+        my @fields         = ();
+
+        #@fields = (
+        $data =~ /
+    (?&lt;header&gt;
+    BEGIN[ ]HEADER
+    .*?
+    END[ ]HEADER
+    )
+    .*?
+    (?&lt;job&gt;
+    BEGIN[ ]DSJOB
+    .*?
+    END[ ]DSJOB )
+    /xsg
+          ;
+        %header_and_job = %+;
+        return \%header_and_job;
+    }
+
+    sub split_fields_by_new_line {
+        my ($curr_record)     = @_;
+        my %fields_and_values = ();
+        my @fields            = ();
+        while (
+            $curr_record =~ m/
+            (?&lt;name&gt;\w+)[ ]&quot;(?&lt;value&gt;.*?)(?&lt;!\\)&quot;|
+            ((?&lt;name&gt;\w+)[ ]\Q=+=+=+=\E
+            (?&lt;value&gt;.*?)
+            \Q=+=+=+=\E)
+            /xsg
+          )
+        {
+            my $name       = $+{name};
+            my $value      = $+{value};
+            my %hash_value = ();
+            push @fields, \%hash_value;
+        }
+        return \@fields;
+    }
+</pre>
+</div>
+<br>
+<div style="font-size: small">
+<p></p>
+</div>
+</body>
+</html>

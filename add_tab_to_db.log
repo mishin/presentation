@@ -1,0 +1,88 @@
+2015/07/23 00:48:19 INFO> read banners.csv with data $VAR1 = [
+          [
+            '12	best	www.yandex.ru'
+          ],
+          [
+            '13	best1	www.yandex.ru'
+          ],
+          [
+            '14	best2	www.yandex.ru'
+          ],
+          [
+            '15	best3	www.yandex.ru'
+          ],
+          [
+            '16	best4	www.yandex.ru'
+          ]
+        ];
+2015/07/23 00:51:27 INFO> read banners.csv with data $VAR1 = [
+          [
+            '12	best	www.yandex.ru'
+          ],
+          [
+            '13	best1	www.yandex.ru'
+          ],
+          [
+            '14	best2	www.yandex.ru'
+          ],
+          [
+            '15	best3	www.yandex.ru'
+          ],
+          [
+            '16	best4	www.yandex.ru'
+          ]
+        ];
+2015/07/23 01:21:25 INFO> read banners.csv with data $VAR1 = [
+          [
+            '12',
+            'best',
+            'www.yandex.ru'
+          ],
+          [
+            '13',
+            'best1',
+            'www.yandex.ru'
+          ],
+          [
+            '14',
+            'best2',
+            'www.yandex.ru'
+          ],
+          [
+            '15',
+            'best3',
+            'www.yandex.ru'
+          ],
+          [
+            '16',
+            'best4',
+            'www.yandex.ru'
+          ]
+        ];
+2015/07/23 23:06:22 INFO> read banners.csv with data $VAR1 = [
+          [
+            '12',
+            'best',
+            'www.yandex.ru'
+          ],
+          [
+            '13',
+            'best1',
+            'www.yandex.ru'
+          ],
+          [
+            '14',
+            'best2',
+            'www.yandex.ru'
+          ],
+          [
+            '15',
+            'best3',
+            'www.yandex.ru'
+          ],
+          [
+            '16',
+            'best4',
+            'www.yandex.ru'
+          ]
+        ];

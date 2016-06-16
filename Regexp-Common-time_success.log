@@ -1,0 +1,29 @@
+# POSIX: 1
+# I18N:  1
+t/1-load.t ....... ok
+t/american.t ..... ok
+# Январь
+# Февраль
+# Март
+# Апрель
+# Май
+# Июнь
+# Июль
+# Август
+# Сентябрь
+# Октябрь
+# Ноябрь
+# Декабрь
+t/dmy.t .......... ok
+t/doc.t .......... ok
+t/hms.t .......... ok
+t/mail-strict.t .. ok
+t/mail.t ......... ok
+t/mdy.t .......... ok
+t/strftime.t ..... ok
+t/tf.t ........... ok
+t/ymd.t .......... ok
+t/zone.t ......... ok
+All tests successful.
+Files=12, Tests=7202,  5 wallclock secs ( 2.12 usr  0.14 sys +  4.86 cusr  0.22 csys =  7.34 CPU)
+Result: PASS

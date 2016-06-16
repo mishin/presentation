@@ -1,0 +1,60 @@
+<html>
+<head>
+<title>Slide 6</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<script>
+function navigate(e) {
+    var keynum = (window.event) // IE
+        ? e.keyCode
+        : e.which;
+    if (keynum == 8) {
+        window.location = "005" + ".html";
+        return false;
+    }
+    if (keynum == 13 || keynum == 32) {
+        window.location = "007" + ".html";
+        return false;
+    }
+    if (keynum == 73 || keynum == 105) {
+        window.location = "index.html";
+        return false;
+    }
+    return true;
+}
+</script>
+</head>
+<body onkeydown="return navigate(event)">
+<div style="border-style: solid ; border-width: 2px ; font-size: x-large">
+<pre>     #! /bin/bash
+
+     # To make this work, you will need Vroom 0.28 or later.  Slide notes are optional, but
+     # recommended.  Slide titles won't be used for this application.
+     #
+     # Earlier versions of Vroom will work if you add the dashes in front of the vroom commands
+     # (e.g. `vroom -compile` and `vroom -html`).  But the HTML is formatted a bit differently, so
+     # I make no promises that it will come out looking as good as the newest versions.
+
+     # You'll also need wkhtmltopdf.  If you don't have it, you can get it here:
+     # http://code.google.com/p/wkhtmltopdf/
+     #
+     # Note that you will almost certainly need the static version in order to handle multiple HTML
+     # files.  See the README file for full details:
+     # https://github.com/antialize/wkhtmltopdf/blob/master/README_WKHTMLTOPDF
+
+
+     # for some reason, just doing an ls of html/ doesn't get the slides in the right order
+     # this seems to fix it
+     vroom compile
+     slides=&quot;$(ls 0* | perl -lne 'print &quot;html/$_.html&quot;')&quot;
+     #echo $slides
+     vroom html
+
+     wkhtmltopdf -O Landscape $slides Vroom_is_Simple.pdf
+</pre>
+</div>
+<br>
+<div style="font-size: small">
+<p></p>
+</div>
+</body>
+</html>

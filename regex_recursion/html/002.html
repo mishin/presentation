@@ -1,0 +1,57 @@
+<html>
+<head>
+<title>Slide 2</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<script>
+function navigate(e) {
+    var keynum = (window.event) // IE
+        ? e.keyCode
+        : e.which;
+    if (keynum == 8) {
+        window.location = "001" + ".html";
+        return false;
+    }
+    if (keynum == 13 || keynum == 32) {
+        window.location = "003.pl" + ".html";
+        return false;
+    }
+    if (keynum == 73 || keynum == 105) {
+        window.location = "index.html";
+        return false;
+    }
+    return true;
+}
+</script>
+</head>
+<body onkeydown="return navigate(event)">
+<div style="border-style: solid ; border-width: 2px ; font-size: x-large">
+<pre>
+
+
+                                     Inspired by
+
+                          Parsing JSON with a single regex
+
+                                    brian d _foy
+
+                       http://blogs.perl.org/users/brian_d_foy
+                   /2013/10/parsing-json-with-a-single-regex.html
+
+                                  and  Buddy Burden
+
+                      http://blogs.perl.org/users/buddy_burden
+                     /2013/06/slideshows-in-vroom-so-noted.html
+
+
+
+
+
+
+</pre>
+</div>
+<br>
+<div style="font-size: small">
+<p>Actually I am delighted by Brian D Foy as</p><p>He plays with regexes</p><p></p>
+</div>
+</body>
+</html>

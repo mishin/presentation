@@ -1,0 +1,88 @@
+
+           -- Title Slide --
+
+
+Today we'll talk about recursion in regular expressions
+
+
+
+
+<Space>    -- Slide 2 --
+
+
+Actually I am delighted by Brian D Foy as
+He plays with regexes
+
+
+<Space>    -- Plain regular expression example --
+
+
+Here we know that% $ + this hash contains named
+brackets
+
+
+
+
+<Space>    -- Slide 4 --
+
+
+
+<Space>    -- Slide 5 --
+
+
+
+<Space>    -- Slide 6 --
+
+
+
+<Space>    -- Slide 7 --
+
+
+
+<Space>    -- Slide 8 --
+
+
+
+<Space>    -- Slide 9 --
+
+
+
+<Space>    -- Slide 10 --
+
+
+
+<Space>    -- Slide 11 --
+
+
+
+<Space>    -- Slide 12 --
+
+
+
+<Space>    -- Title Slide --
+
+
+
+<Space>    -- Slide 14 --
+
+
+
+<Space>    -- Slide 15 --
+
+
+
+<Space>    -- Slide 16 --
+
+
+
+<Space>    -- Slide 17 --
+
+
+
+<Space>    -- Slide 18 --
+
+
+
+<Space>    -- Slide 19 --
+
+
